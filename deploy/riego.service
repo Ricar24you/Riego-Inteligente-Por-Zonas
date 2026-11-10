@@ -5,9 +5,10 @@ After=network.target
 Type=simple
 User=pi4
 WorkingDirectory=/home/pi4/Riego-Inteligente-Por-Zonas
-ExecStart=/home/pi4/Riego-Inteligente-Por-Zonas/_build/default/rel/riego/bin/riego foreground
+ExecStart=/usr/bin/bash /home/pi4/Riego-Inteligente-Por-Zonas/scripts/run-release.sh
 Restart=on-failure
 RestartSec=3
+Environment=TZ=America/Tijuana
 UMask=0077
 NoNewPrivileges=true
 PrivateTmp=true

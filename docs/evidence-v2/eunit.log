@@ -1,0 +1,71 @@
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling riego
+===> Performing EUnit tests...
+[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m=SUPERVISOR REPORT==== 10-Nov-2026::10:04:26.719451 ===
+    supervisor: {local,riego_sup}
+    errorContext: child_terminated
+    reason: killed
+    offender: [{pid,<0.358.0>},
+               {id,riego_controller},
+               {mfargs,{riego_controller,start_link,[]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,5000},
+               {child_type,worker}]
+
+=SUPERVISOR REPORT==== 10-Nov-2026::10:04:26.742802 ===
+    supervisor: {local,riego_sup}
+    errorContext: child_terminated
+    reason: killed
+    offender: [{pid,<0.346.0>},
+               {id,{zone,1}},
+               {mfargs,{riego_valve,start_link,[1]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,5000},
+               {child_type,worker}]
+
+=INFO REPORT==== 10-Nov-2026::10:04:26.847093 ===
+    application: riego
+    exited: stopped
+    type: temporary
+
+[0;32m.[0m=SUPERVISOR REPORT==== 10-Nov-2026::10:04:26.856390 ===
+    supervisor: {local,riego_sup}
+    errorContext: child_terminated
+    reason: killed
+    offender: [{pid,<0.436.0>},
+               {id,riego_controller},
+               {mfargs,{riego_controller,start_link,[]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,5000},
+               {child_type,worker}]
+
+=SUPERVISOR REPORT==== 10-Nov-2026::10:04:26.876907 ===
+    supervisor: {local,riego_sup}
+    errorContext: child_terminated
+    reason: killed
+    offender: [{pid,<0.424.0>},
+               {id,{zone,1}},
+               {mfargs,{riego_valve,start_link,[1]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,5000},
+               {child_type,worker}]
+
+=INFO REPORT==== 10-Nov-2026::10:04:26.899666 ===
+    application: riego
+    exited: stopped
+    type: temporary
+
+=INFO REPORT==== 10-Nov-2026::10:04:26.905847 ===
+    application: riego
+    exited: stopped
+    type: temporary
+
+[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m
+Finished in 0.282 seconds
+[0;32m17 tests, 0 failures
+[0m

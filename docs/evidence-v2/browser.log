@@ -1,0 +1,6 @@
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling riego
+PASS: HTML, programs, rain, leak, metrics, stuck-open interlock/repair, local schedule, WebSocket state
+PASS: live WebSocket, browser form POST, local schedule, 12 zones, stuck-open/reset/repair, mobile viewport, no JS errors
+PASS: cold VM after SIGKILL preserves jam, queue, closed command and inhibited pump

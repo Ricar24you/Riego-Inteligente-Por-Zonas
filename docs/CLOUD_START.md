@@ -21,4 +21,6 @@ erl -pa _build/default/lib/*/ebin -noshell -eval 'application:load(riego),applic
 
 En otra terminal ejecutar `python3 scripts/smoke.py` y opcionalmente `node scripts/browser.cjs` si están Playwright/Chromium. No ejecutar sobre datos del usuario. Detener únicamente los procesos iniciados para estas pruebas. La Pi requiere compilación ARM64, red y SSH aparte. Stitch y publicación Gist están pendientes.
 
-Para ejecutar la release en cloud: `bash scripts/cloud-release.sh`. La release requiere nombre de nodo; el helper utiliza VMARGS_PATH con una cookie generada localmente en archivo privado fuera de Git, porque el home de cloud es de solo lectura. No copiar ese archivo al repositorio. En la Pi, la cuenta pi4 puede crear su cookie normalmente. La distribución Erlang no se usa para controlar válvulas.
+Para ejecutar la release sin distribución Erlang ni cookies: `TZ=America/Tijuana bash scripts/run-release.sh` después de `rebar3 release`. El script obtiene la versión ERTS/release de start_erl.data y usa el runtime empaquetado. `RIEGO_SYS_CONFIG` permite un archivo sys.config externo; no guardar credenciales en él.
+
+Validación aislada recomendada: `TZ=America/Tijuana bash scripts/integration.sh`; agregar `RIEGO_RELEASE_TEST=1` para probar la release y `RIEGO_BROWSER_TEST=1` para navegador con Playwright/Chromium. Selecciona un puerto disponible y limpia únicamente datos temporales. Las instrucciones anteriores que arrancan un servidor manual siguen disponibles, pero no son necesarias para estas pruebas.
