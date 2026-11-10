@@ -13,7 +13,11 @@ handle_info(_,S) -> {noreply,S}.
 terminate(_,_) -> cowboy:stop_listener(riego_listener).
 init(R,ws) -> {cowboy_websocket,R,#{},#{idle_timeout=>60000}};
 init(R,metrics) ->
- S=riego_controller:state(), B=io_lib:format("riego_active ~p~nriego_completed ~p~nriego_liters ~p~nriego_fault ~p~n",[length(maps:get(active,S)),maps:get(completed,S),maps:get(liters,S),case maps:get(fault,S) of true->1;false->0 end]),
+ S=riego_controller:state(),
+ B=io_lib:format("riego_active ~p~nriego_completed ~p~nriego_liters ~p~nriego_fault ~p~nriego_stuck_open ~p~nriego_pump_on ~p~n",
+ [length(maps:get(active,S)),maps:get(completed,S),maps:get(liters,S),
+ case maps:get(fault,S) of true->1;false->0 end,length(maps:get(stuck,S)),
+ case maps:get(pump,S) of true->1;false->0 end]),
  {ok,cowboy_req:reply(200,#{<<"content-type">>=><<"text/plain">>},B,R),metrics};
 init(R,api) ->
  try route(cowboy_req:method(R),cowboy_req:path(R),R) of
@@ -30,7 +34,7 @@ route(<<"POST">>,P,R) ->
  <<"/api/signal">> -> {signal,signal_key(maps:get(<<"kind">>,J)),maps:get(<<"value">>,J)} end,
  case riego_controller:command(C) of ok -> {200,#{ok=>true},R1}; {error,E} -> {422,#{error=>E},R1} end;
 route(_,_,R) -> {404,#{error=>not_found},R}.
-signal_key(<<"rain">>)->rain; signal_key(<<"stuck">>)->stuck; signal_key(<<"flow">>)->flow; signal_key(<<"reset">>)->reset.
+signal_key(<<"rain">>)->rain; signal_key(<<"stuck">>)->stuck; signal_key(<<"repair">>)->repair; signal_key(<<"flow">>)->flow; signal_key(<<"reset">>)->reset.
 websocket_init(S) -> self()!update,{ok,S}.
 websocket_handle(_,S) -> {ok,S}.
 websocket_info(update,S) -> erlang:send_after(1000,self(),update),{reply,{text,jsx:encode(riego_controller:state())},S}.

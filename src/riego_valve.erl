@@ -8,6 +8,12 @@ state(I) -> gen_statem:call(name(I),state).
 callback_mode() -> handle_event_function.
 init([]) -> {ok,closed,#{}}.
 handle_event({call,F},state,S,D) -> {keep_state,D,[{reply,F,S}]};
+handle_event({call,F},{set,stuck_open},_,D) ->
+ {next_state,stuck_open,D,[{reply,F,ok}]};
+handle_event({call,F},{set,repair},_,D) ->
+ {next_state,closed,D,[{reply,F,ok}]};
+handle_event({call,F},{set,_},stuck_open,D) ->
+ {keep_state,D,[{reply,F,{error,stuck_open}}]};
 handle_event({call,F},{set,S},_,D) when S=:=closed; S=:=opening; S=:=open; S=:=fault ->
  {next_state,S,D,[{reply,F,ok}]};
 handle_event(_,_,_,D) -> {keep_state,D}.
