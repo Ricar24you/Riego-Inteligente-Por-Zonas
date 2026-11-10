@@ -1,0 +1,1 @@
+{application, riego, [{description, "Riego Inteligente por Zonas"}, {vsn, "0.1.0"}, {registered, [riego_sup, riego_controller]}, {mod, {riego_app, []}}, {applications, [kernel, stdlib, crypto, cowboy, jsx]}, {env, []}, {modules, []}]}.
