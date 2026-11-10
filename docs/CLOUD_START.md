@@ -20,3 +20,5 @@ erl -pa _build/default/lib/*/ebin -noshell -eval 'application:load(riego),applic
 ```
 
 En otra terminal ejecutar `python3 scripts/smoke.py` y opcionalmente `node scripts/browser.cjs` si están Playwright/Chromium. No ejecutar sobre datos del usuario. Detener únicamente los procesos iniciados para estas pruebas. La Pi requiere compilación ARM64, red y SSH aparte. Stitch y publicación Gist están pendientes.
+
+Para ejecutar la release en cloud: `bash scripts/cloud-release.sh`. La release requiere nombre de nodo; el helper utiliza VMARGS_PATH con una cookie generada localmente en archivo privado fuera de Git, porque el home de cloud es de solo lectura. No copiar ese archivo al repositorio. En la Pi, la cuenta pi4 puede crear su cookie normalmente. La distribución Erlang no se usa para controlar válvulas.

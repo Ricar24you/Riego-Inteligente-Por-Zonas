@@ -25,3 +25,7 @@ No se asigna calificación ni se declara cumplimiento 40/40. La simulación de v
 ## Configuración cloud
 
 Instalación local repetida con éxito mediante `scripts/cloud-install.sh` (sin privilegios). Herramientas retenidas en `/workspace/tooling`. El backend rechazó dos lecturas del borrador y el guardado de install_script/start_skill con INVALID_ARGUMENT: **persistencia del borrador no confirmada**. No se afirma que el entorno esté publicado ni que una tarea nueva restaure la configuración. Las instrucciones completas quedan versionadas y en `docs/CLOUD_START.md`; guardar/publicar en ajustes cuando se resuelva el borrador.
+
+Arranque final de release: verificado con VMARGS_PATH local privado para evitar la ruta home de solo lectura; sobre esa release `scripts/smoke.py` pasó HTTP y WebSocket. Quitar el nombre de nodo no es compatible con el script relx; se mantuvo y se aplicó el override de runtime. EUnit final repetido: 11 pruebas, 0 fallos.
+
+Rama publicada en GitHub: `codex/riego-otp`. La rama main no se modificó. La ejecución de GitHub Actions alojada no se ha consultado con éxito.
