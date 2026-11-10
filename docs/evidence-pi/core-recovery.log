@@ -1,0 +1,2 @@
+PASS: controller checkpoint after SIGKILL: jam, queue, pump inhibited, repair and reset
+Scope: two native ARM64 VMs, controller and 12 valve processes; excludes HTTP, application supervisor and release; no power-loss test.

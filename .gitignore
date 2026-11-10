@@ -2,3 +2,16 @@ _build/
 data/
 *.dump
 __pycache__/
+
+# Instrucciones locales, credenciales y artefactos privados
+/CODEX_TAREA.txt
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+/.aws/
+/secrets/
+/erl_crash.dump

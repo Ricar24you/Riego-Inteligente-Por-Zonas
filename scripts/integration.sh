@@ -4,8 +4,6 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 rebar3 compile
 if [ "${RIEGO_RELEASE_TEST:-0}" = 1 ]; then rebar3 release; fi
-run_dir=$(mktemp -d /tmp/riego-integration.XXXXXX)
-export RIEGO_TEST_DATA_DIR="$run_dir/data"
 # Check availability before starting, and let the OS select a free port by default.
 RIEGO_TEST_PORT=$(python3 - <<'PORT'
 import os,socket
@@ -17,6 +15,8 @@ with socket.socket() as s:
 PORT
 )
 export RIEGO_TEST_PORT
+run_dir=$(mktemp -d /tmp/riego-integration.XXXXXX)
+export RIEGO_TEST_DATA_DIR="$run_dir/data"
 export RIEGO_BASE_URL="http://127.0.0.1:$RIEGO_TEST_PORT"
 server_pid=
 cleanup() {

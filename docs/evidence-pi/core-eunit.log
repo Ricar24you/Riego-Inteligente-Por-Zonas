@@ -1,0 +1,22 @@
+======================== EUnit ========================
+module 'riego_model_tests'
+  riego_model_tests: capacity_priority_test...[0.010 s] ok
+  riego_model_tests: rain_test...ok
+  riego_model_tests: completion_test...ok
+  riego_model_tests: window_test...ok
+  riego_model_tests: overflow_test...ok
+  riego_model_tests: fault_test...ok
+  riego_model_tests: clock_test...ok
+  riego_model_tests: recovery_test...ok
+  riego_model_tests: validation_test...ok
+  riego_model_tests: capacity_over_time_test...[0.001 s] ok
+  [done in 0.041 s]
+module 'riego_safety_tests'
+  riego_safety_tests: stuck_remains_open_test...[0.002 s] ok
+  riego_safety_tests: stuck_interlock_test...ok
+  riego_safety_tests: multiple_stuck_test...ok
+  riego_safety_tests: legacy_state_migration_test...ok
+  riego_safety_tests: configurable_start_test...ok
+  [done in 0.017 s]
+=======================================================
+  All 15 tests passed.

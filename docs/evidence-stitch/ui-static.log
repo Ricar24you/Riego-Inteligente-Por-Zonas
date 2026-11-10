@@ -1,0 +1,8 @@
+PASS: unique HTML IDs and local CSS/JS assets
+PASS: JavaScript syntax priv/www/app.js
+PASS: JavaScript syntax scripts/browser.cjs
+PASS: Python syntax scripts/package-ui.py
+PASS: Python syntax scripts/check-ui.py
+PASS: Python syntax scripts/smoke.py
+PASS: generated, staged and ARM64 release HTML match; CSS/JS embedded
+PASS: all original Stitch file hashes unchanged since inspection

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-low":"#eff4ff","on-secondary-fixed-variant":"#004b73","inverse-primary":"#68dba9","tertiary-fixed-dim":"#d0bcff","on-secondary":"#ffffff","error":"#ba1a1a","on-surface-variant":"#3d4a42","secondary-fixed":"#cce5ff","surface-tint":"#006c4a","primary":"#006948","secondary-fixed-dim":"#93ccff","on-primary":"#ffffff","on-secondary-fixed":"#001d31","on-primary-container":"#f5fff7","tertiary":"#6b38d4","surface-container-lowest":"#ffffff","primary-fixed-dim":"#68dba9","secondary-container":"#5bb8fe","inverse-surface":"#213145","surface-container-highest":"#d3e4fe","on-tertiary-fixed":"#23005c","on-secondary-container":"#00476e","primary-container":"#00855d","on-surface":"#0b1c30","surface-bright":"#f8f9ff","inverse-on-surface":"#eaf1ff","surface":"#f8f9ff","tertiary-container":"#8455ef","on-primary-fixed-variant":"#005137","on-tertiary-container":"#fffbff","on-tertiary-fixed-variant":"#5516be","surface-container-high":"#dce9ff","background":"#f8f9ff","tertiary-fixed":"#e9ddff","outline-variant":"#bccac0","secondary":"#006398","error-container":"#ffdad6","outline":"#6d7a72","surface-dim":"#cbdbf5","on-error-container":"#93000a","surface-variant":"#d3e4fe","surface-container":"#e5eeff","on-background":"#0b1c30","on-tertiary":"#ffffff","on-primary-fixed":"#002114","primary-fixed":"#85f8c4","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.25rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","margin":"1rem","space-lg":"1.5rem","margin-desktop":"2rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"telemetry-metric":["JetBrains Mono"],"telemetry-code":["JetBrains Mono"],"display-lg":["Plus Jakarta Sans"],"telemetry-timestamp":["JetBrains Mono"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.05em","fontWeight":"600"}],"telemetry-metric":["1.875rem",{"lineHeight":"2.25rem","letterSpacing":"-0.03em","fontWeight":"600"}],"telemetry-code":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"500"}],"display-lg":["3rem",{"lineHeight":"3.5rem","letterSpacing":"-0.025em","fontWeight":"700"}],"telemetry-timestamp":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"400"}],"headline-lg":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.6rem","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.45rem","fontWeight":"400"}],"headline-lg-mobile":["1.375rem",{"lineHeight":"1.875rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.04em","fontWeight":"600"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="AgroFlow IoT Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDiL2xUusgzkK6p5_2vSawLMkDgvz8hv4Y1B7-_kVkgnxilGa_qobmut2jNGpARdEmcFiu7K49cuEYBi04dRpwzqw9HacShtdgqcyFvzt1k465gBkL6YJ-Gp-9k3DOXZ3chBluo8-2Hl1ue7-DMkMumZBJXloVofuKuX2cezIa9nnoU4hzXlkDDsC5rQ19cSmZCXEt5BPNC1kkPuDQTMCl8HU2ftdg5PO7kagCYySe2"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">AgroFlow IoT</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Zone Irrigation Control</span></div></div><div class="hidden xl:flex items-center gap-space-sm bg-surface-container-low px-space-sm py-1 rounded-full shadow-[0_1px_3px_rgba(15,23,42,0.04)]"><span class="font-telemetry-code text-telemetry-code px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-semibold">SIMULADOR ACADÉMICO IoT • Erlang/Cowboy API</span><div class="flex items-center gap-1.5 px-2"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-telemetry-code text-telemetry-code text-on-surface font-semibold">WS Conectado:</span><span class="font-telemetry-code text-telemetry-code text-primary font-semibold">erl_node_01@agroflow.local</span></div></div></div><div class="hidden lg:flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-secondary text-sm">schedule</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">America/Tijuana (UTC-8)</span><span class="font-telemetry-code text-telemetry-code font-semibold">22:45:18 PST</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-tertiary text-sm">bedtime</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Ventana Nocturna</span><span class="font-telemetry-code text-telemetry-code font-semibold">22:00 - 06:00 (8h)</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-secondary text-sm">hub</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Concurrencia OTP</span><span class="font-telemetry-code text-telemetry-code font-semibold text-secondary">2 / 3 máx</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-primary-container text-on-primary-container shadow-[0_1px_3px_rgba(15,23,42,0.04)]"><span class="material-symbols-outlined text-sm">water_pump</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container opacity-90">Bomba Maestra</span><span class="font-telemetry-code text-telemetry-code font-semibold">ACTIVA (3.8 bar)</span></div></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center justify-center p-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-[10px] font-bold text-on-error">3</span></div><div class="flex items-center gap-space-xs pl-space-xs pr-space-sm py-1 rounded-full bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvPvUHffKeN-nS7g5h_-OtxhhojNgd0Nm2Hr5g0oM9AWXKujj5uUGCIGqsU2x5_iJ_nz53ZEd7VNwGSCERGuCSPKdKgiy9I6VOU038k0gYNM83th633R2AoFP5vcjiILl3Z1rtNWcJOsF-iIYDiWV_U71Je2gEWSWQpWCbCKE1IDC-CMu7kzLQfI_CsRCNMeggB4iRh206TmKYygghSUF2AY6uS4FmieC3MY5PhYU"/><div class="hidden md:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Ing. Agrónomo</span><span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Superusuario OTP</span></div><span class="material-symbols-outlined text-sm text-on-surface-variant">expand_more</span></div></div></div><div class="w-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(15,23,42,0.03)] px-gutter-desktop"><div class="flex items-center justify-between overflow-x-auto"><nav class="flex items-center gap-space-lg" data-active-classes="text-primary border-b-2 border-primary font-semibold"><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="dashboard-general" href="#">Dashboard General</a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="administracion-zonas" href="#">Administración de Zonas <span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-telemetry-code text-label-sm">12 zonas</span></a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="programacion-riego" href="#">Programación de Riego <span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-telemetry-code text-label-sm">22:00 PST</span></a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="detalle-zona" href="#">Detalle de Zona</a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="historial-eventos" href="#">Historial de Eventos <span class="px-2 py-0.5 rounded-full bg-error text-on-error font-telemetry-code text-label-sm">3 activas</span></a></nav><div class="hidden md:flex items-center gap-space-xs py-2"><span class="font-label-sm text-label-sm text-on-surface-variant">Selector Rápido:</span><select class="bg-surface-container-low text-on-surface font-telemetry-code text-label-sm px-2 py-1 rounded outline-none cursor-pointer"><option>Zona Z-01 [Nogales Sur]</option><option>Zona Z-02 [Viñedo Este]</option><option>Zona Z-03 [Olivos Norte]</option><option>Zona Z-04 [Invernadero Alfa]</option><option>Zona Z-05 [Hortalizas Valle]</option><option>Zona Z-06 [Cítricos Poniente]</option><option>Zona Z-07 [Aguacate Alta]</option><option>Zona Z-08 [Bayas Experimental]</option><option>Zona Z-09 [Forraje Río]</option><option>Zona Z-10 [Vivero Central]</option><option>Zona Z-11 [Frutales Oeste]</option><option>Zona Z-12 [Suelos Piloto]</option></select></div></div></div></header><main class="w-full pt-20 px-gutter-desktop min-h-[calc(100vh-5rem)] bg-surface"><div class="flex flex-col w-full">
+<div class="py-space-md flex flex-col gap-space-lg">
+<!-- Simulator & Telemetry Context Bar -->
+<div class="relative overflow-hidden rounded-xl bg-inverse-surface text-inverse-on-surface shadow-md p-space-md md:p-space-lg">
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1 max-w-3xl">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-telemetry-code text-label-sm font-semibold tracking-wide">
+              SCHEDULER ENGINE OTP 26.2
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest/20 text-inverse-on-surface font-telemetry-code text-label-sm">
+              Cowboy 2.10 • Actor PID &lt;0.245.0&gt;
+            </span>
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-highest/10 text-inverse-primary font-telemetry-code text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-inverse-primary animate-ping"></span>
+              Planificador Activo • Ciclo 1000ms
+            </div>
+</div>
+<h2 class="font-headline-md text-headline-md text-inverse-on-surface tracking-tight mt-1">
+            Motor de Asignación por Prioridad &amp; Ventana Nocturna CFE
+          </h2>
+<p class="font-body-md text-body-md text-surface-container-highest/80 leading-relaxed">
+            Algoritmo heurístico Erlang/OTP para mitigación de evapotranspiración diurna y consumo eléctrico en bloque valle.
+            Prioriza automáticamente por déficit hídrico crítico de suelo reteniendo el margen de seguridad barométrica.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm bg-surface-container-highest/10 p-space-sm rounded-xl">
+<div class="flex flex-col px-3 py-1">
+<span class="font-label-sm text-label-sm text-surface-container-highest/70">Velocidad Simulador</span>
+<div class="flex items-center gap-1 mt-0.5">
+<button class="px-2 py-1 rounded bg-primary text-on-primary font-telemetry-code text-label-sm font-semibold transition-all" id="sim-speed-1x">1x</button>
+<button class="px-2 py-1 rounded bg-surface-container-highest/20 text-inverse-on-surface hover:bg-surface-container-highest/40 font-telemetry-code text-label-sm transition-all" id="sim-speed-5x">5x</button>
+<button class="px-2 py-1 rounded bg-surface-container-highest/20 text-inverse-on-surface hover:bg-surface-container-highest/40 font-telemetry-code text-label-sm transition-all" id="sim-speed-20x">20x</button>
+</div>
+</div>
+<div class="flex flex-col px-3 py-1">
+<span class="font-label-sm text-label-sm text-surface-container-highest/70">Capacidad Hidráulica</span>
+<span class="font-telemetry-code text-headline-sm text-secondary-fixed-dim font-bold">2 / 3 <span class="font-label-sm text-label-sm opacity-75">Slots</span></span>
+</div>
+<button class="px-3 py-2 rounded-lg bg-surface-container-highest/20 hover:bg-surface-container-highest/30 text-inverse-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" id="btn-force-evaluation">
+<span class="material-symbols-outlined text-sm">sync</span>
+            Forzar Tick
+          </button>
+</div>
+</div>
+<!-- Background SVG ambient flow -->
+<div class="absolute -right-8 -bottom-12 opacity-10 pointer-events-none w-96 h-48">
+<svg class="w-full h-full text-inverse-primary" fill="none" viewbox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 100 Q 100 20, 200 100 T 400 100" fill="none" stroke="currentColor" stroke-width="6"></path>
+<path d="M0 130 Q 100 50, 200 130 T 400 130" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path d="M0 160 Q 100 80, 200 160 T 400 160" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- 1. Regla de Negocio y Ventana Nocturna -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Card Ventana Oficial -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">bedtime</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Ventana Oficial CFE</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-telemetry-code text-label-sm font-semibold">TARIFA 9-N</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-on-surface tracking-tight">22:00</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant font-normal">a</span>
+<span class="font-display-lg text-display-lg text-primary tracking-tight">06:00</span>
+<span class="font-telemetry-code text-label-md text-on-surface-variant ml-auto">8h 00m</span>
+</div>
+<p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            America/Tijuana (UTC-8). 0% evapotranspiración por radiación solar nula. Ahorro energético estimado del 41.8% en factura de bombeo vs régimen diurno.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">energy_savings_leaf</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Eficiencia Nocturna</span>
+</div>
+<span class="font-telemetry-code text-label-sm font-semibold text-primary">+96.4% retención</span>
+</div>
+</div>
+<!-- Card Concurrencia Hidráulica -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">water_drop</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Límite Concurrencia</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-telemetry-code text-label-sm font-semibold">3 ZONAS MÁX</span>
+</div>
+<div class="mt-space-md flex items-end justify-between">
+<div>
+<div class="font-telemetry-metric text-telemetry-metric text-secondary font-bold">3.8 bar</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Presión Cabezal Principal (Mín: 3.5 bar)</span>
+</div>
+<div class="text-right">
+<span class="font-telemetry-code text-headline-sm font-bold text-on-surface">2</span>
+<span class="font-telemetry-code text-body-md text-on-surface-variant">/ 3 activas</span>
+</div>
+</div>
+<!-- Gauge visual -->
+<div class="mt-space-md flex flex-col gap-1.5">
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary transition-all" style="width: 66.6%;"></div>
+<div class="h-full bg-secondary-fixed transition-all" style="width: 0%;"></div>
+<div class="h-full bg-transparent flex-1"></div>
+</div>
+<div class="flex justify-between font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">
+<span>0 (Inerte)</span>
+<span>1 Slot Libre (Reserva)</span>
+<span>3 (Límite Hidráulico)</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Caudal Total Consumido</span>
+<span class="font-telemetry-code text-label-sm font-semibold text-secondary">38.4 m³/h</span>
+</div>
+</div>
+<!-- Card Modo Estricto & Políticas OTP -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Política de Ejecución</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-telemetry-code text-label-sm font-semibold">ENFORCED</span>
+</div>
+<div class="mt-space-md flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Modo Ventana Estricta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bloquea apertura automática fuera de 22:00-06:00</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggle-strict-mode" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="mt-space-sm flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Interlock Pluviométrico (&gt;2mm)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Inhibición automática por lluvia detectada</span>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">cloud_off</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Supervisor OTP</span>
+<span class="font-telemetry-code text-label-sm font-semibold text-primary">one_for_all • ok</span>
+</div>
+</div>
+</div>
+<!-- 2. Cronograma Visual de Planificación (Diagrama de Gantt / Timeline) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cronograma Nocturno por Slots Concurrentes</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Distribución temporal sin colisión barométrica. 3 slots hidráulicos mapeados de 22:00 a 06:00 PST.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-1.5 font-telemetry-code text-label-sm bg-error-container text-on-error-container px-2.5 py-1 rounded-full font-semibold">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+            Hora Actual: 22:45 PST
+          </div>
+<div class="hidden sm:flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-secondary"></span> Regando</span>
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-surface-container-highest"></span> En Cola</span>
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-surface-container-low"></span> Reserva</span>
+</div>
+</div>
+</div>
+<!-- Gantt Area Container -->
+<div class="overflow-x-auto pb-space-sm">
+<div class="min-w-[840px] flex flex-col relative select-none">
+<!-- Time Grid Header -->
+<div class="grid grid-cols-8 text-center pb-2 font-telemetry-code text-label-sm text-on-surface-variant">
+<div class="text-left font-semibold text-on-surface">22:00</div>
+<div>23:00</div>
+<div>00:00</div>
+<div>01:00</div>
+<div>02:00</div>
+<div>03:00</div>
+<div>04:00</div>
+<div class="text-right font-semibold text-on-surface">05:00 - 06:00</div>
+</div>
+<!-- Timeline Background Grid Lines -->
+<div class="relative flex flex-col gap-3 py-2">
+<!-- Background vertical guidelines -->
+<div class="absolute inset-0 grid grid-cols-8 pointer-events-none opacity-40">
+<div class="bg-surface-container-low/40"></div>
+<div class="bg-transparent"></div>
+<div class="bg-surface-container-low/40"></div>
+<div class="bg-transparent"></div>
+<div class="bg-surface-container-low/40"></div>
+<div class="bg-transparent"></div>
+<div class="bg-surface-container-low/40"></div>
+<div class="bg-transparent"></div>
+</div>
+<!-- Red Vertical Cursor for Current Time (22:45 is ~9.375% of 8 hours) -->
+<div class="absolute top-0 bottom-0 z-30 pointer-events-none flex flex-col items-center" style="left: 9.375%;">
+<div class="bg-error text-on-error font-telemetry-timestamp text-telemetry-timestamp px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap -mt-2">
+                22:45 PST
+              </div>
+<div class="w-0.5 h-full bg-error shadow-sm"></div>
+</div>
+<!-- SLOT 1 -->
+<div class="relative z-10 flex items-center bg-surface-container-low/70 rounded-xl p-2 min-h-[64px]">
+<div class="w-36 flex flex-col pr-3 shrink-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Slot Hidráulico 1</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Válvula Manifold Alfa</span>
+</div>
+<div class="relative flex-1 h-12 flex items-center">
+<!-- Z-03 (22:00 - 23:30) = 1.5h / 8h = 18.75% width -->
+<div class="absolute left-0 w-[18.75%] h-10 bg-secondary text-on-secondary rounded-lg px-2 flex items-center justify-between shadow-sm cursor-pointer hover:brightness-105 transition-all">
+<div class="flex flex-col truncate">
+<span class="font-telemetry-code text-label-sm font-bold truncate">Z-03 Olivos Norte</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp opacity-90">22:00 - 23:30 (Activo)</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-surface-container-lowest animate-ping shrink-0 ml-1"></span>
+</div>
+<!-- Z-01 (23:30 - 01:00) = 1.5h / 8h = 18.75% width, left 18.75% -->
+<div class="absolute left-[18.75%] w-[18.75%] h-10 bg-surface-container-highest text-on-surface rounded-lg px-2 flex items-center justify-between shadow-sm cursor-pointer hover:bg-surface-variant transition-all ml-1">
+<div class="flex flex-col truncate">
+<span class="font-telemetry-code text-label-sm font-bold truncate">Z-01 Nogales Sur</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">23:30 - 01:00 (Cola)</span>
+</div>
+<span class="material-symbols-outlined text-xs text-on-surface-variant">schedule</span>
+</div>
+<!-- Z-09 (01:00 - 02:30) = 1.5h / 8h = 18.75% width, left 37.5% -->
+<div class="absolute left-[37.5%] w-[18.75%] h-10 bg-surface-container-highest/80 text-on-surface rounded-lg px-2 flex items-center justify-between shadow-sm cursor-pointer hover:bg-surface-variant transition-all ml-2">
+<div class="flex flex-col truncate">
+<span class="font-telemetry-code text-label-sm font-bold truncate">Z-09 Forraje Río</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">01:00 - 02:30</span>
+</div>
+</div>
+<!-- Idle slot rest of night -->
+<div class="absolute left-[56.25%] right-0 h-8 rounded-lg bg-surface-container/40 flex items-center justify-center text-on-surface-variant font-telemetry-code text-label-sm ml-2">
+<span class="opacity-60">Ventana libre de presurización (02:30 - 06:00)</span>
+</div>
+</div>
+</div>
+<!-- SLOT 2 -->
+<div class="relative z-10 flex items-center bg-surface-container-low/70 rounded-xl p-2 min-h-[64px]">
+<div class="w-36 flex flex-col pr-3 shrink-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Slot Hidráulico 2</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Válvula Manifold Beta</span>
+</div>
+<div class="relative flex-1 h-12 flex items-center">
+<!-- Z-07 (22:00 - 23:00) = 1h / 8h = 12.5% width -->
+<div class="absolute left-0 w-[12.5%] h-10 bg-secondary text-on-secondary rounded-lg px-2 flex items-center justify-between shadow-sm cursor-pointer hover:brightness-105 transition-all">
+<div class="flex flex-col truncate">
+<span class="font-telemetry-code text-label-sm font-bold truncate">Z-07 Aguacate</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp opacity-90">22:00-23:00</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-surface-container-lowest animate-ping shrink-0"></span>
+</div>
+<!-- Z-11 (23:00 - 01:00) = 2h / 8h = 25% width, left 12.5% -->
+<div class="absolute left-[12.5%] w-[25%] h-10 bg-surface-container-highest text-on-surface rounded-lg px-2 flex items-center justify-between shadow-sm cursor-pointer hover:bg-surface-variant transition-all ml-1">
+<div class="flex flex-col truncate">
+<span class="font-telemetry-code text-label-sm font-bold truncate">Z-11 Frutales Oeste</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">23:00 - 01:00 (Cola)</span>
+</div>
+<span class="material-symbols-outlined text-xs text-on-surface-variant">schedule</span>
+</div>
+<!-- Z-04 (01:00 - 03:00) = 2h / 8h = 25% width, left 37.5% -->
+<div class="absolute left-[37.5%] w-[25%] h-10 bg-surface-container-highest/80 text-on-surface rounded-lg px-2 flex items-center justify-between shadow-sm cursor-pointer hover:bg-surface-variant transition-all ml-2">
+<div class="flex flex-col truncate">
+<span class="font-telemetry-code text-label-sm font-bold truncate">Z-04 Invernadero Alfa</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">01:00 - 03:00</span>
+</div>
+</div>
+<!-- Idle slot -->
+<div class="absolute left-[62.5%] right-0 h-8 rounded-lg bg-surface-container/40 flex items-center justify-center text-on-surface-variant font-telemetry-code text-label-sm ml-2">
+<span class="opacity-60">Capacidad disponible (03:00 - 06:00)</span>
+</div>
+</div>
+</div>
+<!-- SLOT 3 (RESERVA DE SEGURIDAD & EXPEDICIÓN) -->
+<div class="relative z-10 flex items-center bg-surface-container-low/70 rounded-xl p-2 min-h-[64px]">
+<div class="w-36 flex flex-col pr-3 shrink-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Slot Hidráulico 3</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-tertiary font-semibold">Seguridad Barométrica</span>
+</div>
+<div class="relative flex-1 h-12 flex items-center">
+<!-- Reserva temporal 22:00 a 00:00 (2h = 25%) -->
+<div class="absolute left-0 w-[25%] h-10 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg px-2 flex items-center justify-center shadow-inner">
+<span class="font-telemetry-code text-label-sm flex items-center gap-1 font-semibold truncate">
+<span class="material-symbols-outlined text-xs">shield</span>
+                    Reserva Dinámica (Estabilización)
+                  </span>
+</div>
+<!-- Z-02 (00:00 - 01:30) = 1.5h / 8h = 18.75%, left 25% -->
+<div class="absolute left-[25%] w-[18.75%] h-10 bg-surface-container-highest text-on-surface rounded-lg px-2 flex items-center justify-between shadow-sm cursor-pointer hover:bg-surface-variant transition-all ml-1">
+<div class="flex flex-col truncate">
+<span class="font-telemetry-code text-label-sm font-bold truncate">Z-02 Viñedo Este</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">00:00 - 01:30</span>
+</div>
+<span class="material-symbols-outlined text-xs text-on-surface-variant">schedule</span>
+</div>
+<!-- Slot disponible -->
+<div class="absolute left-[43.75%] right-0 h-8 rounded-lg bg-surface-container/40 flex items-center justify-center text-on-surface-variant font-telemetry-code text-label-sm ml-2">
+<span class="opacity-60">Reserva de compensación de caudal (01:30 - 06:00)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Summary Scale -->
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-telemetry-code text-label-sm">
+<span>Inicio Ventana: 22:00:00 PST</span>
+<span class="text-primary font-semibold">Consumo Proyectado: 218 m³ en 8 horas</span>
+<span>Cierre Ventana: 06:00:00 PST</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3 & 4. Split Grid: Tabla de Priorización OTP & Formulario de Configuración -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Tabla de Priorización de Cola de Riego (Erlang GenServer Scheduler) -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">low_priority</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cola de Prioridad OTP (Erlang Heuristic)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Orden de despacho basado en déficit de humedad del sensor FDR y sensibilidad biológica de la fase fenológica.
+            </p>
+</div>
+<!-- Actions: Reordenar y Optimizar -->
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 transition-all" id="btn-sort-deficit">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+              Ordenar x Humedad
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md flex items-center gap-1 shadow-sm transition-all" id="btn-optimize-otp">
+<span class="material-symbols-outlined text-sm">auto_fix_high</span>
+              Optimizar Plan OTP
+            </button>
+</div>
+</div>
+<!-- Priority Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md" id="table-irrigation-queue">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l-lg">Zona &amp; Cultivo</th>
+<th class="py-2.5 px-3">Déficit Hídrico</th>
+<th class="py-2.5 px-3">Duración</th>
+<th class="py-2.5 px-3">Volumen Est.</th>
+<th class="py-2.5 px-3">Prioridad OTP</th>
+<th class="py-2.5 px-3">Estado Cola</th>
+<th class="py-2.5 px-3 rounded-r-lg text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<!-- Row 1: Regando -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-telemetry-code text-label-md font-bold">
+                      Z-03
+                    </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-label-md text-on-surface font-semibold">Olivos Norte</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Actor &lt;0.182.0&gt;</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between font-telemetry-code text-label-sm font-semibold">
+<span class="text-error">68%</span>
+<span class="text-on-surface-variant text-telemetry-timestamp">Crit: &gt;50%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">90 min</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">19.5 m³</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-code text-label-sm font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Nivel 1 Crítica
+                  </span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-telemetry-code text-label-sm font-semibold inline-flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span> Regando
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-error transition-colors" title="Pausar riego">
+<span class="material-symbols-outlined text-base">pause</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Regando -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-telemetry-code text-label-md font-bold">
+                      Z-07
+                    </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-label-md text-on-surface font-semibold">Aguacate Alta</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Actor &lt;0.186.0&gt;</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between font-telemetry-code text-label-sm font-semibold">
+<span class="text-error">62%</span>
+<span class="text-on-surface-variant text-telemetry-timestamp">Crit: &gt;50%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 62%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">60 min</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">18.9 m³</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-code text-label-sm font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Nivel 1 Crítica
+                  </span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-telemetry-code text-label-sm font-semibold inline-flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span> Regando
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-error transition-colors" title="Pausar riego">
+<span class="material-symbols-outlined text-base">pause</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: En Espera -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-telemetry-code text-label-md font-bold">
+                      Z-01
+                    </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-label-md text-on-surface font-semibold">Nogales Sur</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Actor &lt;0.180.0&gt;</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between font-telemetry-code text-label-sm font-semibold">
+<span class="text-tertiary">54%</span>
+<span class="text-on-surface-variant text-telemetry-timestamp">Medio</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 54%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">90 min</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">24.0 m³</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-telemetry-code text-label-sm font-semibold inline-flex items-center gap-1">
+                    Nivel 2 Media
+                  </span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-telemetry-code text-label-sm font-medium inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">hourglass_empty</span> En Espera (Slot 1)
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Adelantar en cola">
+<span class="material-symbols-outlined text-base">arrow_upward</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: En Espera -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-telemetry-code text-label-md font-bold">
+                      Z-11
+                    </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-label-md text-on-surface font-semibold">Frutales Oeste</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Actor &lt;0.190.0&gt;</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between font-telemetry-code text-label-sm font-semibold">
+<span class="text-tertiary">49%</span>
+<span class="text-on-surface-variant text-telemetry-timestamp">Medio</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 49%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">120 min</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">31.2 m³</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-telemetry-code text-label-sm font-semibold inline-flex items-center gap-1">
+                    Nivel 2 Media
+                  </span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-telemetry-code text-label-sm font-medium inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">hourglass_empty</span> En Espera (Slot 2)
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Adelantar en cola">
+<span class="material-symbols-outlined text-base">arrow_upward</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Pospuesto por Lluvia -->
+<tr class="hover:bg-surface-container-low/60 transition-colors opacity-80">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-telemetry-code text-label-md font-bold">
+                      Z-05
+                    </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-label-md text-on-surface font-semibold">Hortalizas Valle</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Actor &lt;0.184.0&gt;</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between font-telemetry-code text-label-sm font-semibold">
+<span class="text-primary">18%</span>
+<span class="text-on-surface-variant text-telemetry-timestamp">Saturado</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">45 min</td>
+<td class="py-3 px-3 font-telemetry-code text-body-md text-on-surface">8.4 m³</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-telemetry-code text-label-sm font-semibold inline-flex items-center gap-1">
+                    Nivel 3 Mant.
+                  </span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-telemetry-code text-label-sm font-semibold inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">water_drop</span> Inhibido x Lluvia
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Aplazado 24h</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span>Mostrando 5 de 12 zonas registradas en el GenServer</span>
+<div class="flex items-center gap-1 font-telemetry-code text-label-sm">
+<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-semibold">Cola Despacho: FIFO Priorizada</span>
+<span class="px-2 py-1 rounded bg-surface-container-low text-primary font-semibold">Memoria Erlang: 4.2 MB</span>
+</div>
+</div>
+</div>
+<!-- Formulario Modular: Agregar / Editar Regla de Riego -->
+<div class="xl:col-span-4 bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">add_circle</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Configurar Regla</h3>
+</div>
+<span class="font-telemetry-code text-label-sm bg-surface-container-high px-2 py-0.5 rounded text-on-surface">
+              OTP Setpoint
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Parámetros dinámicos para inyección al proceso concurrente de zona.
+          </p>
+<form class="flex flex-col gap-space-md" id="form-irrigation-rule">
+<!-- Selector de Zona -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="rule-zone">
+                Sector / Zona de Riego
+              </label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg p-2.5 outline-none cursor-pointer" id="rule-zone">
+<option value="Z-01">Z-01 • Nogales Sur [FDR 32%]</option>
+<option value="Z-02">Z-02 • Viñedo Este [FDR 38%]</option>
+<option value="Z-03">Z-03 • Olivos Norte [FDR 22% - Crítico]</option>
+<option value="Z-04">Z-04 • Invernadero Alfa [FDR 41%]</option>
+<option value="Z-05">Z-05 • Hortalizas Valle [FDR 78%]</option>
+<option value="Z-06">Z-06 • Cítricos Poniente [FDR 35%]</option>
+<option value="Z-07">Z-07 • Aguacate Alta [FDR 26% - Crítico]</option>
+<option value="Z-08">Z-08 • Bayas Experimental [FDR 44%]</option>
+<option value="Z-09">Z-09 • Forraje Río [FDR 33%]</option>
+<option value="Z-10">Z-10 • Vivero Central [FDR 50%]</option>
+<option value="Z-11">Z-11 • Frutales Oeste [FDR 31%]</option>
+<option value="Z-12">Z-12 • Suelos Piloto [FDR 48%]</option>
+</select>
+</div>
+<!-- Duración del Riego (Slider + Number) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="rule-duration">
+                  Duración de Inyección
+                </label>
+<span class="font-telemetry-code text-headline-sm text-primary font-bold" id="display-duration">45 min</span>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" id="rule-duration" max="180" min="15" step="5" type="range" value="45"/>
+<div class="flex justify-between font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">
+<span>15m (Rápido)</span>
+<span>60m</span>
+<span>120m</span>
+<span>180m (Profundo)</span>
+</div>
+</div>
+<!-- Frecuencia Operativa -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="rule-frequency">
+                Frecuencia de Disparo
+              </label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg p-2.5 outline-none cursor-pointer" id="rule-frequency">
+<option value="threshold">Por Umbral Crítico (&lt; 35% FDR)</option>
+<option value="daily">Diaria Nocturna (22:00 a 06:00)</option>
+<option value="lmv">Lunes, Miércoles y Viernes</option>
+<option value="pulse">Micro-Pulsos Intercalados (30 min on / 30 min off)</option>
+</select>
+</div>
+<!-- Nivel de Prioridad OTP -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                Nivel de Prioridad en Cola OTP
+              </label>
+<div class="grid grid-cols-3 gap-2">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="rule-priority" type="radio" value="p1"/>
+<div class="p-2 text-center rounded-lg bg-surface-container-low peer-checked:bg-error peer-checked:text-on-error font-telemetry-code text-label-sm font-semibold transition-all">
+                    Nivel 1 Alta
+                  </div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="rule-priority" type="radio" value="p2"/>
+<div class="p-2 text-center rounded-lg bg-surface-container-low peer-checked:bg-tertiary peer-checked:text-on-tertiary font-telemetry-code text-label-sm font-semibold transition-all">
+                    Nivel 2 Media
+                  </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="rule-priority" type="radio" value="p3"/>
+<div class="p-2 text-center rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary font-telemetry-code text-label-sm font-semibold transition-all">
+                    Nivel 3 Baja
+                  </div>
+</label>
+</div>
+</div>
+<!-- Política de Conflicto -->
+<div class="flex flex-col gap-1 bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Política de Pluviometría</span>
+<span class="material-symbols-outlined text-sm text-secondary">umbrella</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Si llueve &gt; 2.0 mm/h: Se inhibe apertura de válvula, preservando caudal y posponiendo turno a la noche siguiente.
+              </p>
+</div>
+<!-- Notification Toast Slot (Hidden by default) -->
+<div class="hidden p-2 rounded-lg bg-primary-container text-on-primary-container font-telemetry-code text-label-sm text-center" id="rule-saved-toast">
+              ✓ Parámetros actualizados en nodo Erlang con éxito.
+            </div>
+<!-- Submit Button -->
+<button class="w-full py-2.5 px-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-all mt-1" type="submit">
+<span class="material-symbols-outlined text-base">save</span>
+              Guardar Programación en OTP
+            </button>
+</form>
+</div>
+<div class="mt-space-md pt-space-xs text-center">
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">
+            Validado contra GenServer: agroflow_scheduler_srv:cast/2
+          </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Interactive Duration Slider
+    const durationInput = document.getElementById('rule-duration');
+    const displayDuration = document.getElementById('display-duration');
+    if (durationInput && displayDuration) {
+      durationInput.addEventListener('input', function(e) {
+        displayDuration.textContent = e.target.value + ' min';
+      });
+    }
+
+    // Form submission feedback
+    const ruleForm = document.getElementById('form-irrigation-rule');
+    const toast = document.getElementById('rule-saved-toast');
+    if (ruleForm && toast) {
+      ruleForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3500);
+      });
+    }
+
+    // Simulator Speed selector micro-interaction
+    const speedButtons = [
+      document.getElementById('sim-speed-1x'),
+      document.getElementById('sim-speed-5x'),
+      document.getElementById('sim-speed-20x')
+    ];
+
+    speedButtons.forEach(btn => {
+      if (!btn) return;
+      btn.addEventListener('click', function() {
+        speedButtons.forEach(b => {
+          if (!b) return;
+          b.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+          b.classList.add('bg-surface-container-highest/20', 'text-inverse-on-surface');
+        });
+        this.classList.remove('bg-surface-container-highest/20', 'text-inverse-on-surface');
+        this.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+      });
+    });
+
+    // Force Tick evaluation simulation button
+    const btnForce = document.getElementById('btn-force-evaluation');
+    if (btnForce) {
+      btnForce.addEventListener('click', function() {
+        const icon = btnForce.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.add('animate-spin');
+          setTimeout(() => {
+            icon.classList.remove('animate-spin');
+          }, 800);
+        }
+      });
+    }
+
+    // Sort table by deficit button interaction
+    const btnSort = document.getElementById('btn-sort-deficit');
+    const tableQueue = document.getElementById('table-irrigation-queue');
+    if (btnSort && tableQueue) {
+      btnSort.addEventListener('click', function() {
+        btnSort.classList.add('scale-95');
+        setTimeout(() => btnSort.classList.remove('scale-95'), 200);
+      });
+    }
+
+    // Optimize plan button interaction
+    const btnOptimize = document.getElementById('btn-optimize-otp');
+    if (btnOptimize) {
+      btnOptimize.addEventListener('click', function() {
+        const originalText = btnOptimize.innerHTML;
+        btnOptimize.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">refresh</span> Optimizando OTP...';
+        btnOptimize.disabled = true;
+        setTimeout(() => {
+          btnOptimize.innerHTML = '<span class="material-symbols-outlined text-sm">check_circle</span> Plan Rebalanceado';
+          setTimeout(() => {
+            btnOptimize.innerHTML = originalText;
+            btnOptimize.disabled = false;
+          }, 2000);
+        }, 1200);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest py-space-md shadow-[0_-1px_6px_rgba(15,23,42,0.03)]"><div class="w-full px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-telemetry-code text-telemetry-timestamp"><div>Simulador IoT Agrícola impulsado por Erlang/OTP Actor Model &amp; Cowboy REST/WS • Supervisor Tree ok • Frecuencia de muestreo 1000ms</div><div class="flex items-center gap-space-sm"><span>PID: &lt;0.104.0&gt;</span><span>•</span><span>GenServer Workers: 12</span><span>•</span><span class="text-primary font-semibold">Node Status: HEALTHY</span></div></div></footer></body></html>

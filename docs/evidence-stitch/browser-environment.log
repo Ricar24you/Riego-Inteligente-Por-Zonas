@@ -1,0 +1,8 @@
+node not installed
+nodejs not installed
+chromium not installed
+chromium-browser not installed
+firefox not installed
+Python playwright not installed
+Python selenium not installed
+Browser rendering and mobile screenshots NOT run. JavaScriptCore syntax check is not a browser test.

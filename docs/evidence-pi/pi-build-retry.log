@@ -1,0 +1,13 @@
+/usr/bin/erl
+/usr/bin/rebar3
+/usr/bin/python3
+/usr/bin/curl
+Native architecture: aarch64
+Checkout commit: 1d8c23574505b8b5ace77ea2a9d39cbd62c53f2b
+[0;32m===> Verifying dependencies...
+[0m[0;32m===> Fetching cowboy (from {git,"https://github.com/ninenines/cowboy.git",
+                  {ref,"3ea8395eb8f53a57acb5d3c00b99c70296e7cdbd"}})
+[0m[0;31m===> [1mFailed to fetch and copy dep: {git,"https://github.com/ninenines/cowboy.git",
+                                  {ref,
+                                      "3ea8395eb8f53a57acb5d3c00b99c70296e7cdbd"}}
+[0m[0m

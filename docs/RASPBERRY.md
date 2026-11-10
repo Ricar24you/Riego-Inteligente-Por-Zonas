@@ -1,25 +1,74 @@
 # Raspberry Pi 4 — Debian 13 ARM64
 
-El despliegue se prepara sobre la rama `codex/riego-otp`, nunca main. **Ejecución ARM64 pendiente:** el entorno cloud observado no tiene Tailscale configurado ni concesiones TCP. No se atribuye a la Pi una respuesta obtenida desde una ruta sin VPN. No se han modificado su SSH, firewall o servicios.
+## Estado vigente para publicación
 
-## Verificación desde el tailnet autorizado
+La compilación y el ensamblado de la release ARM64 se completaron después de los intentos restringidos descritos abajo. El usuario confirmó las cinco pantallas AgroFlow desde Windows. Las 17 pruebas EUnit y la integración HTTP/WebSocket aprobadas tienen logs cloud conservados; no se atribuyen a la ejecución nativa de la release. Ver [resumen y evidencias](EVIDENCIA.md). Esta preparación no altera el servidor activo.
 
-Desde un equipo ya conectado a Tailscale y con la clave de host verificada, ejecutar `bash scripts/pi-ssh-check.sh`. Es solo lectura, utiliza BatchMode, StrictHostKeyChecking y la autenticación SSH existente. Verifica aarch64, Debian, Erlang, rebar3, Python, curl, tzdata y checkout. Se puede pasar otro destino autorizado como primer argumento. Para este cloud, habilitar primero la integración Tailscale del entorno; no instalar otro cliente VPN dentro del contenedor ni desactivar claves de host. El transporte cloud raw TCP usa el CONNECT de la plataforma; una vez configurado, establecer la ruta según la skill runtime antes de ejecutar SSH.
+## Registro inicial al 10 de noviembre de 2026
 
-## Preparación nativa
+Trabajo realizado en el checkout `/home/pi4/Riego-Inteligente-Por-Zonas`, rama `codex/riego-otp`. Hardware: Raspberry Pi 4 Model B Rev 1.4; Debian 13.5 aarch64, Git 2.47.3, OTP 27 / ERTS 15.2.7, rebar3 3.24.0. No se instalaron paquetes, no se modificó main ni otros proyectos y no se hizo push.
 
-En la Pi, instalar solo si faltan paquetes: `sudo apt-get update` y `sudo apt-get install erlang rebar3 python3 curl tzdata`. Son operaciones administrativas por ejecutar localmente; no han sido ejecutadas por este trabajo.
+Se ejecutó `bash scripts/pi-build.sh` dos veces: ambos intentos se detuvieron al descargar Cowboy por imposibilidad de resolver github.com. `rebar3 release` quedó bloqueado por lo mismo. Este entorno también deniega crear sockets de loopback (EPERM) y la verificación de systemd (SO_PASSCRED). No se declara HTTP, WebSocket, release ni systemd aprobados en la Pi.
 
-Usar el checkout existente `/home/pi4/Riego-Inteligente-Por-Zonas` y la rama `codex/riego-otp`. Conservar modificaciones locales antes de cambiar de rama; no usar reset --hard ni sobrescribir proyectos. Con acceso disponible, traer los commits mediante Git autorizado. `bash scripts/pi-build.sh` rehúsa ejecutarse fuera de ARM64 o de esa rama, compila nativamente, ejecuta EUnit y los 21 checks horarios, construye release y verifica HTTP/WebSocket en una instancia aislada. No necesita sudo, no reinicia servicios y limpia únicamente su directorio temporal.
+Sí se compiló todo `src/*.erl` con `erlc -Werror`, se aprobaron 15 pruebas EUnit del modelo/seguridad, 21 límites horarios y recuperación del controlador y 12 válvulas tras SIGKILL entre dos VMs ARM64. No son las 17 pruebas de aplicación completa ni una prueba de corte eléctrico. [Resultados y logs](EVIDENCIA.md).
 
-**No copiar la release x86_64 de cloud a ARM64.** Conservar salida de `uname -m`, `git rev-parse HEAD` y pruebas como evidencia real cuando se ejecute el script.
+## Completar desde una terminal normal de la Pi
 
-## Servicio systemd
+Las herramientas ya existen; no hace falta instalar paquetes. Usar una terminal con red disponible y permisos de sockets, sin cambiar firewall, SSH ni VPN:
 
-Revisar rutas de `deploy/riego.service`. Crear `data` propiedad de pi4 con permisos privados. El servicio usa `scripts/run-release.sh`: arranca la release empaquetada sin distribución Erlang y sin cookies, con systemd encargado del ciclo de vida. Conserva `ProtectSystem=strict`, `ProtectHome=read-only` y únicamente `data` escribible. `Environment=TZ=America/Tijuana` selecciona la zona; revisar la configuración según HORARIOS.md.
+```bash
+cd /home/pi4/Riego-Inteligente-Por-Zonas
+git status --short --branch
+# Confirmar codex/riego-otp antes de continuar.
+bash scripts/pi-build.sh
+```
 
-Una vez confirmadas las pruebas nativas, copiar solo la unidad de este proyecto a `/etc/systemd/system/riego.service`, ejecutar `sudo systemctl daemon-reload` y `sudo systemctl enable --now riego`. No reemplazar una unidad existente sin revisarla ni tocar servicios ajenos. Confirmar `systemctl status riego`, `journalctl -u riego`, GET local `/api/state`, métricas y reinicio controlado. Verificar `timedatectl` y respaldar `data` antes de actualizar.
+El script rechaza otra arquitectura o rama, construye nativamente, ejecuta EUnit y horarios, ensambla release y prueba HTTP/WebSocket y recuperación tras SIGKILL con datos temporales. No usa sudo ni reinicia servicios. La release x86_64 de cloud no sirve en ARM64. No usar reset --hard ni sobrescribir cambios locales. Si falla la descarga, resolver conectividad desde esa terminal antes de repetir; no alterar las versiones fijadas en rebar.lock.
 
-Acceder por túnel: `ssh -L 8080:127.0.0.1:8080 pi4@100.93.156.85`. El listener permanece en loopback, sin abrir LAN o Internet. En cloud no publicar enlaces de preview localhost.
+Tras completar el script, arrancar manualmente para usar el dashboard:
 
-Pendiente: preflight SSH en tailnet, ejecución nativa ARM64, instalación/arranque/reinicio real systemd y evidencia de la demostración en Pi. La comprobación systemd-analyze local no pudo completarse porque `/run/systemd` es de solo lectura; no se declara validada la unidad por ese comando.
+```bash
+TZ=America/Tijuana bash scripts/run-release.sh
+```
+
+Mantener esa terminal abierta; Ctrl+C detiene el proceso. El listener es `127.0.0.1:8080` y los datos se guardan en `data/`. America/Tijuana es la zona prevista por la configuración del proyecto; cambiar TZ antes de arrancar si se necesita otra zona IANA. Desde otra terminal de la Pi comprobar:
+
+```bash
+curl -fsS http://127.0.0.1:8080/api/state
+curl -fsS http://127.0.0.1:8080/metrics
+```
+
+## Systemd preparado, sin instalar
+
+La unidad existente es `deploy/riego.service`, con usuario pi4, rutas de este checkout, launcher de la release, reinicio ante fallo y TZ America/Tijuana. Conserva `ProtectSystem=strict`, `ProtectHome=read-only`, `NoNewPrivileges` y escritura limitada a `data/`. Se creó `data/` con permisos 0700. No se copió nada a `/etc/systemd/system` ni se ejecutó daemon-reload, enable, start o restart.
+
+Desde la terminal normal, repetir la validación sin instalación:
+
+```bash
+systemd-analyze verify deploy/riego.service
+```
+
+**Los siguientes comandos son únicamente el procedimiento preparado para cuando autorices instalarlo. No se han ejecutado.** Antes, completar las pruebas nativas, detener el arranque manual y revisar cualquier unidad riego existente; no sobrescribirla sin revisión.
+
+```bash
+sudo install -m 644 deploy/riego.service /etc/systemd/system/riego.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now riego
+systemctl status riego --no-pager
+journalctl -u riego -n 50 --no-pager
+curl -fsS http://127.0.0.1:8080/api/state
+```
+
+El arranque y reinicio bajo systemd y la persistencia después de un corte eléctrico siguen pendientes. Respaldar data antes de actualizar y verificar reloj/zona con timedatectl.
+
+## Abrir el dashboard desde Windows
+
+Primero completar build y arrancar manualmente (o usar systemd una vez autorizado e instalado). En PowerShell, con el cliente OpenSSH y la autenticación SSH habitual:
+
+```powershell
+ssh -N -L 8080:127.0.0.1:8080 pi4@raspberrypi.local
+```
+
+Mantener PowerShell abierto y visitar **http://localhost:8080** en el navegador de Windows. Si raspberrypi.local no resuelve, sustituirlo por la IP real de la Pi, consultada con `hostname -I` en una terminal normal de la Pi. El destino Tailscale previamente documentado era `pi4@100.93.156.85`; usarlo solo si sigue correspondiendo a esta Pi y Windows ya está en el tailnet autorizado. No se verificó esa dirección desde esta sesión.
+
+Si Windows tiene ocupado el puerto 8080, usar `ssh -N -L 18080:127.0.0.1:8080 pi4@raspberrypi.local` y abrir http://localhost:18080. El servidor permanece en loopback; el acceso se realiza por el túnel SSH sin exponerlo a LAN o Internet.

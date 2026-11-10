@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-low":"#eff4ff","on-secondary-fixed-variant":"#004b73","inverse-primary":"#68dba9","tertiary-fixed-dim":"#d0bcff","on-secondary":"#ffffff","error":"#ba1a1a","on-surface-variant":"#3d4a42","secondary-fixed":"#cce5ff","surface-tint":"#006c4a","primary":"#006948","secondary-fixed-dim":"#93ccff","on-primary":"#ffffff","on-secondary-fixed":"#001d31","on-primary-container":"#f5fff7","tertiary":"#6b38d4","surface-container-lowest":"#ffffff","primary-fixed-dim":"#68dba9","secondary-container":"#5bb8fe","inverse-surface":"#213145","surface-container-highest":"#d3e4fe","on-tertiary-fixed":"#23005c","on-secondary-container":"#00476e","primary-container":"#00855d","on-surface":"#0b1c30","surface-bright":"#f8f9ff","inverse-on-surface":"#eaf1ff","surface":"#f8f9ff","tertiary-container":"#8455ef","on-primary-fixed-variant":"#005137","on-tertiary-container":"#fffbff","on-tertiary-fixed-variant":"#5516be","surface-container-high":"#dce9ff","background":"#f8f9ff","tertiary-fixed":"#e9ddff","outline-variant":"#bccac0","secondary":"#006398","error-container":"#ffdad6","outline":"#6d7a72","surface-dim":"#cbdbf5","on-error-container":"#93000a","surface-variant":"#d3e4fe","surface-container":"#e5eeff","on-background":"#0b1c30","on-tertiary":"#ffffff","on-primary-fixed":"#002114","primary-fixed":"#85f8c4","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.25rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","margin":"1rem","space-lg":"1.5rem","margin-desktop":"2rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"telemetry-metric":["JetBrains Mono"],"telemetry-code":["JetBrains Mono"],"display-lg":["Plus Jakarta Sans"],"telemetry-timestamp":["JetBrains Mono"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.05em","fontWeight":"600"}],"telemetry-metric":["1.875rem",{"lineHeight":"2.25rem","letterSpacing":"-0.03em","fontWeight":"600"}],"telemetry-code":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"500"}],"display-lg":["3rem",{"lineHeight":"3.5rem","letterSpacing":"-0.025em","fontWeight":"700"}],"telemetry-timestamp":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"400"}],"headline-lg":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.6rem","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.45rem","fontWeight":"400"}],"headline-lg-mobile":["1.375rem",{"lineHeight":"1.875rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.04em","fontWeight":"600"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="AgroFlow IoT Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDiL2xUusgzkK6p5_2vSawLMkDgvz8hv4Y1B7-_kVkgnxilGa_qobmut2jNGpARdEmcFiu7K49cuEYBi04dRpwzqw9HacShtdgqcyFvzt1k465gBkL6YJ-Gp-9k3DOXZ3chBluo8-2Hl1ue7-DMkMumZBJXloVofuKuX2cezIa9nnoU4hzXlkDDsC5rQ19cSmZCXEt5BPNC1kkPuDQTMCl8HU2ftdg5PO7kagCYySe2"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">AgroFlow IoT</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Zone Irrigation Control</span></div></div><div class="hidden xl:flex items-center gap-space-sm bg-surface-container-low px-space-sm py-1 rounded-full shadow-[0_1px_3px_rgba(15,23,42,0.04)]"><span class="font-telemetry-code text-telemetry-code px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-semibold">SIMULADOR ACADÉMICO IoT • Erlang/Cowboy API</span><div class="flex items-center gap-1.5 px-2"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-telemetry-code text-telemetry-code text-on-surface font-semibold">WS Conectado:</span><span class="font-telemetry-code text-telemetry-code text-primary font-semibold">erl_node_01@agroflow.local</span></div></div></div><div class="hidden lg:flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-secondary text-sm">schedule</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">America/Tijuana (UTC-8)</span><span class="font-telemetry-code text-telemetry-code font-semibold">22:45:18 PST</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-tertiary text-sm">bedtime</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Ventana Nocturna</span><span class="font-telemetry-code text-telemetry-code font-semibold">22:00 - 06:00 (8h)</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-secondary text-sm">hub</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Concurrencia OTP</span><span class="font-telemetry-code text-telemetry-code font-semibold text-secondary">2 / 3 máx</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-primary-container text-on-primary-container shadow-[0_1px_3px_rgba(15,23,42,0.04)]"><span class="material-symbols-outlined text-sm">water_pump</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container opacity-90">Bomba Maestra</span><span class="font-telemetry-code text-telemetry-code font-semibold">ACTIVA (3.8 bar)</span></div></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center justify-center p-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-[10px] font-bold text-on-error">3</span></div><div class="flex items-center gap-space-xs pl-space-xs pr-space-sm py-1 rounded-full bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvPvUHffKeN-nS7g5h_-OtxhhojNgd0Nm2Hr5g0oM9AWXKujj5uUGCIGqsU2x5_iJ_nz53ZEd7VNwGSCERGuCSPKdKgiy9I6VOU038k0gYNM83th633R2AoFP5vcjiILl3Z1rtNWcJOsF-iIYDiWV_U71Je2gEWSWQpWCbCKE1IDC-CMu7kzLQfI_CsRCNMeggB4iRh206TmKYygghSUF2AY6uS4FmieC3MY5PhYU"/><div class="hidden md:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Ing. Agrónomo</span><span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Superusuario OTP</span></div><span class="material-symbols-outlined text-sm text-on-surface-variant">expand_more</span></div></div></div><div class="w-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(15,23,42,0.03)] px-gutter-desktop"><div class="flex items-center justify-between overflow-x-auto"><nav class="flex items-center gap-space-lg" data-active-classes="text-primary border-b-2 border-primary font-semibold"><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="dashboard-general" href="#">Dashboard General</a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="administracion-zonas" href="#">Administración de Zonas <span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-telemetry-code text-label-sm">12 zonas</span></a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="programacion-riego" href="#">Programación de Riego <span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-telemetry-code text-label-sm">22:00 PST</span></a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="detalle-zona" href="#">Detalle de Zona</a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="historial-eventos" href="#">Historial de Eventos <span class="px-2 py-0.5 rounded-full bg-error text-on-error font-telemetry-code text-label-sm">3 activas</span></a></nav><div class="hidden md:flex items-center gap-space-xs py-2"><span class="font-label-sm text-label-sm text-on-surface-variant">Selector Rápido:</span><select class="bg-surface-container-low text-on-surface font-telemetry-code text-label-sm px-2 py-1 rounded outline-none cursor-pointer"><option>Zona Z-01 [Nogales Sur]</option><option>Zona Z-02 [Viñedo Este]</option><option>Zona Z-03 [Olivos Norte]</option><option>Zona Z-04 [Invernadero Alfa]</option><option>Zona Z-05 [Hortalizas Valle]</option><option>Zona Z-06 [Cítricos Poniente]</option><option>Zona Z-07 [Aguacate Alta]</option><option>Zona Z-08 [Bayas Experimental]</option><option>Zona Z-09 [Forraje Río]</option><option>Zona Z-10 [Vivero Central]</option><option>Zona Z-11 [Frutales Oeste]</option><option>Zona Z-12 [Suelos Piloto]</option></select></div></div></div></header><main class="w-full pt-20 px-gutter-desktop min-h-[calc(100vh-5rem)] bg-surface"><div class="flex flex-col w-full pb-16">
+<!-- Top Academic Simulation Controller Banner -->
+<div class="relative overflow-hidden rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl p-space-lg mb-space-lg">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/4 -bottom-20 w-64 h-64 rounded-full bg-secondary-container/15 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-1 max-w-2xl">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary font-telemetry-code text-label-sm text-on-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-ping"></span>
+            Erlang/OTP 26.2.1
+          </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high/30 text-surface-bright font-telemetry-code text-label-sm">
+            Supervisor: agroflow_zone_sup
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-code text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+            Banco de Pruebas de Resiliencia
+          </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-surface-bright tracking-tight mt-1">
+          Simulador de Caos y Tolerancia a Fallos IoT
+        </h2>
+<p class="font-body-md text-body-md text-surface-container-high/90">
+          Inyecte perturbaciones físicas en tiempo real para verificar el modelo de actores Erlang, la concurrencia máxima acotada (3 zonas en simultáneo) y los árboles de supervisión en caso de fallos de válvulas.
+        </p>
+</div>
+<!-- Quick Injection Controls -->
+<div class="w-full xl:w-auto flex flex-wrap items-center gap-space-md p-space-sm rounded-lg bg-surface-container-lowest/10 backdrop-blur-md">
+<!-- Rain Injector -->
+<button class="group flex items-center gap-space-sm px-space-md py-2.5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 transition-all shadow-md active:scale-95" id="rainSimulatorBtn" onclick="toggleRainSimulation()">
+<span class="material-symbols-outlined text-lg group-hover:rotate-12 transition-transform">rainy</span>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm tracking-wider uppercase opacity-80">Perturbación Pluvial</span>
+<span class="font-telemetry-code text-body-sm font-semibold" id="rainBtnLabel">Activar Lluvia (15mm/h)</span>
+</div>
+</button>
+<!-- Pressure Drop Slider -->
+<div class="flex flex-col gap-1 min-w-[210px] px-space-sm py-1 bg-surface-container-lowest/15 rounded-lg">
+<div class="flex items-center justify-between font-telemetry-code text-label-sm">
+<span class="text-surface-dim flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary-fixed">speed</span>
+              Presión Colector
+            </span>
+<span class="text-primary-fixed-dim font-bold" id="pressureReadout">3.8 bar (55.1 PSI)</span>
+</div>
+<input class="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-surface-container-highest/40 accent-primary-fixed" id="pressureSlider" max="4.8" min="1.2" oninput="updateMasterPressure(this.value)" step="0.1" type="range" value="3.8"/>
+<div class="flex justify-between font-telemetry-timestamp text-telemetry-timestamp text-surface-dim">
+<span>1.2 bar (Crítico)</span>
+<span>4.8 bar (Óptimo)</span>
+</div>
+</div>
+<!-- Chaos Injector Dropdown -->
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-error text-on-error hover:bg-error/90 transition-all shadow-md active:scale-95" onclick="injectValveFailure()">
+<span class="material-symbols-outlined text-lg">warning</span>
+<span class="font-telemetry-code text-label-sm font-bold">Forzar Atascamiento</span>
+</button>
+<button class="p-2.5 rounded-lg bg-surface-container-lowest/20 hover:bg-surface-container-lowest/30 text-surface-bright transition-colors" onclick="resetSimulator()" title="Reiniciar Árbol Supervisor">
+<span class="material-symbols-outlined text-lg">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Header & Controls Toolbar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Administración y Telemetría de Zonas IoT
+        </h1>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-telemetry-code text-label-sm font-semibold">
+          12 Nodos gen_server
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Matriz de solenoides hidráulicos con retroalimentación capacitiva de humedad y control por proceso concurrente.
+      </p>
+</div>
+<!-- Global Control Toggle (Autonomous OTP vs Manual Override) -->
+<div class="flex items-center gap-space-md self-start lg:self-auto bg-surface-container-lowest p-1.5 rounded-xl shadow-sm">
+<div class="flex items-center gap-2 px-space-sm">
+<span class="material-symbols-outlined text-secondary text-lg">engineering</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Estrategia Global:</span>
+</div>
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-md py-1.5 rounded-md font-telemetry-code text-label-sm font-bold bg-primary text-on-primary shadow-sm transition-all flex items-center gap-1.5" id="strategyAutoBtn" onclick="setGlobalStrategy('auto')">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+          Autónomo OTP
+        </button>
+<button class="px-space-md py-1.5 rounded-md font-telemetry-code text-label-sm font-bold text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" id="strategyManualBtn" onclick="setGlobalStrategy('manual')">
+<span class="material-symbols-outlined text-sm">tune</span>
+          Calibración Manual
+        </button>
+</div>
+</div>
+</div>
+<!-- Filter & KPI Strip -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-sm mb-space-lg">
+<!-- Filter All -->
+<button class="zone-filter-pill active flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm transition-all text-left" id="filterBtn-all" onclick="filterZones('all')">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">apps</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Todas</span>
+</div>
+<span class="font-telemetry-code text-label-md px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-bold">12</span>
+</button>
+<!-- Filter Watering -->
+<button class="zone-filter-pill flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm transition-all text-left" id="filterBtn-open" onclick="filterZones('open')">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="font-label-md text-label-md text-on-surface">Regando</span>
+</div>
+<span class="font-telemetry-code text-label-md px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold" id="badgeCountWatering">2</span>
+</button>
+<!-- Filter Closed -->
+<button class="zone-filter-pill flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm transition-all text-left" id="filterBtn-closed" onclick="filterZones('closed')">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface">Cerradas</span>
+</div>
+<span class="font-telemetry-code text-label-md px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold" id="badgeCountClosed">7</span>
+</button>
+<!-- Filter Stuck / Error -->
+<button class="zone-filter-pill flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm transition-all text-left" id="filterBtn-stuck" onclick="filterZones('stuck')">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-label-md text-label-md text-on-surface">Atoradas</span>
+</div>
+<span class="font-telemetry-code text-label-md px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-bold" id="badgeCountStuck">1</span>
+</button>
+<!-- Filter Repair -->
+<button class="zone-filter-pill flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm transition-all text-left" id="filterBtn-repair" onclick="filterZones('repair')">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md text-on-surface">Reparación</span>
+</div>
+<span class="font-telemetry-code text-label-md px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold">1</span>
+</button>
+<!-- Filter Inhibited -->
+<button class="zone-filter-pill flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm transition-all text-left" id="filterBtn-inhibited" onclick="filterZones('inhibited')">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-md text-label-md text-on-surface">Inhibidas</span>
+</div>
+<span class="font-telemetry-code text-label-md px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold" id="badgeCountInhibited">1</span>
+</button>
+</div>
+<!-- Real-Time Concurrency Alert Toast Bar -->
+<div class="hidden mb-space-md p-space-md rounded-xl bg-error-container text-on-error-container flex items-center justify-between shadow-md" id="concurrencyAlert">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-error">gpp_maybe</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold">Límite de Concurrencia OTP Alcanzado (3 / 3 Zonas)</span>
+<span class="font-body-sm text-body-sm">
+          El planificador Erlang deniega nuevas aperturas de solenoide para garantizar la presión hidrostática crítica (&gt;2.8 bar).
+        </span>
+</div>
+</div>
+<button class="p-1 rounded-md hover:bg-error/10 text-on-error-container font-telemetry-code text-label-sm font-semibold" onclick="dismissConcurrencyAlert()">
+      Entendido
+    </button>
+</div>
+<!-- Main Content Layout: Matrix Grid & Diagnostic Drawer -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Master Zones Grid (Occupies 8 or 12 cols depending on drawer status) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md transition-all duration-300" id="zonesContainer">
+<!-- List Controls Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-telemetry-code text-label-sm">
+<span class="material-symbols-outlined text-base">hub</span>
+<span>Reglas de Negocio:</span>
+<span class="text-primary font-bold">Max 3 concurrentes</span>
+<span>•</span>
+<span class="text-on-surface">Inhibición por lluvia: ON</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-telemetry-code text-label-sm text-on-surface transition-colors flex items-center gap-1" onclick="adjustAllMoisture(-5)">
+<span class="material-symbols-outlined text-sm">humidity_low</span>
+            -5% Global
+          </button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-telemetry-code text-label-sm text-on-surface transition-colors flex items-center gap-1" onclick="adjustAllMoisture(+5)">
+<span class="material-symbols-outlined text-sm">humidity_high</span>
+            +5% Global
+          </button>
+</div>
+</div>
+<!-- 12 Zones Grid Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md" id="zonesGrid">
+<!-- ZONES INJECTED VIA JAVASCRIPT FOR REALISTIC TELEMETRY -->
+</div>
+</div>
+<!-- Right Column: Erlang GenServer Diagnostic Drawer & Supervisor Monitor -->
+<div class="lg:col-span-4 flex flex-col gap-space-md sticky top-24" id="diagnosticPanel">
+<!-- Diagnostic Panel Container -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-lg shadow-md">
+<!-- Diagnostic Header -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Inspector de Proceso OTP</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="diagZoneTitle">Z-01 [Nogales Sur]</h3>
+</div>
+</div>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold" id="diagPid">
+            &lt;0.412.0&gt;
+          </span>
+</div>
+<!-- Actor FSM Status Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Estado Actual de Máquina (FSM):</span>
+<span class="font-telemetry-code text-label-sm font-bold text-secondary flex items-center gap-1.5" id="diagFsmState">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+              irrigating_active
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface">
+<div class="p-2 rounded-lg bg-surface-container-lowest">
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant block">Reductions OTP</span>
+<span class="font-telemetry-code text-body-sm font-bold" id="diagReductions">148,291</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest">
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant block">Memory Footprint</span>
+<span class="font-telemetry-code text-body-sm font-bold" id="diagMemory">24.8 KB</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest">
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant block">Lock Concurrencia</span>
+<span class="font-telemetry-code text-body-sm font-bold text-primary" id="diagLock">acquired (1/3)</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest">
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant block">Posición Solenoide</span>
+<span class="font-telemetry-code text-body-sm font-bold text-secondary" id="diagValvePos">OPEN 100%</span>
+</div>
+</div>
+</div>
+<!-- Live Telemetry Sparkline & Flow Visualizer -->
+<div class="flex flex-col gap-2 mb-space-md">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Curva de Flujo Dinámico (m³/h)</span>
+<span class="font-telemetry-code font-bold text-secondary" id="diagFlowRate">4.82 m³/h</span>
+</div>
+<!-- Sparkline SVG -->
+<div class="w-full h-16 bg-surface-container-low rounded-lg p-1.5 flex items-end">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 100 40">
+<path d="M0,35 Q15,30 25,20 T50,15 T75,8 T100,5" fill="none" stroke="#006398" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,35 Q15,30 25,20 T50,15 T75,8 T100,5 L100,40 L0,40 Z" fill="#5bb8fe" fill-opacity="0.25"></path>
+<circle cx="100" cy="5" fill="#006398" r="3.5"></circle>
+</svg>
+</div>
+</div>
+<!-- Erlang Message Queue & Event Stream Logs -->
+<div class="flex flex-col gap-1.5 mb-space-md">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Buzón de Mensajes &amp; GenServer Logs</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-primary font-bold">Mailbox: 0 msgs</span>
+</div>
+<div class="h-36 overflow-y-auto rounded-lg bg-inverse-surface p-2.5 text-inverse-on-surface font-telemetry-code text-telemetry-timestamp flex flex-col gap-1.5" id="diagLogTerminal">
+<div class="text-surface-dim">[22:42:01.082] &lt;0.412.0&gt; gen_server:cast(open_solenoid_valve)</div>
+<div class="text-primary-fixed-dim">[22:42:01.085] Lock: Concurrency permit granted (2/3 active)</div>
+<div class="text-surface-bright">[22:43:10.120] Moisture reading: 32% (below threshold 45%)</div>
+<div class="text-secondary-fixed-dim">[22:44:00.000] Flow sensor verified: 4.82 m3/h at 48.2 PSI</div>
+<div class="text-surface-dim">[22:45:18.441] Heartbeat ack ok • next tick in 1000ms</div>
+</div>
+</div>
+<!-- Diagnostic Actions -->
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="px-space-sm py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-telemetry-code text-label-sm font-semibold transition-colors flex items-center justify-center gap-1" onclick="restartWorkerProcess()">
+<span class="material-symbols-outlined text-sm">restart_alt</span>
+            Reiniciar Worker
+          </button>
+<button class="px-space-sm py-2 rounded-lg bg-tertiary-container hover:bg-tertiary-container/90 text-on-tertiary-container font-telemetry-code text-label-sm font-semibold transition-colors flex items-center justify-center gap-1" onclick="triggerManualBypass()">
+<span class="material-symbols-outlined text-sm">lock_open</span>
+            Bypass Forzado
+          </button>
+</div>
+</div>
+<!-- Supervisor Tree Miniature Topology -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">Topología OTP Supervisor</span>
+<span class="font-telemetry-code text-label-sm text-primary font-bold">one_for_one</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex items-center justify-between font-telemetry-code text-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">account_tree</span>
+<span>agroflow_zone_sup</span>
+</div>
+<span class="text-on-surface-variant font-semibold">12 workers / 0 rest</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Estrategia de reinicio automático: si una válvula reporta atasco continuo por 30s, el worker es reiniciado de forma aislada sin afectar las otras 11 zonas.
+        </p>
+</div>
+</div>
+</div>
+<!-- Calibration Modal Drawer (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-space-md" id="calibrationModal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl p-space-lg flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="p-2 rounded-lg bg-primary-container text-on-primary-container">
+<span class="material-symbols-outlined">tune</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="calibModalTitle">Calibración Capacitiva Sensor</h3>
+<span class="font-telemetry-code text-label-sm text-on-surface-variant" id="calibModalSub">Zona Z-01 [Nogales Sur]</span>
+</div>
+</div>
+<button class="p-1 rounded-full text-on-surface-variant hover:bg-surface-container" onclick="closeCalibrationModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Tipo de Suelo / Matriz Textural</label>
+<select class="w-full p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md border-none outline-none">
+<option>Franco Arcilloso (Capacidad de campo: 38%)</option>
+<option>Arenoso Volcánico (Capacidad de campo: 22%)</option>
+<option>Limoso Aluvial (Capacidad de campo: 35%)</option>
+<option>Sustrato de Coco Invernadero (Capacidad: 60%)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Umbral de Activación (Min %)</span>
+<input class="p-2 rounded-lg bg-surface-container-low font-telemetry-code text-body-md font-bold text-on-surface outline-none" type="number" value="35"/>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Umbral de Saturación (Max %)</span>
+<input class="p-2 rounded-lg bg-surface-container-low font-telemetry-code text-body-md font-bold text-on-surface outline-none" type="number" value="75"/>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-secondary-container/20 text-on-secondary-container flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5">info</span>
+<span class="font-body-sm text-body-sm">
+          Al calibrar, el nodo gen_server recalculará la tasa de absorción y ajustará la duración estimada de cada pulso de riego.
+        </span>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md" onclick="closeCalibrationModal()">
+          Cancelar
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container" onclick="saveCalibration()">
+          Guardar Calibración en Nodo
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Complete Mock State for the 12 IoT Irrigation Zones
+  let zonesData = [
+    {
+      id: "Z-01",
+      name: "Invernadero Alfa (Nogales Sur)",
+      crop: "Nogales Jóvenes",
+      area: "3,200 m²",
+      moisture: 32,
+      moistureTarget: 50,
+      valveState: "open", // open, closed, stuck, repair, inhibited
+      pressure: 3.8,
+      flow: 4.82,
+      pid: "<0.412.0>",
+      reductions: 148291,
+      memory: "24.8 KB",
+      lastSync: "22:45:12 PST"
+    },
+    {
+      id: "Z-02",
+      name: "Viñedo Cabernet Este",
+      crop: "Vides de Mesa",
+      area: "5,800 m²",
+      moisture: 29,
+      moistureTarget: 40,
+      valveState: "open",
+      pressure: 3.7,
+      flow: 5.15,
+      pid: "<0.413.0>",
+      reductions: 192301,
+      memory: "26.1 KB",
+      lastSync: "22:45:10 PST"
+    },
+    {
+      id: "Z-03",
+      name: "Olivos Centenarios Norte",
+      crop: "Olivo Frantoio",
+      area: "7,400 m²",
+      moisture: 58,
+      moistureTarget: 45,
+      valveState: "closed",
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.414.0>",
+      reductions: 98112,
+      memory: "21.4 KB",
+      lastSync: "22:44:59 PST"
+    },
+    {
+      id: "Z-04",
+      name: "Parcela Arándanos Alta",
+      crop: "Blueberries Eureka",
+      area: "2,100 m²",
+      moisture: 42,
+      moistureTarget: 55,
+      valveState: "closed",
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.415.0>",
+      reductions: 104230,
+      memory: "22.0 KB",
+      lastSync: "22:45:04 PST"
+    },
+    {
+      id: "Z-05",
+      name: "Hortalizas Valle Bajo",
+      crop: "Tomate Roma Saladette",
+      area: "4,600 m²",
+      moisture: 24,
+      moistureTarget: 60,
+      valveState: "stuck", // STUCK VALVE ANOMALY
+      pressure: 2.1,
+      flow: 6.90,
+      pid: "<0.416.0>",
+      reductions: 310500,
+      memory: "38.2 KB",
+      lastSync: "22:45:17 PST"
+    },
+    {
+      id: "Z-06",
+      name: "Cítricos Poniente",
+      crop: "Limón Eureka Orgánico",
+      area: "6,200 m²",
+      moisture: 61,
+      moistureTarget: 48,
+      valveState: "closed",
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.417.0>",
+      reductions: 87400,
+      memory: "20.9 KB",
+      lastSync: "22:45:01 PST"
+    },
+    {
+      id: "Z-07",
+      name: "Aguacates Cuenca Alta",
+      crop: "Aguacate Hass Superior",
+      area: "8,900 m²",
+      moisture: 38,
+      moistureTarget: 50,
+      valveState: "repair", // IN REPAIR
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.418.0>",
+      reductions: 12050,
+      memory: "18.3 KB",
+      lastSync: "22:43:20 PST"
+    },
+    {
+      id: "Z-08",
+      name: "Bayas Experimental Sector B",
+      crop: "Frambuesa Enana",
+      area: "1,500 m²",
+      moisture: 52,
+      moistureTarget: 50,
+      valveState: "inhibited", // INHIBITED BY PLUVIAL
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.419.0>",
+      reductions: 64200,
+      memory: "21.1 KB",
+      lastSync: "22:45:15 PST"
+    },
+    {
+      id: "Z-09",
+      name: "Forraje Alfalfa Sector Río",
+      crop: "Alfalfa Riego Intenso",
+      area: "12,000 m²",
+      moisture: 64,
+      moistureTarget: 50,
+      valveState: "closed",
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.420.0>",
+      reductions: 89400,
+      memory: "20.5 KB",
+      lastSync: "22:44:50 PST"
+    },
+    {
+      id: "Z-10",
+      name: "Vivero de Injertos Central",
+      crop: "Patrones Criollos",
+      area: "1,800 m²",
+      moisture: 72,
+      moistureTarget: 65,
+      valveState: "closed",
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.421.0>",
+      reductions: 91200,
+      memory: "21.0 KB",
+      lastSync: "22:45:03 PST"
+    },
+    {
+      id: "Z-11",
+      name: "Frutales de Hueso Poniente",
+      crop: "Duraznos & Ciruelos",
+      area: "4,100 m²",
+      moisture: 48,
+      moistureTarget: 45,
+      valveState: "closed",
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.422.0>",
+      reductions: 78100,
+      memory: "20.2 KB",
+      lastSync: "22:45:08 PST"
+    },
+    {
+      id: "Z-12",
+      name: "Suelos de Investigación Piloto",
+      crop: "Suelo Descanso / Sensorizado",
+      area: "2,000 m²",
+      moisture: 55,
+      moistureTarget: 40,
+      valveState: "closed",
+      pressure: 0.0,
+      flow: 0.0,
+      pid: "<0.423.0>",
+      reductions: 62400,
+      memory: "19.8 KB",
+      lastSync: "22:45:14 PST"
+    }
+  ];
+
+  let currentFilter = 'all';
+  let isRaining = false;
+  let globalStrategy = 'auto'; // 'auto' | 'manual'
+  let selectedZoneId = "Z-01";
+
+  // Render Zone Cards
+  function renderZones() {
+    const grid = document.getElementById('zonesGrid');
+    if (!grid) return;
+
+    let filtered = zonesData;
+    if (currentFilter !== 'all') {
+      filtered = zonesData.filter(z => z.valveState === currentFilter);
+    }
+
+    grid.innerHTML = filtered.map(zone => {
+      const isSelected = zone.id === selectedZoneId;
+      const isCurrentlyOpen = zone.valveState === 'open';
+      const isStuck = zone.valveState === 'stuck';
+      const isRepair = zone.valveState === 'repair';
+      const isInhibited = zone.valveState === 'inhibited';
+
+      // Moisture color coding
+      let moistureColor = 'bg-primary';
+      let moistureTextColor = 'text-primary';
+      if (zone.moisture < 35) {
+        moistureColor = 'bg-error';
+        moistureTextColor = 'text-error';
+      } else if (zone.moisture > 70) {
+        moistureColor = 'bg-secondary';
+        moistureTextColor = 'text-secondary';
+      }
+
+      // Valve Pill Configuration
+      let valvePillHtml = '';
+      if (isCurrentlyOpen) {
+        valvePillHtml = `
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-telemetry-code text-label-sm font-semibold shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+            Abierta (Flujo Activo)
+          </span>`;
+      } else if (isStuck) {
+        valvePillHtml = `
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-code text-label-sm font-bold shadow-sm" title="OTP Reason: {:error, :valve_stuck_open}">
+            <span class="w-2 h-2 rounded-full bg-error"></span>
+            Atorada Abierta (Falla OTP)
+          </span>`;
+      } else if (isRepair) {
+        valvePillHtml = `
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-telemetry-code text-label-sm font-semibold">
+            <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            En Reparación (Bloqueo)
+          </span>`;
+      } else if (isInhibited) {
+        valvePillHtml = `
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-telemetry-code text-label-sm font-semibold">
+            <span class="w-2 h-2 rounded-full bg-outline"></span>
+            Inhibida Sensor Pluvial
+          </span>`;
+      } else {
+        valvePillHtml = `
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-telemetry-code text-label-sm font-semibold">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+            Cerrada (Normal)
+          </span>`;
+      }
+
+      return `
+        <div onclick="selectZone('${zone.id}')" class="cursor-pointer group flex flex-col justify-between p-space-md rounded-2xl bg-surface-container-lowest transition-all hover:shadow-lg ${isSelected ? 'shadow-md ring-2 ring-primary/40' : 'shadow-sm'}">
+          <!-- Card Header -->
+          <div class="flex flex-col gap-2 pb-space-sm">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-telemetry-code text-label-sm font-bold">${zone.id}</span>
+                <span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant font-semibold">${zone.pid}</span>
+              </div>
+              ${valvePillHtml}
+            </div>
+            
+            <div class="flex flex-col">
+              <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-tight">${zone.name}</h4>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">${zone.crop} • ${zone.area}</span>
+            </div>
+          </div>
+
+          <!-- Telemetry Soil Moisture & Pressure Gauges -->
+          <div class="flex flex-col gap-space-sm py-space-sm my-space-xs rounded-xl bg-surface-container-low/60 p-space-sm">
+            
+            <!-- Moisture Interactive Slider Bar -->
+            <div class="flex flex-col gap-1">
+              <div class="flex items-center justify-between font-label-sm text-label-sm">
+                <span class="text-on-surface-variant font-medium flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">water_drop</span>
+                  Humedad de Suelo
+                </span>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-telemetry-code font-bold ${moistureTextColor}">${zone.moisture}%</span>
+                  <span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">(Obj: ${zone.moistureTarget}%)</span>
+                </div>
+              </div>
+
+              <!-- Bar with Simulated Slider Controls -->
+              <div class="flex items-center gap-2">
+                <button onclick="event.stopPropagation(); adjustSingleZoneMoisture('${zone.id}', -5)" class="w-6 h-6 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-telemetry-code text-label-sm font-bold flex items-center justify-center shadow-xs" title="Disminuir -5%">-</button>
+                <div class="relative flex-1 h-2 rounded-full bg-surface-container-highest overflow-hidden">
+                  <div class="h-full rounded-full transition-all duration-300 ${moistureColor}" style="width: ${zone.moisture}%"></div>
+                </div>
+                <button onclick="event.stopPropagation(); adjustSingleZoneMoisture('${zone.id}', +5)" class="w-6 h-6 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-telemetry-code text-label-sm font-bold flex items-center justify-center shadow-xs" title="Aumentar +5%">+</button>
+              </div>
+            </div>
+
+            <!-- Pressure & Dynamic Flow Indicator -->
+            <div class="grid grid-cols-2 gap-2 pt-1 font-telemetry-code text-label-sm">
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm text-on-surface-variant">speed</span>
+                <span class="text-on-surface-variant font-medium">Presión:</span>
+                <span class="font-bold text-on-surface">${zone.pressure > 0 ? (zone.pressure + ' bar') : '0.0 bar'}</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm text-secondary">waves</span>
+                <span class="text-on-surface-variant font-medium">Caudal:</span>
+                <span class="font-bold text-secondary">${zone.flow.toFixed(1)} m³/h</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Actions Footer -->
+          <div class="flex items-center justify-between pt-space-xs gap-space-xs">
+            <!-- Actuate Solenoid Toggle -->
+            <button onclick="event.stopPropagation(); toggleZoneValve('${zone.id}')" class="px-space-md py-1.5 rounded-lg font-telemetry-code text-label-sm font-bold transition-all flex items-center gap-1 shadow-sm ${
+              isCurrentlyOpen 
+                ? 'bg-secondary text-on-secondary hover:bg-secondary/90' 
+                : (isStuck 
+                    ? 'bg-error text-on-error hover:bg-error/90' 
+                    : (isRepair 
+                        ? 'bg-surface-container text-on-surface-variant cursor-not-allowed opacity-60' 
+                        : 'bg-primary text-on-primary hover:bg-primary/90'))
+            }">
+              <span class="material-symbols-outlined text-sm">${isCurrentlyOpen ? 'water_loss' : 'valve'}</span>
+              ${isCurrentlyOpen ? 'Cerrar Riego' : (isStuck ? 'Forzar Reset' : (isRepair ? 'Bloqueada' : 'Abrir Válvula'))}
+            </button>
+
+            <!-- Calibration & Quick Menu -->
+            <div class="flex items-center gap-1">
+              <button onclick="event.stopPropagation(); openCalibrationModal('${zone.id}')" title="Calibrar Sensor Suelo" class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant">
+                <span class="material-symbols-outlined text-base">tune</span>
+              </button>
+              <button onclick="event.stopPropagation(); toggleRepairStatus('${zone.id}')" title="${isRepair ? 'Liberar Reparación' : 'Marcar en Reparación'}" class="p-1.5 rounded-md hover:bg-surface-container ${isRepair ? 'text-tertiary' : 'text-on-surface-variant'}">
+                <span class="material-symbols-outlined text-base">build</span>
+              </button>
+              <button onclick="event.stopPropagation(); inspectZone('${zone.id}')" title="Ver Diagnóstico Erlang" class="p-1.5 rounded-md hover:bg-surface-container text-primary">
+                <span class="material-symbols-outlined text-base">query_stats</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    updateBadgeCounts();
+  }
+
+  // Update counts in top pill filters
+  function updateBadgeCounts() {
+    const wateringCount = zonesData.filter(z => z.valveState === 'open').length;
+    const closedCount = zonesData.filter(z => z.valveState === 'closed').length;
+    const stuckCount = zonesData.filter(z => z.valveState === 'stuck').length;
+    const inhibitedCount = zonesData.filter(z => z.valveState === 'inhibited').length;
+
+    const wElem = document.getElementById('badgeCountWatering');
+    const cElem = document.getElementById('badgeCountClosed');
+    const sElem = document.getElementById('badgeCountStuck');
+    const iElem = document.getElementById('badgeCountInhibited');
+
+    if (wElem) wElem.textContent = wateringCount;
+    if (cElem) cElem.textContent = closedCount;
+    if (sElem) sElem.textContent = stuckCount;
+    if (iElem) iElem.textContent = inhibitedCount;
+  }
+
+  // Filter Zone List
+  function filterZones(filterType) {
+    currentFilter = filterType;
+    document.querySelectorAll('.zone-filter-pill').forEach(btn => {
+      btn.classList.remove('bg-surface-container-high', 'font-bold');
+    });
+    const target = document.getElementById('filterBtn-' + filterType);
+    if (target) {
+      target.classList.add('bg-surface-container-high');
+    }
+    renderZones();
+  }
+
+  // Select Zone for Diagnostic Panel
+  function selectZone(id) {
+    selectedZoneId = id;
+    const zone = zonesData.find(z => z.id === id);
+    if (!zone) return;
+
+    document.getElementById('diagZoneTitle').textContent = `${zone.id} [${zone.name}]`;
+    document.getElementById('diagPid').textContent = zone.pid;
+    document.getElementById('diagReductions').textContent = zone.reductions.toLocaleString();
+    document.getElementById('diagMemory').textContent = zone.memory;
+    document.getElementById('diagFlowRate').textContent = `${zone.flow.toFixed(2)} m³/h`;
+
+    const fsmState = document.getElementById('diagFsmState');
+    const lock = document.getElementById('diagLock');
+    const valvePos = document.getElementById('diagValvePos');
+
+    if (zone.valveState === 'open') {
+      fsmState.innerHTML = `<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span> irrigating_active`;
+      fsmState.className = "font-telemetry-code text-label-sm font-bold text-secondary flex items-center gap-1.5";
+      lock.textContent = "acquired (lock_ok)";
+      valvePos.textContent = "OPEN 100%";
+    } else if (zone.valveState === 'stuck') {
+      fsmState.innerHTML = `<span class="w-2 h-2 rounded-full bg-error"></span> exception:stuck_valve`;
+      fsmState.className = "font-telemetry-code text-label-sm font-bold text-error flex items-center gap-1.5";
+      lock.textContent = "emergency_locked";
+      valvePos.textContent = "UNRESPONSIVE";
+    } else if (zone.valveState === 'inhibited') {
+      fsmState.innerHTML = `<span class="w-2 h-2 rounded-full bg-secondary-container"></span> inhibited_pluvial`;
+      fsmState.className = "font-telemetry-code text-label-sm font-bold text-on-surface-variant flex items-center gap-1.5";
+      lock.textContent = "bypassed";
+      valvePos.textContent = "CLOSED 0%";
+    } else if (zone.valveState === 'repair') {
+      fsmState.innerHTML = `<span class="w-2 h-2 rounded-full bg-tertiary"></span> maintenance_isolation`;
+      fsmState.className = "font-telemetry-code text-label-sm font-bold text-tertiary flex items-center gap-1.5";
+      lock.textContent = "isolated";
+      valvePos.textContent = "MANUAL_LOCK";
+    } else {
+      fsmState.innerHTML = `<span class="w-2 h-2 rounded-full bg-primary"></span> idle_listening`;
+      fsmState.className = "font-telemetry-code text-label-sm font-bold text-primary flex items-center gap-1.5";
+      lock.textContent = "released (0/3)";
+      valvePos.textContent = "CLOSED 0%";
+    }
+
+    appendDiagnosticLog(`[${zone.lastSync}] Inspector: Attached to ${zone.pid} state: ${zone.valveState}`);
+    renderZones();
+  }
+
+  function inspectZone(id) {
+    selectZone(id);
+    document.getElementById('diagnosticPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Actuate Valve with Maximum Concurrency Enforcement (Max 3 Active Zones)
+  function toggleZoneValve(id) {
+    const zone = zonesData.find(z => z.id === id);
+    if (!zone) return;
+
+    if (zone.valveState === 'repair') {
+      alert("La zona está marcada en reparación física. Desactive el bloqueo técnico antes de abrir.");
+      return;
+    }
+
+    if (zone.valveState === 'stuck') {
+      // Recovery reset
+      zone.valveState = 'closed';
+      zone.pressure = 0.0;
+      zone.flow = 0.0;
+      appendDiagnosticLog(`[OTP Tree] Process ${zone.pid} force terminated: Reason :killed. Supervisor restarted worker in <0.${Math.floor(400 + Math.random()*90)}.0>`);
+      renderZones();
+      selectZone(id);
+      return;
+    }
+
+    if (zone.valveState === 'open') {
+      // Close it
+      zone.valveState = 'closed';
+      zone.pressure = 0.0;
+      zone.flow = 0.0;
+      appendDiagnosticLog(`[${new Date().toLocaleTimeString()}] Zone ${zone.id} closed normally. Solenoid released.`);
+    } else {
+      // Check maximum concurrency rule: max 3 open
+      const currentlyOpen = zonesData.filter(z => z.valveState === 'open').length;
+      if (currentlyOpen >= 3) {
+        showConcurrencyAlert();
+        appendDiagnosticLog(`[CONCURRENCY REJECT] gen_server:call(${zone.pid}, open_valve) -> {:error, :max_concurrency_reached}`);
+        return;
+      }
+
+      // Check rain inhibition
+      if (isRaining) {
+        alert("Riego inhibido por sensor pluvial activo (15mm/h). Suspenda la lluvia simulada o active bypass.");
+        return;
+      }
+
+      zone.valveState = 'open';
+      zone.pressure = 3.8;
+      zone.flow = parseFloat((4.5 + Math.random() * 1.5).toFixed(2));
+      appendDiagnosticLog(`[${new Date().toLocaleTimeString()}] Zone ${zone.id} valve OPENED. Actuator lock granted.`);
+    }
+
+    renderZones();
+    selectZone(id);
+  }
+
+  // Toggle Repair Status
+  function toggleRepairStatus(id) {
+    const zone = zonesData.find(z => z.id === id);
+    if (!zone) return;
+
+    if (zone.valveState === 'repair') {
+      zone.valveState = 'closed';
+      appendDiagnosticLog(`[MAINTENANCE] Zone ${zone.id} cleared from manual lock.`);
+    } else {
+      zone.valveState = 'repair';
+      zone.pressure = 0.0;
+      zone.flow = 0.0;
+      appendDiagnosticLog(`[MAINTENANCE] Zone ${zone.id} flagged in physical repair.`);
+    }
+    renderZones();
+    selectZone(id);
+  }
+
+  // Adjust Soil Moisture for single zone
+  function adjustSingleZoneMoisture(id, delta) {
+    const zone = zonesData.find(z => z.id === id);
+    if (!zone) return;
+    zone.moisture = Math.max(5, Math.min(95, zone.moisture + delta));
+    appendDiagnosticLog(`[TELEMETRY] Sensor update ${zone.id}: Soil moisture adjusted to ${zone.moisture}%`);
+    renderZones();
+    selectZone(id);
+  }
+
+  // Adjust all moisture
+  function adjustAllMoisture(delta) {
+    zonesData.forEach(z => {
+      z.moisture = Math.max(5, Math.min(95, z.moisture + delta));
+    });
+    appendDiagnosticLog(`[TELEMETRY] Global calibration pulse: ${delta > 0 ? '+' : ''}${delta}% applied to all 12 probes.`);
+    renderZones();
+    selectZone(selectedZoneId);
+  }
+
+  // Simulator Controls
+  function toggleRainSimulation() {
+    isRaining = !isRaining;
+    const btn = document.getElementById('rainSimulatorBtn');
+    const label = document.getElementById('rainBtnLabel');
+
+    if (isRaining) {
+      btn.className = "group flex items-center gap-space-sm px-space-md py-2.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-container-high transition-all shadow-md active:scale-95";
+      label.textContent = "Detener Lluvia (Inhibido)";
+      
+      // Auto-inhibit all active zones or mark them
+      zonesData.forEach(z => {
+        if (z.valveState === 'open') {
+          z.valveState = 'inhibited';
+          z.pressure = 0.0;
+          z.flow = 0.0;
+        }
+      });
+      appendDiagnosticLog(`[PLUVIAL SENSOR TRIGGERED] Rain >15mm/h detected. agroflow_zone_sup sent {:inhibit_all} broadcast.`);
+    } else {
+      btn.className = "group flex items-center gap-space-sm px-space-md py-2.5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 transition-all shadow-md active:scale-95";
+      label.textContent = "Activar Lluvia (15mm/h)";
+      
+      zonesData.forEach(z => {
+        if (z.valveState === 'inhibited') {
+          z.valveState = 'closed';
+        }
+      });
+      appendDiagnosticLog(`[PLUVIAL SENSOR CLEARED] Weather clear. Zone nodes resumed normal standby.`);
+    }
+    renderZones();
+    selectZone(selectedZoneId);
+  }
+
+  function updateMasterPressure(val) {
+    const num = parseFloat(val);
+    const psi = (num * 14.5038).toFixed(1);
+    const readout = document.getElementById('pressureReadout');
+    readout.textContent = `${num.toFixed(1)} bar (${psi} PSI)`;
+
+    if (num < 2.2) {
+      readout.className = "text-error font-bold";
+      appendDiagnosticLog(`[HYDRAULIC ALARM] Main header pressure dropped to ${num.toFixed(1)} bar! Cavitation protection active.`);
+    } else {
+      readout.className = "text-primary-fixed-dim font-bold";
+    }
+
+    // Apply pressure drop to open zones
+    zonesData.forEach(z => {
+      if (z.valveState === 'open') {
+        z.pressure = num;
+        z.flow = parseFloat((num * 1.25).toFixed(2));
+      }
+    });
+    renderZones();
+    selectZone(selectedZoneId);
+  }
+
+  function injectValveFailure() {
+    // Pick the currently selected zone or first open zone to force stuck
+    const target = zonesData.find(z => z.id === selectedZoneId) || zonesData[0];
+    target.valveState = 'stuck';
+    target.flow = 7.2;
+    target.pressure = 1.9;
+    appendDiagnosticLog(`[CHAOS INJECTION] Injected stuck solenoid in ${target.id} (${target.pid}). Supervisor will observe heartbeat failure.`);
+    renderZones();
+    selectZone(target.id);
+  }
+
+  function resetSimulator() {
+    zonesData.forEach(z => {
+      if (z.valveState === 'stuck') z.valveState = 'closed';
+      if (z.valveState === 'repair') z.valveState = 'closed';
+    });
+    isRaining = false;
+    document.getElementById('rainBtnLabel').textContent = "Activar Lluvia (15mm/h)";
+    document.getElementById('pressureSlider').value = 3.8;
+    updateMasterPressure(3.8);
+    appendDiagnosticLog(`[SUPERVISOR TREE] agroflow_zone_sup executed full state reset. All 12 workers refreshed.`);
+    renderZones();
+    selectZone(selectedZoneId);
+  }
+
+  function setGlobalStrategy(type) {
+    globalStrategy = type;
+    const autoBtn = document.getElementById('strategyAutoBtn');
+    const manualBtn = document.getElementById('strategyManualBtn');
+
+    if (type === 'auto') {
+      autoBtn.className = "px-space-md py-1.5 rounded-md font-telemetry-code text-label-sm font-bold bg-primary text-on-primary shadow-sm transition-all flex items-center gap-1.5";
+      manualBtn.className = "px-space-md py-1.5 rounded-md font-telemetry-code text-label-sm font-bold text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5";
+      appendDiagnosticLog(`[CONFIG] Global strategy switched to Autonomous OTP Scheduler.`);
+    } else {
+      manualBtn.className = "px-space-md py-1.5 rounded-md font-telemetry-code text-label-sm font-bold bg-tertiary text-on-tertiary shadow-sm transition-all flex items-center gap-1.5";
+      autoBtn.className = "px-space-md py-1.5 rounded-md font-telemetry-code text-label-sm font-bold text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5";
+      appendDiagnosticLog(`[CONFIG] Global strategy switched to Manual Operator Calibration.`);
+    }
+  }
+
+  // Log terminal helper
+  function appendDiagnosticLog(msg) {
+    const term = document.getElementById('diagLogTerminal');
+    if (!term) return;
+    const line = document.createElement('div');
+    line.className = "text-surface-bright";
+    line.textContent = msg;
+    term.appendChild(line);
+    term.scrollTop = term.scrollHeight;
+  }
+
+  // Alert helpers
+  function showConcurrencyAlert() {
+    const alertBox = document.getElementById('concurrencyAlert');
+    if (alertBox) {
+      alertBox.classList.remove('hidden');
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function dismissConcurrencyAlert() {
+    const alertBox = document.getElementById('concurrencyAlert');
+    if (alertBox) alertBox.classList.add('hidden');
+  }
+
+  // Diagnostic drawer actions
+  function restartWorkerProcess() {
+    const zone = zonesData.find(z => z.id === selectedZoneId);
+    if (!zone) return;
+    const oldPid = zone.pid;
+    zone.pid = `<0.${Math.floor(400 + Math.random()*90)}.0>`;
+    zone.reductions = 2100;
+    appendDiagnosticLog(`[SUPERVISOR] Exit signal received for ${oldPid}. Spawned new GenServer worker ${zone.pid}.`);
+    selectZone(zone.id);
+  }
+
+  function triggerManualBypass() {
+    const zone = zonesData.find(z => z.id === selectedZoneId);
+    if (!zone) return;
+    appendDiagnosticLog(`[BYPASS] Override command dispatched to hardware solenoide for ${zone.id}.`);
+    alert(`Bypass manual activado temporalmente para ${zone.name}. El actuador ignorará las restricciones OTP por 15 minutos.`);
+  }
+
+  // Calibration Modal
+  function openCalibrationModal(id) {
+    const zone = zonesData.find(z => z.id === id);
+    if (!zone) return;
+    document.getElementById('calibModalTitle').textContent = `Calibración Capacitiva Sensor`;
+    document.getElementById('calibModalSub').textContent = `${zone.id} [${zone.name}] - Suelo Actual: ${zone.moisture}%`;
+    document.getElementById('calibrationModal').classList.remove('hidden');
+    document.getElementById('calibrationModal').classList.add('flex');
+  }
+
+  function closeCalibrationModal() {
+    document.getElementById('calibrationModal').classList.add('hidden');
+    document.getElementById('calibrationModal').classList.remove('flex');
+  }
+
+  function saveCalibration() {
+    appendDiagnosticLog(`[CALIBRATION] Soil moisture lookup curves updated for ${selectedZoneId}. New absorption gradient persisted.`);
+    closeCalibrationModal();
+  }
+
+  // Initialize on load
+  document.addEventListener('DOMContentLoaded', () => {
+    renderZones();
+    selectZone("Z-01");
+  });
+</script></main><footer class="w-full bg-surface-container-lowest py-space-md shadow-[0_-1px_6px_rgba(15,23,42,0.03)]"><div class="w-full px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-telemetry-code text-telemetry-timestamp"><div>Simulador IoT Agrícola impulsado por Erlang/OTP Actor Model &amp; Cowboy REST/WS • Supervisor Tree ok • Frecuencia de muestreo 1000ms</div><div class="flex items-center gap-space-sm"><span>PID: &lt;0.104.0&gt;</span><span>•</span><span>GenServer Workers: 12</span><span>•</span><span class="text-primary font-semibold">Node Status: HEALTHY</span></div></div></footer></body></html>

@@ -1,0 +1,5 @@
+PASS TZ=UTC, start=22, 4 boundary checks
+PASS TZ=America/Tijuana, start=22, 12 boundary checks
+PASS TZ=America/Tijuana, start=1, 3 boundary checks
+PASS TZ=America/Tijuana, start=2, 2 boundary checks
+PASS: 21 checks, UTC, winter/summer, midnight, fixed 8h across DST, ambiguous/skipped starts

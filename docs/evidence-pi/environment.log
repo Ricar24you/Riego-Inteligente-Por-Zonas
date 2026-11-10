@@ -1,0 +1,30 @@
+Validation date: 2026-11-10
+Model: Raspberry Pi 4 Model B Rev 1.4
+Architecture: aarch64
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.5
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+$ git status --short --branch
+## codex/riego-otp...origin/codex/riego-otp
+ M scripts/timezone-checks.py
+?? CODEX_TAREA.txt
+?? docs/evidence-pi/
+$ git rev-parse HEAD
+1d8c23574505b8b5ace77ea2a9d39cbd62c53f2b
+$ git --version
+git version 2.47.3
+$ erl -noshell -eval io:format("OTP ~s ERTS ~s~n",[erlang:system_info(otp_release),erlang:system_info(version)]),halt().
+OTP 27 ERTS 15.2.7
+$ rebar3 version
+rebar 3.24.0 on Erlang/OTP 27 Erts 15.2.7
+Existing /etc/systemd/system/riego.service: False
+data permissions: 0o700
+No service installed, activated or restarted by this session.

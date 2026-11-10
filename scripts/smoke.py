@@ -7,7 +7,9 @@ def get(p): return urllib.request.urlopen(base+p).read()
 def post(p,b):
  req=urllib.request.Request(base+p,data=json.dumps(b).encode(),headers={'Content-Type':'application/json'})
  return json.load(urllib.request.urlopen(req))
-assert b'Riego Inteligente' in get('/')
+assert b'AgroFlow IoT' in get('/')
+assert b'--green:#006948' in get('/')
+assert b'/api/programas' in get('/')
 assert 'active' in json.loads(get('/api/state'))
 assert post('/api/programas',dict(zone=2,duration=60,priority=1))['ok']
 assert post('/api/signal',dict(kind='rain',value=True))['ok']

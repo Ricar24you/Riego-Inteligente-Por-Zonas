@@ -1,0 +1,3 @@
+DNS github.com gaierror(-3, 'Temporary failure in name resolution')
+TCP bind loopback PermissionError(1, 'Operation not permitted')
+HTTP /api/state URLError(PermissionError(1, 'Operation not permitted'))

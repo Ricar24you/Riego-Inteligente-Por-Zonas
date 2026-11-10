@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-low":"#eff4ff","on-secondary-fixed-variant":"#004b73","inverse-primary":"#68dba9","tertiary-fixed-dim":"#d0bcff","on-secondary":"#ffffff","error":"#ba1a1a","on-surface-variant":"#3d4a42","secondary-fixed":"#cce5ff","surface-tint":"#006c4a","primary":"#006948","secondary-fixed-dim":"#93ccff","on-primary":"#ffffff","on-secondary-fixed":"#001d31","on-primary-container":"#f5fff7","tertiary":"#6b38d4","surface-container-lowest":"#ffffff","primary-fixed-dim":"#68dba9","secondary-container":"#5bb8fe","inverse-surface":"#213145","surface-container-highest":"#d3e4fe","on-tertiary-fixed":"#23005c","on-secondary-container":"#00476e","primary-container":"#00855d","on-surface":"#0b1c30","surface-bright":"#f8f9ff","inverse-on-surface":"#eaf1ff","surface":"#f8f9ff","tertiary-container":"#8455ef","on-primary-fixed-variant":"#005137","on-tertiary-container":"#fffbff","on-tertiary-fixed-variant":"#5516be","surface-container-high":"#dce9ff","background":"#f8f9ff","tertiary-fixed":"#e9ddff","outline-variant":"#bccac0","secondary":"#006398","error-container":"#ffdad6","outline":"#6d7a72","surface-dim":"#cbdbf5","on-error-container":"#93000a","surface-variant":"#d3e4fe","surface-container":"#e5eeff","on-background":"#0b1c30","on-tertiary":"#ffffff","on-primary-fixed":"#002114","primary-fixed":"#85f8c4","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.25rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","margin":"1rem","space-lg":"1.5rem","margin-desktop":"2rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"telemetry-metric":["JetBrains Mono"],"telemetry-code":["JetBrains Mono"],"display-lg":["Plus Jakarta Sans"],"telemetry-timestamp":["JetBrains Mono"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.05em","fontWeight":"600"}],"telemetry-metric":["1.875rem",{"lineHeight":"2.25rem","letterSpacing":"-0.03em","fontWeight":"600"}],"telemetry-code":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"500"}],"display-lg":["3rem",{"lineHeight":"3.5rem","letterSpacing":"-0.025em","fontWeight":"700"}],"telemetry-timestamp":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"400"}],"headline-lg":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.6rem","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.45rem","fontWeight":"400"}],"headline-lg-mobile":["1.375rem",{"lineHeight":"1.875rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.04em","fontWeight":"600"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="AgroFlow IoT Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDiL2xUusgzkK6p5_2vSawLMkDgvz8hv4Y1B7-_kVkgnxilGa_qobmut2jNGpARdEmcFiu7K49cuEYBi04dRpwzqw9HacShtdgqcyFvzt1k465gBkL6YJ-Gp-9k3DOXZ3chBluo8-2Hl1ue7-DMkMumZBJXloVofuKuX2cezIa9nnoU4hzXlkDDsC5rQ19cSmZCXEt5BPNC1kkPuDQTMCl8HU2ftdg5PO7kagCYySe2"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">AgroFlow IoT</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Zone Irrigation Control</span></div></div><div class="hidden xl:flex items-center gap-space-sm bg-surface-container-low px-space-sm py-1 rounded-full shadow-[0_1px_3px_rgba(15,23,42,0.04)]"><span class="font-telemetry-code text-telemetry-code px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-semibold">SIMULADOR ACADÉMICO IoT • Erlang/Cowboy API</span><div class="flex items-center gap-1.5 px-2"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-telemetry-code text-telemetry-code text-on-surface font-semibold">WS Conectado:</span><span class="font-telemetry-code text-telemetry-code text-primary font-semibold">erl_node_01@agroflow.local</span></div></div></div><div class="hidden lg:flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-secondary text-sm">schedule</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">America/Tijuana (UTC-8)</span><span class="font-telemetry-code text-telemetry-code font-semibold">22:45:18 PST</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-tertiary text-sm">bedtime</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Ventana Nocturna</span><span class="font-telemetry-code text-telemetry-code font-semibold">22:00 - 06:00 (8h)</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] text-on-surface"><span class="material-symbols-outlined text-secondary text-sm">hub</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Concurrencia OTP</span><span class="font-telemetry-code text-telemetry-code font-semibold text-secondary">2 / 3 máx</span></div></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-primary-container text-on-primary-container shadow-[0_1px_3px_rgba(15,23,42,0.04)]"><span class="material-symbols-outlined text-sm">water_pump</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container opacity-90">Bomba Maestra</span><span class="font-telemetry-code text-telemetry-code font-semibold">ACTIVA (3.8 bar)</span></div></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center justify-center p-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-[10px] font-bold text-on-error">3</span></div><div class="flex items-center gap-space-xs pl-space-xs pr-space-sm py-1 rounded-full bg-surface-container-lowest shadow-[0_1px_3px_rgba(15,23,42,0.04)] cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvPvUHffKeN-nS7g5h_-OtxhhojNgd0Nm2Hr5g0oM9AWXKujj5uUGCIGqsU2x5_iJ_nz53ZEd7VNwGSCERGuCSPKdKgiy9I6VOU038k0gYNM83th633R2AoFP5vcjiILl3Z1rtNWcJOsF-iIYDiWV_U71Je2gEWSWQpWCbCKE1IDC-CMu7kzLQfI_CsRCNMeggB4iRh206TmKYygghSUF2AY6uS4FmieC3MY5PhYU"/><div class="hidden md:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Ing. Agrónomo</span><span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">Superusuario OTP</span></div><span class="material-symbols-outlined text-sm text-on-surface-variant">expand_more</span></div></div></div><div class="w-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(15,23,42,0.03)] px-gutter-desktop"><div class="flex items-center justify-between overflow-x-auto"><nav class="flex items-center gap-space-lg" data-active-classes="text-primary border-b-2 border-primary font-semibold"><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="dashboard-general" href="#">Dashboard General</a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="administracion-zonas" href="#">Administración de Zonas <span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-telemetry-code text-label-sm">12 zonas</span></a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="programacion-riego" href="#">Programación de Riego <span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-telemetry-code text-label-sm">22:00 PST</span></a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="detalle-zona" href="#">Detalle de Zona</a><a class="py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2 whitespace-nowrap" data-path="historial-eventos" href="#">Historial de Eventos <span class="px-2 py-0.5 rounded-full bg-error text-on-error font-telemetry-code text-label-sm">3 activas</span></a></nav><div class="hidden md:flex items-center gap-space-xs py-2"><span class="font-label-sm text-label-sm text-on-surface-variant">Selector Rápido:</span><select class="bg-surface-container-low text-on-surface font-telemetry-code text-label-sm px-2 py-1 rounded outline-none cursor-pointer"><option>Zona Z-01 [Nogales Sur]</option><option>Zona Z-02 [Viñedo Este]</option><option>Zona Z-03 [Olivos Norte]</option><option>Zona Z-04 [Invernadero Alfa]</option><option>Zona Z-05 [Hortalizas Valle]</option><option>Zona Z-06 [Cítricos Poniente]</option><option>Zona Z-07 [Aguacate Alta]</option><option>Zona Z-08 [Bayas Experimental]</option><option>Zona Z-09 [Forraje Río]</option><option>Zona Z-10 [Vivero Central]</option><option>Zona Z-11 [Frutales Oeste]</option><option>Zona Z-12 [Suelos Piloto]</option></select></div></div></div></header><main class="w-full pt-20 px-gutter-desktop min-h-[calc(100vh-5rem)] bg-surface"><div class="flex flex-col w-full pb-16">
+<!-- Resumen de Incidencias & Pluviómetro Telemetry Header -->
+<section class="w-full mb-space-lg">
+<!-- Academic Telemetry & Simulator Status Strip -->
+<div class="w-full bg-gradient-to-r from-inverse-surface via-inverse-surface/95 to-inverse-surface rounded-xl p-space-md md:p-space-lg text-inverse-on-surface shadow-md mb-space-md relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start gap-space-md">
+<div class="p-3 bg-inverse-primary/20 text-inverse-primary rounded-xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-surface-bright font-bold">Bitácora &amp; Auditoría de Eventos OTP</span>
+<span class="font-telemetry-code text-label-sm px-2.5 py-0.5 rounded-full bg-inverse-primary/20 text-inverse-primary font-semibold">Actor GenServer Trace: :live</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-inverse-on-surface/70">Sync 1000ms PST</span>
+</div>
+<p class="font-body-md text-body-md text-inverse-on-surface/80 max-w-3xl mt-1">
+              Registro determinista en tiempo real con trazabilidad Erlang/Cowboy de eventos de lluvia, sobrepresión, válvulas atoradas, bypass y cambios de estado en actuadores de campo.
+            </p>
+</div>
+</div>
+<!-- Rain Gauge Sensor Micro-Panel -->
+<div class="w-full lg:w-auto bg-surface-container-highest/15 backdrop-blur-md rounded-xl p-space-sm md:p-space-md flex items-center gap-space-md shrink-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 text-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">grain</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">Sensor Pluvia-Net (PST)</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+</div>
+<span class="font-telemetry-code text-body-sm text-surface-bright font-medium">1.2 mm acumulados (21:30 PST)</span>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-inverse-on-surface/70">Bomba rearmada a las 22:15 tras cese</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4 KPI Telemetry Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1: Disponibilidad -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Disponibilidad OTP</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold">99.8</span>
+<span class="font-label-md text-label-md text-primary font-bold">%</span>
+</div>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant mt-1">12 workers activos • supervisor OK</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="99.8, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<!-- KPI 2: Lluvia Gestionada -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Eventos Lluvia (Mes)</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-secondary font-bold">4</span>
+<span class="font-label-md text-label-md text-on-surface-variant">ciclos inhibidos</span>
+</div>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-secondary font-medium mt-1">Ahorro est: 124.6 m³ agua</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">water_drop</span>
+</div>
+</div>
+<!-- KPI 3: Válvulas Atoradas Resueltas -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Válvulas Auto-Resueltas</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-tertiary font-bold">2</span>
+<span class="font-label-md text-label-md text-on-surface-variant">por watchdog</span>
+</div>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant mt-1">Ciclo de pulsos reversos OK</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">sync_saved_locally</span>
+</div>
+</div>
+<!-- KPI 4: Reparaciones Físicas Activas -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Reparación Activa</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-error font-bold">1</span>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-semibold">Z-06 Bloqueada</span>
+</div>
+<span class="font-telemetry-timestamp text-telemetry-timestamp text-error mt-1">Solenoide 24VAC en revisión</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-error-container/50 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">engineering</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Controls Bar: Categorías, Filtros de Zona, Búsqueda y Export -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col gap-space-md">
+<!-- Category Filter Tabs -->
+<div class="flex items-center justify-between flex-wrap gap-space-sm pb-space-sm border-b border-surface-container-high/60">
+<div class="flex items-center gap-1.5 overflow-x-auto py-1 max-w-full" id="categoryFilterContainer">
+<button class="category-btn active px-3 py-1.5 rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary text-on-primary shadow-sm" data-category="all" onclick="filterLogs('all')">
+<span class="material-symbols-outlined text-sm">dashboard</span>
+<span>Todos los Eventos</span>
+<span class="px-1.5 py-0.2 rounded-full bg-on-primary/20 text-on-primary font-telemetry-code text-label-sm">24</span>
+</button>
+<button class="category-btn px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-category="lluvia" onclick="filterLogs('lluvia')">
+<span class="material-symbols-outlined text-sm text-secondary">cloud_sync</span>
+<span>Lluvia &amp; Inhibición</span>
+</button>
+<button class="category-btn px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-category="atorada" onclick="filterLogs('atorada')">
+<span class="material-symbols-outlined text-sm text-error">error</span>
+<span>Válvula Atorada</span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="category-btn px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-category="fuga" onclick="filterLogs('fuga')">
+<span class="material-symbols-outlined text-sm text-on-tertiary-fixed-variant">troubleshoot</span>
+<span>Fugas &amp; Presión</span>
+</button>
+<button class="category-btn px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-category="reparacion" onclick="filterLogs('reparacion')">
+<span class="material-symbols-outlined text-sm text-tertiary">build</span>
+<span>Reparaciones</span>
+</button>
+<button class="category-btn px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-category="lorawan" onclick="filterLogs('lorawan')">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">sensors</span>
+<span>Heartbeat IoT</span>
+</button>
+</div>
+<!-- Quick Export Triggers -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 cursor-pointer shadow-sm" onclick="exportAuditData('csv')">
+<span class="material-symbols-outlined text-base">file_download</span>
+<span>CSV</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 cursor-pointer shadow-sm" onclick="exportAuditData('erl')">
+<span class="material-symbols-outlined text-base">data_object</span>
+<span>Erlang Term (.etf)</span>
+</button>
+</div>
+</div>
+<!-- Secondary Filter Strip: Zonas, Ventana Temporal, Live Filter Input -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-space-sm items-center">
+<!-- Search Input -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-lg">search</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg outline-none focus:ring-2 focus:ring-primary/40 placeholder:text-on-surface-variant/60" id="eventSearch" oninput="searchEvents()" placeholder="Buscar por PID, zona, error o mensaje..." type="text"/>
+</div>
+<!-- Zone Selector Dropdown -->
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Zona:</span>
+<select class="bg-transparent text-on-surface font-telemetry-code text-label-sm outline-none w-full cursor-pointer" id="zoneSelectorFilter" onchange="filterByZone()">
+<option value="all">Todas las Zonas (Z-01 a Z-12)</option>
+<option value="Z-01">Z-01 [Nogales Sur]</option>
+<option value="Z-02">Z-02 [Viñedo Este]</option>
+<option value="Z-03">Z-03 [Olivos Norte]</option>
+<option value="Z-04">Z-04 [Invernadero Alfa]</option>
+<option value="Z-05">Z-05 [Hortalizas Valle]</option>
+<option value="Z-06">Z-06 [Cítricos Poniente]</option>
+<option value="Z-07">Z-07 [Aguacate Alta]</option>
+<option value="Z-08">Z-08 [Bayas Experimental]</option>
+<option value="Z-09">Z-09 [Forraje Río]</option>
+<option value="Z-10">Z-10 [Vivero Central]</option>
+<option value="Z-11">Z-11 [Frutales Oeste]</option>
+<option value="Z-12">Z-12 [Suelos Piloto]</option>
+</select>
+</div>
+<!-- Time Window Selector -->
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Rango:</span>
+<select class="bg-transparent text-on-surface font-telemetry-code text-label-sm outline-none w-full cursor-pointer">
+<option>Hoy (Últimas 8h de riego)</option>
+<option>Últimas 24 horas</option>
+<option>Últimos 7 días</option>
+<option>Ciclo Nocturno Activo (22:00-06:00)</option>
+</select>
+</div>
+<!-- Quick Action Counter -->
+<div class="flex items-center justify-between md:justify-end gap-2 px-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-telemetry-code text-telemetry-timestamp text-on-surface-variant">WS Feed OK</span>
+</div>
+<span class="font-telemetry-code text-label-sm text-primary font-semibold" id="displayedCount">5 mostrados</span>
+</div>
+</div>
+</section>
+<!-- Two-Column Master / Detail Grid: Timeline on Left, Active Repair Ticket on Right -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT / MAIN: Audit Log SaaS Timeline (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Bitácora Cronológica de Auditoría</span>
+<span class="font-telemetry-code text-telemetry-timestamp px-2 py-0.5 rounded bg-surface-container-high text-on-surface">PST / UTC-8</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nivel de Log: <strong class="text-on-surface">DEBUG / INFO / WARN / CRIT</strong></span>
+</div>
+<!-- TIMELINE CONTAINER -->
+<div class="relative pl-6 space-y-space-md before:content-[''] before:absolute before:left-3 before:top-3 before:bottom-3 before:w-0.5 before:bg-surface-container-high" id="eventsTimeline">
+<!-- EVENTO 1 (CRÍTICO / ROJO): Z-05 Válvula Atorada -->
+<article class="event-card relative bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all" data-category="atorada" data-zone="Z-05">
+<!-- Timeline Pin Dot -->
+<div class="absolute -left-6 top-6 w-3 h-3 rounded-full bg-error ring-4 ring-error-container -translate-x-1.5 flex items-center justify-center"></div>
+<div class="flex flex-col gap-space-sm">
+<!-- Header bar with badge and timestamp -->
+<div class="flex items-start justify-between flex-wrap gap-2">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-telemetry-code text-label-sm px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                  CRITICAL: VALVE_STUCK_OPEN
+                </span>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-semibold">Zona Z-05 [Hortalizas Valle]</span>
+<span class="font-telemetry-code text-telemetry-timestamp text-on-surface-variant">PID &lt;0.218.0&gt;</span>
+</div>
+<div class="flex items-center gap-1 font-telemetry-timestamp text-telemetry-timestamp text-error font-medium">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Hace 12 min (22:33:14 PST)</span>
+</div>
+</div>
+<!-- Title & Description -->
+<div>
+<h3 class="font-headline-sm text-headline-sm text-error font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">warning</span>
+                Z-05: Alerta de Válvula Atorada Abierta
+              </h3>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-relaxed">
+                Se envió la señal de cierre <code class="font-telemetry-code text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-error font-bold">{valve_cmd, close}</code> pero el flujómetro ultrasónico continuó registrando un caudal anómalo de <strong class="font-telemetry-code font-bold">8.7 m³/h</strong> durante &gt;90 segundos. El supervisor Erlang emitió advertencia crítica y activó bypass.
+              </p>
+</div>
+<!-- Telemetry Matrix Snip & OTP actions taken -->
+<div class="bg-surface-container-low rounded-lg p-space-sm grid grid-cols-2 sm:grid-cols-3 gap-space-sm font-telemetry-code text-body-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Caudal Detectado:</span>
+<span class="text-error font-bold">8.70 m³/h (&gt; umbral 0.05)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Presión de Red:</span>
+<span class="text-on-surface font-semibold">48.2 PSI (Nominal)</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Erlang Exception:</span>
+<span class="text-on-tertiary-fixed-variant truncate">{error, flow_after_close}</span>
+</div>
+</div>
+<!-- Action buttons in footer -->
+<div class="flex items-center justify-between pt-space-xs flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Acción OTP:</span>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded bg-error/10 text-error font-semibold">Concurrencia reasignada (Slot Liberado)</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded-lg bg-error text-on-error hover:bg-error/90 font-label-md text-label-md transition-colors flex items-center gap-1 cursor-pointer" onclick="focusRepairTicket()">
+<span class="material-symbols-outlined text-sm">build</span>
+<span>Ver Ticket #REP-2025-084</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- EVENTO 2 (PÚRPURA / TÉCNICO): Z-06 Reparación & Mantenimiento -->
+<article class="event-card relative bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all" data-category="reparacion" data-zone="Z-06">
+<div class="absolute -left-6 top-6 w-3 h-3 rounded-full bg-tertiary ring-4 ring-tertiary-fixed -translate-x-1.5 flex items-center justify-center"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between flex-wrap gap-2">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-telemetry-code text-label-sm px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">handyman</span>
+                  MAINTENANCE_LOCKOUT
+                </span>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-semibold">Zona Z-06 [Cítricos Poniente]</span>
+<span class="font-telemetry-code text-telemetry-timestamp text-on-surface-variant">PID &lt;0.222.0&gt;</span>
+</div>
+<div class="flex items-center gap-1 font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Hace 45 min (22:00:10 PST)</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-tertiary font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">build_circle</span>
+                Z-06: Zona Puesta en Modo Reparación y Bloqueo Físico
+              </h3>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-relaxed">
+                El técnico de campo <strong class="text-on-surface font-semibold">Carlos Mendoza</strong> marcó la zona en mantenimiento preventivo para el reemplazo del solenoide electrohidráulico de 24VAC. Válvula aislada lógicamente en el árbol de supervisión Erlang para evitar arranques automáticos nocturnos.
+              </p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between flex-wrap gap-2 font-telemetry-code text-body-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Técnico Asignado:</span>
+<span class="text-tertiary font-semibold">C. Mendoza (Lic. T-4091)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Duración Estimada:</span>
+<span class="text-on-surface font-medium">90 minutos restantes</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-label-sm text-tertiary font-bold">STATE: INHIBITED_BY_OPERATOR</span>
+</div>
+</div>
+</div>
+</article>
+<!-- EVENTO 3 (ÁMBAR / LLUVIA): Sistema Global Inhibido por Pluviómetro -->
+<article class="event-card relative bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all" data-category="lluvia" data-zone="all">
+<div class="absolute -left-6 top-6 w-3 h-3 rounded-full bg-secondary ring-4 ring-secondary-fixed -translate-x-1.5 flex items-center justify-center"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between flex-wrap gap-2">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-telemetry-code text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">water_drop</span>
+                  RAIN_INHIBIT_ENGAGED
+                </span>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-semibold">Sistema Global / Bomba Maestra</span>
+<span class="font-telemetry-code text-telemetry-timestamp text-on-surface-variant">Supervisor &lt;0.104.0&gt;</span>
+</div>
+<div class="flex items-center gap-1 font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Hace 1h 15 min (21:30:00 PST)</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-secondary-fixed-variant font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">cloud_sync</span>
+                Sistema Global: Bomba Maestra Inhibida por Precipitación Pluvial
+              </h3>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-relaxed">
+                La estación meteorológica de campo registró precipitación acumulada de <strong class="font-telemetry-code text-secondary font-bold">3.4 mm</strong> (&gt; umbral de corte de 2.0 mm). Se activó el protocolo automático de ahorro hidrológico: apagado suave preventivo de bomba y postergación del ciclo programado de las 21:30.
+              </p>
+</div>
+<!-- Weather Metric Bar -->
+<div class="bg-surface-container-low rounded-lg p-space-sm grid grid-cols-2 sm:grid-cols-4 gap-2 font-telemetry-code text-body-sm">
+<div>
+<span class="text-on-surface-variant font-label-sm text-label-sm block">Pluviosidad:</span>
+<span class="text-secondary font-bold">3.4 mm/h</span>
+</div>
+<div>
+<span class="text-on-surface-variant font-label-sm text-label-sm block">Humedad Aire:</span>
+<span class="text-on-surface font-semibold">89% RH</span>
+</div>
+<div>
+<span class="text-on-surface-variant font-label-sm text-label-sm block">Acción Tomada:</span>
+<span class="text-secondary font-medium">Bomba Standby</span>
+</div>
+<div>
+<span class="text-on-surface-variant font-label-sm text-label-sm block">Reanudar en:</span>
+<span class="text-primary font-bold">Post-Evaporación OK</span>
+</div>
+</div>
+</div>
+</article>
+<!-- EVENTO 4 (AZUL / OPERACIÓN NORMAL): Ventana Nocturna Z-03 & Z-07 -->
+<article class="event-card relative bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all" data-category="all" data-zone="Z-03">
+<div class="absolute -left-6 top-6 w-3 h-3 rounded-full bg-primary ring-4 ring-primary-fixed -translate-x-1.5 flex items-center justify-center"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between flex-wrap gap-2">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-telemetry-code text-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">play_circle</span>
+                  NOMINAL_WINDOW_START
+                </span>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-semibold">Z-03 [Olivos Norte] &amp; Z-07 [Aguacate Alta]</span>
+<span class="font-telemetry-code text-telemetry-timestamp text-on-surface-variant">Concurrencia: 2 / 3</span>
+</div>
+<div class="flex items-center gap-1 font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Hace 1h 45 min (22:00:00 PST)</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">bedtime</span>
+                Z-03 &amp; Z-07: Inicio Exitoso de Ventana Nocturna de Riego
+              </h3>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-relaxed">
+                El scheduler OTP asignó slots 1 y 2 de irrigación programada tras verificar que el pluviómetro marcó cese de lluvia a las 21:55. Se ejecutó rampa de arranque secuencial suave en el variador de frecuencia de la bomba para mitigar efecto golpe de ariete.
+              </p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between flex-wrap gap-2 font-telemetry-code text-body-sm">
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Presión Manifold:</span>
+<span class="text-primary font-bold">3.8 bar (Estable)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Caudal Combinado:</span>
+<span class="text-secondary font-bold">22.4 m³/h</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Slot 3:</span>
+<span class="text-on-surface-variant font-medium">Disponible para rotación</span>
+</div>
+</div>
+</div>
+</article>
+<!-- EVENTO 5 (AMARILLO / ADVERTENCIA): Reconexión LoRaWAN Z-11 -->
+<article class="event-card relative bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all" data-category="lorawan" data-zone="Z-11">
+<div class="absolute -left-6 top-6 w-3 h-3 rounded-full bg-secondary-container ring-4 ring-secondary-container/40 -translate-x-1.5 flex items-center justify-center"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between flex-wrap gap-2">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-telemetry-code text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">network_check</span>
+                  LORA_TELEMETRY_RECONNECT
+                </span>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-semibold">Zona Z-11 [Frutales Oeste]</span>
+<span class="font-telemetry-code text-telemetry-timestamp text-on-surface-variant">DevEUI: 70B3D57ED0028A11</span>
+</div>
+<div class="flex items-center gap-1 font-telemetry-timestamp text-telemetry-timestamp text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Hace 3 horas (20:45:02 PST)</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-xl text-on-surface-variant">sensors</span>
+                Red IoT: Reconexión Automática del Sensor LoRaWAN Z-11
+              </h3>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-relaxed">
+                Timeout de telemetría de suelo recuperado tras 120 segundos de desvanecimiento por interferencia de topografía. El proceso GenServer <code class="font-telemetry-code text-label-sm">&lt;0.245.0&gt;</code> recibió paquete uplink con RSSI de -104 dBm y SNR de 7.2 dB. Datos de humedad actualizados al 38.4%.
+              </p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between flex-wrap gap-2 font-telemetry-code text-body-sm">
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant font-label-sm text-label-sm">RSSI / SNR:</span>
+<span class="text-on-surface font-semibold">-104 dBm / +7.2 dB</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Batería Nodo:</span>
+<span class="text-primary font-bold">3.62V (94%)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">done_all</span>
+<span class="text-label-sm text-primary font-semibold">Heartbeat Restaurado</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- RIGHT / SIDEBAR: Gestión de Reparaciones Físicas y Reset GenServer (4 cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-md sticky top-24">
+<!-- Primary Card: Active Repair Ticket -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm border-l-4 border-l-error relative overflow-hidden transition-all" id="repairTicketCard">
+<div class="absolute right-0 top-0 w-32 h-32 bg-error/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-xl">confirmation_number</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Orden Activa</span>
+</div>
+<span class="font-telemetry-code text-label-sm px-2.5 py-1 rounded bg-error-container text-on-error-container font-bold">#REP-2025-084</span>
+</div>
+<div class="space-y-space-sm">
+<div class="p-3 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Zona Afectada</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Z-05 • Hortalizas Valle</span>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded bg-error/10 text-error font-semibold">Actor Bloqueado</span>
+</div>
+</div>
+<div class="space-y-2 text-body-sm">
+<div class="flex items-center justify-between pb-1 border-b border-surface-container-high/60">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Tipo de Falla:</span>
+<span class="font-telemetry-code font-bold text-error">Válvula Atorada Abierta</span>
+</div>
+<div class="flex items-center justify-between pb-1 border-b border-surface-container-high/60">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Causa Probable:</span>
+<span class="font-body-sm text-on-surface">Solenoide sucio / Sedimento</span>
+</div>
+<div class="flex items-center justify-between pb-1 border-b border-surface-container-high/60">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Reportado a las:</span>
+<span class="font-telemetry-code text-on-surface">22:33:14 PST (Hace 12m)</span>
+</div>
+<div class="flex items-center justify-between pb-1 border-b border-surface-container-high/60">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Prioridad:</span>
+<span class="font-label-md text-label-md text-error font-bold uppercase">ALTA (Nivel 1)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Estado de Campo:</span>
+<span class="font-telemetry-code text-on-surface font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                Técnico en Trayecto
+              </span>
+</div>
+</div>
+<!-- Academic Simulator Action Callout -->
+<div class="p-space-sm bg-primary/5 rounded-lg border border-primary/20 mt-space-md">
+<div class="flex items-center gap-1.5 text-primary mb-1">
+<span class="material-symbols-outlined text-sm">science</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Acción del Simulador IoT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              Presione el botón para simular que el operador o técnico en campo ha limpiado el diafragma. El supervisor Erlang reiniciará el <code class="font-telemetry-code text-label-sm">GenServer</code> y normalizará el caudal.
+            </p>
+<button class="w-full py-2.5 px-space-md bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-body-lg font-bold rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer" id="btnRepairSim" onclick="simulateValveRepair()">
+<span class="material-symbols-outlined text-lg">settings_backup_restore</span>
+<span>Simular Válvula Reparada (Reset GenServer)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Live Actor Tree / Concurrency Widget -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-xl">account_tree</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">OTP Concurrencia</span>
+</div>
+<span class="font-telemetry-code text-label-sm text-secondary font-semibold">2 / 3 Activas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Límite físico de la bomba maestra de 3 válvulas simultáneas para sostener 3.8 bar de presión hidráulica.
+        </p>
+<!-- Slot visualizer -->
+<div class="space-y-2">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between font-telemetry-code text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-on-surface font-semibold">Slot 1: Zona Z-03</span>
+</div>
+<span class="text-primary font-bold">11.2 m³/h</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between font-telemetry-code text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-on-surface font-semibold">Slot 2: Zona Z-07</span>
+</div>
+<span class="text-primary font-bold">11.2 m³/h</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between font-telemetry-code text-body-sm border border-dashed border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface-variant/40"></span>
+<span class="text-on-surface-variant">Slot 3: Vacante (En Espera)</span>
+</div>
+<span class="text-on-surface-variant text-label-sm">Listo para Z-01</span>
+</div>
+</div>
+</div>
+<!-- Quick Maintenance Contacts Box -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="material-symbols-outlined text-tertiary text-lg">badge</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Personal en Turno</span>
+</div>
+<div class="space-y-2 pt-2">
+<div class="flex items-center justify-between text-body-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Ing. R. Sandoval</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Supervisión Erlang Central</span>
+</div>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-medium">En Línea</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Téc. C. Mendoza</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Electromecánico de Campo</span>
+</div>
+<span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-medium">En Z-06</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Notification Toast Container (Dynamic feedback for simulations) -->
+<div class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-space-sm translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0" id="toastIcon">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-lg font-bold" id="toastTitle">Acción OTP Completada</span>
+<span class="font-telemetry-code text-body-sm text-inverse-on-surface/80" id="toastMessage">El GenServer Z-05 se restableció a estado nominal.</span>
+</div>
+</div>
+</div>
+<!-- Vanilla JS for Live Search, Filtering, and Reset Simulation -->
+<script>
+  function showToast(title, message, isError = false) {
+    const toast = document.getElementById('toastNotification');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+
+    toastTitle.textContent = title;
+    toastMsg.textContent = message;
+    
+    if (isError) {
+      toastIcon.className = "w-8 h-8 rounded-lg bg-error text-on-error flex items-center justify-center shrink-0";
+      toastIcon.innerHTML = '<span class="material-symbols-outlined text-lg">error</span>';
+    } else {
+      toastIcon.className = "w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0";
+      toastIcon.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span>';
+    }
+
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    }, 4500);
+  }
+
+  function filterLogs(category) {
+    const buttons = document.querySelectorAll('.category-btn');
+    buttons.forEach(btn => {
+      if (btn.dataset.category === category) {
+        btn.className = "category-btn active px-3 py-1.5 rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary text-on-primary shadow-sm";
+      } else {
+        btn.className = "category-btn px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5";
+      }
+    });
+
+    const events = document.querySelectorAll('.event-card');
+    let visibleCount = 0;
+
+    events.forEach(card => {
+      const cardCat = card.dataset.category;
+      if (category === 'all' || cardCat === category) {
+        card.style.display = 'block';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    document.getElementById('displayedCount').textContent = visibleCount + ' mostrados';
+  }
+
+  function filterByZone() {
+    const selectedZone = document.getElementById('zoneSelectorFilter').value;
+    const events = document.querySelectorAll('.event-card');
+    let visibleCount = 0;
+
+    events.forEach(card => {
+      const zone = card.dataset.zone;
+      if (selectedZone === 'all' || zone === selectedZone || zone === 'all') {
+        card.style.display = 'block';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    document.getElementById('displayedCount').textContent = visibleCount + ' mostrados';
+  }
+
+  function searchEvents() {
+    const query = document.getElementById('eventSearch').value.toLowerCase();
+    const events = document.querySelectorAll('.event-card');
+    let visibleCount = 0;
+
+    events.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      if (text.includes(query)) {
+        card.style.display = 'block';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    document.getElementById('displayedCount').textContent = visibleCount + ' mostrados';
+  }
+
+  function focusRepairTicket() {
+    const ticketCard = document.getElementById('repairTicketCard');
+    ticketCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    ticketCard.classList.add('ring-4', 'ring-error/40');
+    setTimeout(() => {
+      ticketCard.classList.remove('ring-4', 'ring-error/40');
+    }, 2000);
+  }
+
+  function simulateValveRepair() {
+    const btn = document.getElementById('btnRepairSim');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-lg">sync</span> <span>Reiniciando GenServer &lt;0.218.0&gt;...</span>';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-lg">verified</span> <span>Válvula Nominal (Cerrada 0.00 m³/h)</span>';
+      btn.className = "w-full py-2.5 px-space-md bg-surface-container-high text-primary font-headline-sm text-body-lg font-bold rounded-lg shadow-sm flex items-center justify-center gap-2 cursor-default";
+
+      // Modificar el ticket activo para reflejar la resolución
+      const ticketCard = document.getElementById('repairTicketCard');
+      ticketCard.className = "bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm border-l-4 border-l-primary relative overflow-hidden transition-all";
+
+      // Mostrar Toast feedback
+      showToast(
+        "GenServer Z-05 Restablecido",
+        "Se aplicó ráfaga de reverso, diafragma desatorado. Flujo = 0.00 m³/h. PID rearmado: <0.294.0>."
+      );
+
+      // Agregar evento de resolución al tope de la bitácora
+      const timeline = document.getElementById('eventsTimeline');
+      const resolvedCard = document.createElement('article');
+      resolvedCard.className = "event-card relative bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all";
+      resolvedCard.dataset.category = "atorada";
+      resolvedCard.dataset.zone = "Z-05";
+      resolvedCard.innerHTML = `
+        <div class="absolute -left-6 top-6 w-3 h-3 rounded-full bg-primary ring-4 ring-primary-fixed -translate-x-1.5 flex items-center justify-center"></div>
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-start justify-between flex-wrap gap-2">
+            <div class="flex items-center gap-space-xs flex-wrap">
+              <span class="font-telemetry-code text-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">check_circle</span>
+                RESOLVED: GENSERVER_RESTART
+              </span>
+              <span class="font-telemetry-code text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-semibold">Zona Z-05 [Hortalizas Valle]</span>
+              <span class="font-telemetry-code text-telemetry-timestamp text-on-surface-variant">Nuevo PID &lt;0.294.0&gt;</span>
+            </div>
+            <div class="flex items-center gap-1 font-telemetry-timestamp text-telemetry-timestamp text-primary font-medium">
+              <span class="material-symbols-outlined text-sm">schedule</span>
+              <span>Justo Ahora (22:46:05 PST)</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-primary font-bold flex items-center gap-2">
+              <span class="material-symbols-outlined text-xl">task_alt</span>
+              Z-05: Válvula Normalizada y Restablecida a Ciclo Automático
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface mt-1 leading-relaxed">
+              El proceso GenServer respondió exitosamente al comando de rearme <code class="font-telemetry-code text-label-sm">{rearm_valve, :ok}</code>. Caudal ultrasónico verificado en 0.00 m³/h y presión de reposo en 52.1 PSI.
+            </p>
+          </div>
+        </div>
+      `;
+      timeline.insertBefore(resolvedCard, timeline.firstChild);
+      document.getElementById('displayedCount').textContent = '6 mostrados';
+    }, 1200);
+  }
+
+  function exportAuditData(format) {
+    if (format === 'csv') {
+      showToast("Descarga Iniciada", "Exportando agroflow_telemetry_events_2025.csv con 24 registros...");
+    } else {
+      showToast("Formato Erlang Term", "Generando binario .etf de eventos del supervisor Erlang OTP...");
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-lowest py-space-md shadow-[0_-1px_6px_rgba(15,23,42,0.03)]"><div class="w-full px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-telemetry-code text-telemetry-timestamp"><div>Simulador IoT Agrícola impulsado por Erlang/OTP Actor Model &amp; Cowboy REST/WS • Supervisor Tree ok • Frecuencia de muestreo 1000ms</div><div class="flex items-center gap-space-sm"><span>PID: &lt;0.104.0&gt;</span><span>•</span><span>GenServer Workers: 12</span><span>•</span><span class="text-primary font-semibold">Node Status: HEALTHY</span></div></div></footer></body></html>

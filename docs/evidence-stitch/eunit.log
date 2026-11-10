@@ -1,0 +1,613 @@
+[0;32m===> Verifying dependencies...
+[0m[0;32m===> Analyzing applications...
+[0m[0;32m===> Compiling riego
+[0m[0;32m===> Performing EUnit tests...
+[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m=ERROR REPORT==== 10-Nov-2026::11:38:26.733536 ===
+Failed to start Ranch listener riego_listener in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{ip,{127,0,0,1}},{port,0}]) for reason eperm (not owner)
+
+=CRASH REPORT==== 10-Nov-2026::11:38:26.733858 ===
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.267.0>
+    registered_name: []
+    exception exit: {listen_error,riego_listener,eperm}
+      in function  ranch_acceptors_sup:listen_error/5 (/home/pi4/Riego-Inteligente-Por-Zonas/_build/default/lib/ranch/src/ranch_acceptors_sup.erl, line 66)
+      in call from supervisor:init/1 (supervisor.erl, line 869)
+      in call from gen_server:init_it/2 (gen_server.erl, line 2229)
+      in call from gen_server:init_it/6 (gen_server.erl, line 2184)
+    ancestors: [<0.265.0>,ranch_sup,<0.240.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.265.0>]
+    dictionary: [{logger,error_logger}]
+    trap_exit: true
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 5690
+  neighbours:
+
+=SUPERVISOR REPORT==== 10-Nov-2026::11:38:26.740287 ===
+    supervisor: {<0.265.0>,ranch_listener_sup}
+    errorContext: start_error
+    reason: {listen_error,riego_listener,eperm}
+    offender: [{pid,undefined},
+               {id,ranch_acceptors_sup},
+               {mfargs,
+                   {ranch_acceptors_sup,start_link,
+                       [riego_listener,ranch_tcp]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,infinity},
+               {child_type,supervisor}]
+
+=CRASH REPORT==== 10-Nov-2026::11:38:26.740712 ===
+  crasher:
+    initial call: riego_http:init/1
+    pid: <0.264.0>
+    registered_name: []
+    exception error: no match of right hand side value 
+                     {error,
+                      {{shutdown,
+                        {failed_to_start_child,ranch_acceptors_sup,
+                         {listen_error,riego_listener,eperm}}},
+                       {child,undefined,
+                        {ranch_listener_sup,riego_listener},
+                        {ranch_listener_sup,start_link,
+                         [riego_listener,ranch_tcp,
+                          #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                            connection_type => supervisor},
+                          cowboy_clear,
+                          #{env =>
+                             #{dispatch =>
+                                [{'_',[],
+                                  [{[<<"ws">>],[],riego_http,ws},
+                                   {[<<"api">>,'...'],[],riego_http,api},
+                                   {[<<"metrics">>],[],riego_http,metrics},
+                                   {[],[],cowboy_static,
+                                    {priv_file,riego,"www/index.html"}}]}]},
+                            connection_type => supervisor}]},
+                        permanent,false,infinity,supervisor,
+                        [ranch_listener_sup]}}}
+      in function  riego_http:init/1 (/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl, line 9)
+      in call from gen_server:init_it/2 (gen_server.erl, line 2229)
+      in call from gen_server:init_it/6 (gen_server.erl, line 2184)
+    ancestors: [riego_sup,<0.248.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.249.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 29
+    reductions: 409
+  neighbours:
+
+=SUPERVISOR REPORT==== 10-Nov-2026::11:38:26.741844 ===
+    supervisor: {local,riego_sup}
+    errorContext: start_error
+    reason: {{badmatch,
+              {error,
+               {{shutdown,
+                 {failed_to_start_child,ranch_acceptors_sup,
+                  {listen_error,riego_listener,eperm}}},
+                {child,undefined,
+                 {ranch_listener_sup,riego_listener},
+                 {ranch_listener_sup,start_link,
+                  [riego_listener,ranch_tcp,
+                   #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                     connection_type => supervisor},
+                   cowboy_clear,
+                   #{env =>
+                      #{dispatch =>
+                         [{'_',[],
+                           [{[<<"ws">>],[],riego_http,ws},
+                            {[<<"api">>,'...'],[],riego_http,api},
+                            {[<<"metrics">>],[],riego_http,metrics},
+                            {[],[],cowboy_static,
+                             {priv_file,riego,"www/index.html"}}]}]},
+                     connection_type => supervisor}]},
+                 permanent,false,infinity,supervisor,
+                 [ranch_listener_sup]}}}},
+             [{riego_http,init,1,
+               [{file,
+                 "/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl"},
+                {line,9}]},
+              {gen_server,init_it,2,[{file,"gen_server.erl"},{line,2229}]},
+              {gen_server,init_it,6,[{file,"gen_server.erl"},{line,2184}]},
+              {proc_lib,init_p_do_apply,3,
+               [{file,"proc_lib.erl"},{line,329}]}]}
+    offender: [{pid,undefined},
+               {id,riego_http},
+               {mfargs,{riego_http,start_link,[]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,5000},
+               {child_type,worker}]
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.742825 ===
+    application: riego
+    exited: {{shutdown,
+              {failed_to_start_child,riego_http,
+               {{badmatch,
+                 {error,
+                  {{shutdown,
+                    {failed_to_start_child,ranch_acceptors_sup,
+                     {listen_error,riego_listener,eperm}}},
+                   {child,undefined,
+                    {ranch_listener_sup,riego_listener},
+                    {ranch_listener_sup,start_link,
+                     [riego_listener,ranch_tcp,
+                      #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                        connection_type => supervisor},
+                      cowboy_clear,
+                      #{env =>
+                         #{dispatch =>
+                            [{'_',[],
+                              [{[<<"ws">>],[],riego_http,ws},
+                               {[<<"api">>,'...'],[],riego_http,api},
+                               {[<<"metrics">>],[],riego_http,metrics},
+                               {[],[],cowboy_static,
+                                {priv_file,riego,"www/index.html"}}]}]},
+                        connection_type => supervisor}]},
+                    permanent,false,infinity,supervisor,
+                    [ranch_listener_sup]}}}},
+                [{riego_http,init,1,
+                  [{file,
+                    "/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl"},
+                   {line,9}]},
+                 {gen_server,init_it,2,[{file,"gen_server.erl"},{line,2229}]},
+                 {gen_server,init_it,6,[{file,"gen_server.erl"},{line,2184}]},
+                 {proc_lib,init_p_do_apply,3,
+                  [{file,"proc_lib.erl"},{line,329}]}]}}},
+             {riego_app,start,[normal,[]]}}
+    type: temporary
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.743665 ===
+    application: jsx
+    exited: stopped
+    type: temporary
+
+=CRASH REPORT==== 10-Nov-2026::11:38:26.742984 ===
+  crasher:
+    initial call: application_master:init/3
+    pid: <0.247.0>
+    registered_name: []
+    exception exit: {{shutdown,
+                      {failed_to_start_child,riego_http,
+                       {{badmatch,
+                         {error,
+                          {{shutdown,
+                            {failed_to_start_child,ranch_acceptors_sup,
+                             {listen_error,riego_listener,eperm}}},
+                           {child,undefined,
+                            {ranch_listener_sup,riego_listener},
+                            {ranch_listener_sup,start_link,
+                             [riego_listener,ranch_tcp,
+                              #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                                connection_type => supervisor},
+                              cowboy_clear,
+                              #{env =>
+                                 #{dispatch =>
+                                    [{'_',[],
+                                      [{[<<"ws">>],[],riego_http,ws},
+                                       {[<<"api">>,'...'],[],riego_http,api},
+                                       {[<<"metrics">>],[],riego_http,metrics},
+                                       {[],[],cowboy_static,
+                                        {priv_file,riego,
+                                         "www/index.html"}}]}]},
+                                connection_type => supervisor}]},
+                            permanent,false,infinity,supervisor,
+                            [ranch_listener_sup]}}}},
+                        [{riego_http,init,1,
+                          [{file,
+                            "/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl"},
+                           {line,9}]},
+                         {gen_server,init_it,2,
+                          [{file,"gen_server.erl"},{line,2229}]},
+                         {gen_server,init_it,6,
+                          [{file,"gen_server.erl"},{line,2184}]},
+                         {proc_lib,init_p_do_apply,3,
+                          [{file,"proc_lib.erl"},{line,329}]}]}}},
+                     {riego_app,start,[normal,[]]}}
+      in function  application_master:init/3 (application_master.erl, line 143)
+    ancestors: [application_controller,<0.10.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.248.0>,normal}]
+    links: [<0.45.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 29
+    reductions: 172
+  neighbours:
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.747237 ===
+    application: cowboy
+    exited: stopped
+    type: temporary
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.750563 ===
+    application: ranch
+    exited: stopped
+    type: temporary
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.750828 ===
+    application: cowlib
+    exited: stopped
+    type: temporary
+
+[0;31mF[0m=ERROR REPORT==== 10-Nov-2026::11:38:26.756410 ===
+Failed to start Ranch listener riego_listener in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{ip,{127,0,0,1}},{port,0}]) for reason eperm (not owner)
+
+=CRASH REPORT==== 10-Nov-2026::11:38:26.756670 ===
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.297.0>
+    registered_name: []
+    exception exit: {listen_error,riego_listener,eperm}
+      in function  ranch_acceptors_sup:listen_error/5 (/home/pi4/Riego-Inteligente-Por-Zonas/_build/default/lib/ranch/src/ranch_acceptors_sup.erl, line 66)
+      in call from supervisor:init/1 (supervisor.erl, line 869)
+      in call from gen_server:init_it/2 (gen_server.erl, line 2229)
+      in call from gen_server:init_it/6 (gen_server.erl, line 2184)
+    ancestors: [<0.295.0>,ranch_sup,<0.270.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.295.0>]
+    dictionary: [{logger,error_logger}]
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 4003
+  neighbours:
+
+=SUPERVISOR REPORT==== 10-Nov-2026::11:38:26.757290 ===
+    supervisor: {<0.295.0>,ranch_listener_sup}
+    errorContext: start_error
+    reason: {listen_error,riego_listener,eperm}
+    offender: [{pid,undefined},
+               {id,ranch_acceptors_sup},
+               {mfargs,
+                   {ranch_acceptors_sup,start_link,
+                       [riego_listener,ranch_tcp]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,infinity},
+               {child_type,supervisor}]
+
+=CRASH REPORT==== 10-Nov-2026::11:38:26.757689 ===
+  crasher:
+    initial call: riego_http:init/1
+    pid: <0.294.0>
+    registered_name: []
+    exception error: no match of right hand side value 
+                     {error,
+                      {{shutdown,
+                        {failed_to_start_child,ranch_acceptors_sup,
+                         {listen_error,riego_listener,eperm}}},
+                       {child,undefined,
+                        {ranch_listener_sup,riego_listener},
+                        {ranch_listener_sup,start_link,
+                         [riego_listener,ranch_tcp,
+                          #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                            connection_type => supervisor},
+                          cowboy_clear,
+                          #{env =>
+                             #{dispatch =>
+                                [{'_',[],
+                                  [{[<<"ws">>],[],riego_http,ws},
+                                   {[<<"api">>,'...'],[],riego_http,api},
+                                   {[<<"metrics">>],[],riego_http,metrics},
+                                   {[],[],cowboy_static,
+                                    {priv_file,riego,"www/index.html"}}]}]},
+                            connection_type => supervisor}]},
+                        permanent,false,infinity,supervisor,
+                        [ranch_listener_sup]}}}
+      in function  riego_http:init/1 (/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl, line 9)
+      in call from gen_server:init_it/2 (gen_server.erl, line 2229)
+      in call from gen_server:init_it/6 (gen_server.erl, line 2184)
+    ancestors: [riego_sup,<0.278.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.279.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 376
+    stack_size: 29
+    reductions: 247
+  neighbours:
+
+=SUPERVISOR REPORT==== 10-Nov-2026::11:38:26.758854 ===
+    supervisor: {local,riego_sup}
+    errorContext: start_error
+    reason: {{badmatch,
+              {error,
+               {{shutdown,
+                 {failed_to_start_child,ranch_acceptors_sup,
+                  {listen_error,riego_listener,eperm}}},
+                {child,undefined,
+                 {ranch_listener_sup,riego_listener},
+                 {ranch_listener_sup,start_link,
+                  [riego_listener,ranch_tcp,
+                   #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                     connection_type => supervisor},
+                   cowboy_clear,
+                   #{env =>
+                      #{dispatch =>
+                         [{'_',[],
+                           [{[<<"ws">>],[],riego_http,ws},
+                            {[<<"api">>,'...'],[],riego_http,api},
+                            {[<<"metrics">>],[],riego_http,metrics},
+                            {[],[],cowboy_static,
+                             {priv_file,riego,"www/index.html"}}]}]},
+                     connection_type => supervisor}]},
+                 permanent,false,infinity,supervisor,
+                 [ranch_listener_sup]}}}},
+             [{riego_http,init,1,
+               [{file,
+                 "/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl"},
+                {line,9}]},
+              {gen_server,init_it,2,[{file,"gen_server.erl"},{line,2229}]},
+              {gen_server,init_it,6,[{file,"gen_server.erl"},{line,2184}]},
+              {proc_lib,init_p_do_apply,3,
+               [{file,"proc_lib.erl"},{line,329}]}]}
+    offender: [{pid,undefined},
+               {id,riego_http},
+               {mfargs,{riego_http,start_link,[]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,5000},
+               {child_type,worker}]
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.759862 ===
+    application: riego
+    exited: {{shutdown,
+              {failed_to_start_child,riego_http,
+               {{badmatch,
+                 {error,
+                  {{shutdown,
+                    {failed_to_start_child,ranch_acceptors_sup,
+                     {listen_error,riego_listener,eperm}}},
+                   {child,undefined,
+                    {ranch_listener_sup,riego_listener},
+                    {ranch_listener_sup,start_link,
+                     [riego_listener,ranch_tcp,
+                      #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                        connection_type => supervisor},
+                      cowboy_clear,
+                      #{env =>
+                         #{dispatch =>
+                            [{'_',[],
+                              [{[<<"ws">>],[],riego_http,ws},
+                               {[<<"api">>,'...'],[],riego_http,api},
+                               {[<<"metrics">>],[],riego_http,metrics},
+                               {[],[],cowboy_static,
+                                {priv_file,riego,"www/index.html"}}]}]},
+                        connection_type => supervisor}]},
+                    permanent,false,infinity,supervisor,
+                    [ranch_listener_sup]}}}},
+                [{riego_http,init,1,
+                  [{file,
+                    "/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl"},
+                   {line,9}]},
+                 {gen_server,init_it,2,[{file,"gen_server.erl"},{line,2229}]},
+                 {gen_server,init_it,6,[{file,"gen_server.erl"},{line,2184}]},
+                 {proc_lib,init_p_do_apply,3,
+                  [{file,"proc_lib.erl"},{line,329}]}]}}},
+             {riego_app,start,[normal,[]]}}
+    type: temporary
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.760696 ===
+    application: jsx
+    exited: stopped
+    type: temporary
+
+=CRASH REPORT==== 10-Nov-2026::11:38:26.760034 ===
+  crasher:
+    initial call: application_master:init/3
+    pid: <0.277.0>
+    registered_name: []
+    exception exit: {{shutdown,
+                      {failed_to_start_child,riego_http,
+                       {{badmatch,
+                         {error,
+                          {{shutdown,
+                            {failed_to_start_child,ranch_acceptors_sup,
+                             {listen_error,riego_listener,eperm}}},
+                           {child,undefined,
+                            {ranch_listener_sup,riego_listener},
+                            {ranch_listener_sup,start_link,
+                             [riego_listener,ranch_tcp,
+                              #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                                connection_type => supervisor},
+                              cowboy_clear,
+                              #{env =>
+                                 #{dispatch =>
+                                    [{'_',[],
+                                      [{[<<"ws">>],[],riego_http,ws},
+                                       {[<<"api">>,'...'],[],riego_http,api},
+                                       {[<<"metrics">>],[],riego_http,metrics},
+                                       {[],[],cowboy_static,
+                                        {priv_file,riego,
+                                         "www/index.html"}}]}]},
+                                connection_type => supervisor}]},
+                            permanent,false,infinity,supervisor,
+                            [ranch_listener_sup]}}}},
+                        [{riego_http,init,1,
+                          [{file,
+                            "/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl"},
+                           {line,9}]},
+                         {gen_server,init_it,2,
+                          [{file,"gen_server.erl"},{line,2229}]},
+                         {gen_server,init_it,6,
+                          [{file,"gen_server.erl"},{line,2184}]},
+                         {proc_lib,init_p_do_apply,3,
+                          [{file,"proc_lib.erl"},{line,329}]}]}}},
+                     {riego_app,start,[normal,[]]}}
+      in function  application_master:init/3 (application_master.erl, line 143)
+    ancestors: [application_controller,<0.10.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.278.0>,normal}]
+    links: [<0.45.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 29
+    reductions: 172
+  neighbours:
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.764233 ===
+    application: cowboy
+    exited: stopped
+    type: temporary
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.767469 ===
+    application: ranch
+    exited: stopped
+    type: temporary
+
+=INFO REPORT==== 10-Nov-2026::11:38:26.767714 ===
+    application: cowlib
+    exited: stopped
+    type: temporary
+
+[0;31mF[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m
+Failures:
+
+  1) riego_otp_tests:-recovery_test_/0-fun-6-/0
+[0;31m     Failure/Error: {error,
+                     {badmatch,
+                      {error,
+                       {riego,
+                        {{shutdown,
+                          {failed_to_start_child,riego_http,
+                           {{badmatch,
+                             {error,
+                              {{shutdown,
+                                {failed_to_start_child,ranch_acceptors_sup,
+                                 {listen_error,riego_listener,eperm}}},
+                               {child,undefined,
+                                {ranch_listener_sup,riego_listener},
+                                {ranch_listener_sup,start_link,
+                                 [riego_listener,ranch_tcp,
+                                  #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                                    connection_type => supervisor},
+                                  cowboy_clear,
+                                  #{env =>
+                                     #{dispatch =>
+                                        [{'_',[],
+                                          [{[<<"ws">>],[],riego_http,ws},
+                                           {[<<"api">>,'...'],
+                                            [],riego_http,api},
+                                           {[<<"metrics">>],
+                                            [],riego_http,metrics},
+                                           {[],[],cowboy_static,
+                                            {priv_file,riego,
+                                             "www/index.html"}}]}]},
+                                    connection_type => supervisor}]},
+                                permanent,false,infinity,supervisor,
+                                [ranch_listener_sup]}}}},
+                            [{riego_http,init,1,
+                              [{file,
+                                "/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl"},
+                               {line,9}]},
+                             {gen_server,init_it,2,
+                              [{file,"gen_server.erl"},{line,2229}]},
+                             {gen_server,init_it,6,
+                              [{file,"gen_server.erl"},{line,2184}]},
+                             {proc_lib,init_p_do_apply,3,
+                              [{file,"proc_lib.erl"},{line,329}]}]}}},
+                         {riego_app,start,[normal,[]]}}}}},
+                     [{riego_otp_tests,'-recovery_test_/0-fun-6-',0,
+                       [{file,
+                         "/home/pi4/Riego-Inteligente-Por-Zonas/test/riego_otp_tests.erl"},
+                        {line,6}]},
+                      {eunit_test,run_testfun,1,
+                       [{file,"eunit_test.erl"},{line,72}]},
+                      {eunit_proc,run_test,1,
+                       [{file,"eunit_proc.erl"},{line,544}]},
+                      {eunit_proc,with_timeout,3,
+                       [{file,"eunit_proc.erl"},{line,369}]},
+                      {eunit_proc,handle_test,2,
+                       [{file,"eunit_proc.erl"},{line,527}]},
+                      {eunit_proc,tests_inorder,3,
+                       [{file,"eunit_proc.erl"},{line,469}]},
+                      {eunit_proc,with_timeout,3,
+                       [{file,"eunit_proc.erl"},{line,359}]},
+                      {eunit_proc,run_group,2,
+                       [{file,"eunit_proc.erl"},{line,583}]}]}
+[0m[0;36m     Output: [0m
+  2) riego_otp_tests:-stuck_survives_restart_test_/0-fun-17-/0
+[0;31m     Failure/Error: {error,
+                     {badmatch,
+                      {error,
+                       {riego,
+                        {{shutdown,
+                          {failed_to_start_child,riego_http,
+                           {{badmatch,
+                             {error,
+                              {{shutdown,
+                                {failed_to_start_child,ranch_acceptors_sup,
+                                 {listen_error,riego_listener,eperm}}},
+                               {child,undefined,
+                                {ranch_listener_sup,riego_listener},
+                                {ranch_listener_sup,start_link,
+                                 [riego_listener,ranch_tcp,
+                                  #{socket_opts => [{ip,{127,0,0,1}},{port,0}],
+                                    connection_type => supervisor},
+                                  cowboy_clear,
+                                  #{env =>
+                                     #{dispatch =>
+                                        [{'_',[],
+                                          [{[<<"ws">>],[],riego_http,ws},
+                                           {[<<"api">>,'...'],
+                                            [],riego_http,api},
+                                           {[<<"metrics">>],
+                                            [],riego_http,metrics},
+                                           {[],[],cowboy_static,
+                                            {priv_file,riego,
+                                             "www/index.html"}}]}]},
+                                    connection_type => supervisor}]},
+                                permanent,false,infinity,supervisor,
+                                [ranch_listener_sup]}}}},
+                            [{riego_http,init,1,
+                              [{file,
+                                "/home/pi4/Riego-Inteligente-Por-Zonas/src/riego_http.erl"},
+                               {line,9}]},
+                             {gen_server,init_it,2,
+                              [{file,"gen_server.erl"},{line,2229}]},
+                             {gen_server,init_it,6,
+                              [{file,"gen_server.erl"},{line,2184}]},
+                             {proc_lib,init_p_do_apply,3,
+                              [{file,"proc_lib.erl"},{line,329}]}]}}},
+                         {riego_app,start,[normal,[]]}}}}},
+                     [{riego_otp_tests,
+                       '-stuck_survives_restart_test_/0-fun-17-',0,
+                       [{file,
+                         "/home/pi4/Riego-Inteligente-Por-Zonas/test/riego_otp_tests.erl"},
+                        {line,26}]},
+                      {eunit_test,run_testfun,1,
+                       [{file,"eunit_test.erl"},{line,72}]},
+                      {eunit_proc,run_test,1,
+                       [{file,"eunit_proc.erl"},{line,544}]},
+                      {eunit_proc,with_timeout,3,
+                       [{file,"eunit_proc.erl"},{line,369}]},
+                      {eunit_proc,handle_test,2,
+                       [{file,"eunit_proc.erl"},{line,527}]},
+                      {eunit_proc,tests_inorder,3,
+                       [{file,"eunit_proc.erl"},{line,469}]},
+                      {eunit_proc,with_timeout,3,
+                       [{file,"eunit_proc.erl"},{line,359}]},
+                      {eunit_proc,run_group,2,
+                       [{file,"eunit_proc.erl"},{line,583}]}]}
+[0m[0;36m     Output: [0m
+
+Finished in 0.214 seconds
+[0;31m17 tests, 2 failures
+[0m[0;31m===> [1mError running tests
+[0m[0m

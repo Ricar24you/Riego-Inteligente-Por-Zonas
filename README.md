@@ -34,6 +34,26 @@ POST requiere `Content-Type: application/json`. No exponer esta API de simulaci�
 
 ## Validación y entrega
 
-`bash scripts/integration.sh` arranca una instancia en puerto disponible y directorio temporal, ejecuta pruebas HTTP/WebSocket y la detiene al terminar. `RIEGO_RELEASE_TEST=1 bash scripts/integration.sh` verifica la release; `RIEGO_BROWSER_TEST=1` agrega pruebas de navegador si están Playwright/Chromium. `python3 scripts/timezone-checks.py` verifica UTC, Tijuana y horario de verano en VMs nuevas. No ejecutar `smoke.py` o `browser.cjs` directamente sobre datos del usuario. CI ejecuta EUnit, horarios, build y HTTP/WebSocket. La [verificación ARM64](docs/RASPBERRY.md) aún requiere acceso a la Pi.
+`bash scripts/integration.sh` arranca una instancia en puerto disponible y directorio temporal, ejecuta pruebas HTTP/WebSocket y la detiene al terminar. `RIEGO_RELEASE_TEST=1 bash scripts/integration.sh` verifica la release; `RIEGO_BROWSER_TEST=1` agrega pruebas de navegador si están Playwright/Chromium. `python3 scripts/timezone-checks.py` verifica UTC, Tijuana y horario de verano en VMs nuevas. No ejecutar `smoke.py` o `browser.cjs` directamente sobre datos del usuario. CI ejecuta EUnit, horarios, build y HTTP/WebSocket. La release ARM64 está ensamblada; ver [resultados nativos](docs/RASPBERRY.md) y el alcance de cada validación en [EVIDENCIA](docs/EVIDENCIA.md).
 
-Ver [arquitectura](docs/ARQUITECTURA.md), [manual](docs/MANUAL.md), [Raspberry Pi](docs/RASPBERRY.md), [demostración](docs/DEMO.md) y [evidencia y pendientes](docs/EVIDENCIA.md). La UI actual es un prototipo funcional; **no se declara creada en Stitch ni se afirma 40/40**.
+Ver [arquitectura](docs/ARQUITECTURA.md), [manual](docs/MANUAL.md), [Raspberry Pi](docs/RASPBERRY.md), [demostración](docs/DEMO.md) y [evidencia y pendientes](docs/EVIDENCIA.md). La interfaz AgroFlow adapta las cinco pantallas originales de Google Stitch conservadas en `design/stitch/stitch_riego_inteligente_iot_dashboard/`. Ver la trazabilidad y las limitaciones de verificación en [EVIDENCIA](docs/EVIDENCIA.md).
+
+
+## Interfaz AgroFlow / Stitch
+
+Navegación por enlaces: dashboard, administración de las 12 zonas, programación, detalle y bitácora. Responsive a móvil/tablet, con filtros de estado y eventos, selección de zona compartida y estados de conexión. Usa `GET /api/state`, los dos POST existentes y `/ws`; bajo HTTPS selecciona `wss`. HTTP sirve como respaldo cada tres segundos y los controles se bloquean tras seis segundos sin estado reciente. Los errores de API se muestran sin simular un éxito ni repetir automáticamente un POST.
+
+Se conservan la marca, paleta, paneles, matriz y jerarquía del diseño exportado. CSS y JavaScript se sirven localmente, sin Tailwind CDN, imágenes remotas ni descargas obligatorias de fuentes. Las familias de Stitch están declaradas con fuentes de sistema como respaldo. No se muestran sensores, cultivos, PID, presión, ahorros ni gráficos ficticios. Litros y caudal son los valores simulados del backend; los litros son acumulados persistidos, no diarios. Programar agrega un trabajo único (1–28800 segundos, prioridad 0–9), no un horario recurrente. La lluvia es global; reparar y reconocer son acciones independientes. La bitácora solo contiene fecha y tipo porque ese es el esquema real.
+
+Validación sin tocar el servicio activo:
+
+```bash
+python3 scripts/check-ui.py
+rebar3 compile
+TZ=America/Tijuana rebar3 eunit
+RIEGO_BROWSER_TEST=1 bash scripts/integration.sh
+```
+
+El navegador necesita Node, Playwright y Chromium (`CHROMIUM_PATH` opcional). Sus capturas se guardan en `docs/evidence-stitch/`, preservando los originales Stitch y las capturas históricas. La evidencia conservada registra **17 pruebas EUnit aprobadas**, integración HTTP/WebSocket y recuperación tras SIGKILL en cloud; la compilación y el ensamblado de la release **ARM64** también pasaron. El usuario confirmó funcionando desde **Windows las cinco pantallas**: dashboard, zonas, programación, detalle e historial. Esta confirmación manual no sustituye una prueba automatizada móvil ni demuestra la ejecución HTTP de la release ARM64. Los intentos restringidos y sus logs se conservan en [EVIDENCIA](docs/EVIDENCIA.md).
+
+La página `priv/www/index.html` es autocontenida. Tras editar `priv/www/shell.html`, `app.css` o `app.js`, regenerarla con `python3 scripts/package-ui.py`; también produce `_build/ui/index.html`. Esta usa exclusivamente la ruta estática `/` que ya existe y las API/WS actuales. Consultar el [procedimiento seguro](docs/DESPLIEGUE_UI.md) antes de reemplazar el archivo servido. No se realizó despliegue, reinicio ni push.

@@ -13,9 +13,9 @@ def check(zone, start, points):
     times = '[' + ','.join(str(t) for t, _ in pairs) + ']'
     expression = (f'C=#{{timezone=>local,start_hour=>{start},duration_hours=>8}},'
                   f'R=[riego_schedule:remaining(T,C)||T<-{times}],'
-                  'io:format("~s",[jsx:encode(R)]),halt().')
+                  'io:format("~w",[R]),halt().')
     result = subprocess.run(['erl', '-pa', '_build/default/lib/riego/ebin',
-                             '_build/default/lib/jsx/ebin', '-noshell', '-eval', expression],
+                             '-noshell', '-eval', expression],
                             env={**os.environ, 'TZ': zone}, check=True,
                             capture_output=True, text=True, timeout=30)
     actual = json.loads(result.stdout)
