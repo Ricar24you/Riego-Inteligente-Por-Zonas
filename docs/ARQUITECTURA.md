@@ -1,0 +1,13 @@
+# Arquitectura y decisiones
+
+`riego_sup` arranca 12 válvulas gen_statem, controlador y propietario del listener Cowboy. `rest_for_one` reinicia los dependientes después de una caída. Se eligió recuperación conservadora de todas las salidas frente al aislamiento por válvula sugerido por el profesor: sacrifica disponibilidad para evitar salidas huérfanas. Cowboy/Ranch mantiene su árbol propio; un gen_server administra start/stop del listener para no supervisar dos veces el mismo PID.
+
+El modelo puro permite verificar políticas sin esperar ocho horas. El controlador es la autoridad única de apertura. Cierra salidas, guarda estado deseado y aplica aperturas. `opening` es un estado transitorio inmediato del simulador, sin retardo hidráulico. Un fallo inyectado representa aislamiento global de la bomba; no se simula mecánicamente una válvula que permanece físicamente abierta, ni un relé independiente de emergencia. Requiere adaptar y probar hardware antes de uso real.
+
+Invariantes: activos <=3; zonas válidas y únicas; no despacho fuera de ventana, durante lluvia o fallo; no pérdida de trabajos activos al recuperar; duración usa reloj monotónico y no el reloj civil. La prioridad es no expropiativa.
+
+Estado crítico en `data/state.term`: escritura sincronizada a temporal y rename atómico en el mismo filesystem antes de confirmar API. Una imagen inválida impide arrancar en lugar de descartar información silenciosamente. No se garantiza fsync del directorio ante pérdida física de energía; para campo se necesita almacenamiento durable y pruebas de corte eléctrico. El reinicio puede repetir como máximo el trabajo desde el último checkpoint (aproximadamente un segundo). No se deduce consumo real durante tiempo sin controlador.
+
+Bitácora circular de 100 eventos; no es auditoría histórica ilimitada. Métricas de consumo y ejecuciones se conservan. Las muestras de lluvia/caudal son inyecciones de simulación; una sola lectura no puede distinguir sensor averiado de fuga física: se aplica parada conservadora. No hay validación de presión ni humedad física. Los programas no incluyen fechas recurrentes; se despachan en la siguiente ventana disponible.
+
+No se citan porcentajes de agricultura como hechos verificados: las cifras contextuales del profesor son referencias aproximadas y no forman parte de la validación técnica.

@@ -1,0 +1,21 @@
+name: Erlang validation
+on: [push, pull_request]
+jobs:
+  otp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: '27'
+          rebar3-version: '3.24'
+      - run: rebar3 compile
+      - run: rebar3 eunit
+      - run: rebar3 release
+      - name: HTTP and WebSocket integration
+        run: |
+          erl -pa _build/default/lib/*/ebin -noshell -eval 'application:ensure_all_started(riego), timer:sleep(infinity).' > /tmp/riego.log 2>&1 &
+          pid=$!
+          trap 'kill $pid' EXIT
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8080/api/state && break; sleep 1; done
+          python3 scripts/smoke.py

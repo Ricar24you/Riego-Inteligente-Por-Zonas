@@ -1,0 +1,10 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+try{const p=await b.newPage({viewport:{width:1365,height:1000}});let errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto('http://127.0.0.1:8080');await p.getByText('En línea',{exact:true}).waitFor();
+await p.selectOption('#zone','3');await p.locator('#duration').fill('120');await p.getByRole('button',{name:'Agregar a cola'}).click();await p.getByText('Solicitud aceptada',{exact:true}).waitFor();
+if(await p.locator('.zone').count()!==12)throw Error('Expected 12 zones');
+await p.screenshot({path:'docs/dashboard.png',fullPage:true});
+await p.setViewportSize({width:390,height:844});await p.screenshot({path:'docs/mobile.png',fullPage:true});
+if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile overflow');
+if(errors.length)throw Error(errors.join('\n'));console.log('PASS: live WebSocket, browser form POST, 12 zones, mobile viewport, no JS errors');
+}finally{await b.close()}})().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,352 @@
+Hit:1 https://deb.debian.org/debian trixie InRelease
+rm: cannot remove '/var/cache/apt/archives/partial/*.deb': Permission denied
+Reading package lists...
+W: Unable to read /etc/apt/apt.conf.d/80-applied-apt-retries - open (13: Permission denied)
+W: Unable to read /etc/apt/apt.conf.d/80-applied-apt-retries - open (13: Permission denied)
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling riego
+===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling riego
+===> Performing EUnit tests...
+[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m[0;32m.[0m=SUPERVISOR REPORT==== 10-Nov-2026::17:19:18.592073 ===
+    supervisor: {local,riego_sup}
+    errorContext: child_terminated
+    reason: killed
+    offender: [{pid,<0.266.0>},
+               {id,riego_controller},
+               {mfargs,{riego_controller,start_link,[]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,5000},
+               {child_type,worker}]
+
+=SUPERVISOR REPORT==== 10-Nov-2026::17:19:18.614750 ===
+    supervisor: {local,riego_sup}
+    errorContext: child_terminated
+    reason: killed
+    offender: [{pid,<0.254.0>},
+               {id,{zone,1}},
+               {mfargs,{riego_valve,start_link,[1]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,5000},
+               {child_type,worker}]
+
+=INFO REPORT==== 10-Nov-2026::17:19:18.718809 ===
+    application: riego
+    exited: stopped
+    type: temporary
+
+[0;32m.[0m
+Finished in 0.207 seconds
+[0;32m11 tests, 0 failures
+[0m===> Verifying dependencies...
+===> Analyzing applications...
+===> Compiling riego
+===> Assembling release riego-0.1.0...
+===> Warnings generating release:
+*WARNING* kernel: Source code not found: application.erl
+*WARNING* kernel: Source code not found: application_controller.erl
+*WARNING* kernel: Source code not found: application_master.erl
+*WARNING* kernel: Source code not found: application_starter.erl
+*WARNING* kernel: Source code not found: auth.erl
+*WARNING* kernel: Source code not found: code.erl
+*WARNING* kernel: Source code not found: code_server.erl
+*WARNING* kernel: Source code not found: dist_util.erl
+*WARNING* kernel: Source code not found: erl_boot_server.erl
+*WARNING* kernel: Source code not found: erl_compile_server.erl
+*WARNING* kernel: Source code not found: erl_distribution.erl
+*WARNING* kernel: Source code not found: erl_erts_errors.erl
+*WARNING* kernel: Source code not found: erl_reply.erl
+*WARNING* kernel: Source code not found: erl_kernel_errors.erl
+*WARNING* kernel: Source code not found: erl_signal_handler.erl
+*WARNING* kernel: Source code not found: erpc.erl
+*WARNING* kernel: Source code not found: error_handler.erl
+*WARNING* kernel: Source code not found: error_logger.erl
+*WARNING* kernel: Source code not found: file.erl
+*WARNING* kernel: Source code not found: file_server.erl
+*WARNING* kernel: Source code not found: file_io_server.erl
+*WARNING* kernel: Source code not found: global.erl
+*WARNING* kernel: Source code not found: global_group.erl
+*WARNING* kernel: Source code not found: global_search.erl
+*WARNING* kernel: Source code not found: group.erl
+*WARNING* kernel: Source code not found: group_history.erl
+*WARNING* kernel: Source code not found: heart.erl
+*WARNING* kernel: Source code not found: inet6_tcp.erl
+*WARNING* kernel: Source code not found: inet6_tcp_dist.erl
+*WARNING* kernel: Source code not found: inet6_udp.erl
+*WARNING* kernel: Source code not found: inet6_sctp.erl
+*WARNING* kernel: Source code not found: inet_config.erl
+*WARNING* kernel: Source code not found: inet_epmd_dist.erl
+*WARNING* kernel: Source code not found: inet_epmd_socket.erl
+*WARNING* kernel: Source code not found: inet_hosts.erl
+*WARNING* kernel: Source code not found: inet_gethost_native.erl
+*WARNING* kernel: Source code not found: inet_tcp_dist.erl
+*WARNING* kernel: Source code not found: kernel.erl
+*WARNING* kernel: Source code not found: kernel_config.erl
+*WARNING* kernel: Source code not found: kernel_refc.erl
+*WARNING* kernel: Source code not found: local_tcp.erl
+*WARNING* kernel: Source code not found: local_udp.erl
+*WARNING* kernel: Source code not found: logger.erl
+*WARNING* kernel: Source code not found: logger_backend.erl
+*WARNING* kernel: Source code not found: logger_config.erl
+*WARNING* kernel: Source code not found: logger_disk_log_h.erl
+*WARNING* kernel: Source code not found: logger_filters.erl
+*WARNING* kernel: Source code not found: logger_formatter.erl
+*WARNING* kernel: Source code not found: logger_h_common.erl
+*WARNING* kernel: Source code not found: logger_handler.erl
+*WARNING* kernel: Source code not found: logger_handler_watcher.erl
+*WARNING* kernel: Source code not found: logger_olp.erl
+*WARNING* kernel: Source code not found: logger_proxy.erl
+*WARNING* kernel: Source code not found: logger_server.erl
+*WARNING* kernel: Source code not found: logger_simple_h.erl
+*WARNING* kernel: Source code not found: logger_std_h.erl
+*WARNING* kernel: Source code not found: logger_sup.erl
+*WARNING* kernel: Source code not found: net.erl
+*WARNING* kernel: Source code not found: net_adm.erl
+*WARNING* kernel: Source code not found: net_kernel.erl
+*WARNING* kernel: Source code not found: os.erl
+*WARNING* kernel: Source code not found: ram_file.erl
+*WARNING* kernel: Source code not found: rpc.erl
+*WARNING* kernel: Source code not found: user_drv.erl
+*WARNING* kernel: Source code not found: user_sup.erl
+*WARNING* kernel: Source code not found: prim_tty.erl
+*WARNING* kernel: Source code not found: disk_log.erl
+*WARNING* kernel: Source code not found: disk_log_1.erl
+*WARNING* kernel: Source code not found: disk_log_server.erl
+*WARNING* kernel: Source code not found: disk_log_sup.erl
+*WARNING* kernel: Source code not found: dist_ac.erl
+*WARNING* kernel: Source code not found: erl_ddll.erl
+*WARNING* kernel: Source code not found: erl_epmd.erl
+*WARNING* kernel: Source code not found: erts_debug.erl
+*WARNING* kernel: Source code not found: gen_tcp.erl
+*WARNING* kernel: Source code not found: gen_tcp_socket.erl
+*WARNING* kernel: Source code not found: gen_udp.erl
+*WARNING* kernel: Source code not found: gen_udp_socket.erl
+*WARNING* kernel: Source code not found: gen_sctp.erl
+*WARNING* kernel: Source code not found: inet.erl
+*WARNING* kernel: Source code not found: inet_db.erl
+*WARNING* kernel: Source code not found: inet_dns.erl
+*WARNING* kernel: Source code not found: inet_dns_tsig.erl
+*WARNING* kernel: Source code not found: inet_parse.erl
+*WARNING* kernel: Source code not found: inet_res.erl
+*WARNING* kernel: Source code not found: inet_tcp.erl
+*WARNING* kernel: Source code not found: inet_udp.erl
+*WARNING* kernel: Source code not found: inet_sctp.erl
+*WARNING* kernel: Source code not found: pg.erl
+*WARNING* kernel: Source code not found: pg2.erl
+*WARNING* kernel: Source code not found: raw_file_io.erl
+*WARNING* kernel: Source code not found: raw_file_io_compressed.erl
+*WARNING* kernel: Source code not found: raw_file_io_deflate.erl
+*WARNING* kernel: Source code not found: raw_file_io_delayed.erl
+*WARNING* kernel: Source code not found: raw_file_io_inflate.erl
+*WARNING* kernel: Source code not found: raw_file_io_list.erl
+*WARNING* kernel: Source code not found: seq_trace.erl
+*WARNING* kernel: Source code not found: socket.erl
+*WARNING* kernel: Source code not found: standard_error.erl
+*WARNING* kernel: Source code not found: trace.erl
+*WARNING* kernel: Source code not found: wrap_log_reader.erl
+*WARNING* stdlib: Source code not found: argparse.erl
+*WARNING* stdlib: Source code not found: array.erl
+*WARNING* stdlib: Source code not found: base64.erl
+*WARNING* stdlib: Source code not found: beam_lib.erl
+*WARNING* stdlib: Source code not found: binary.erl
+*WARNING* stdlib: Source code not found: c.erl
+*WARNING* stdlib: Source code not found: calendar.erl
+*WARNING* stdlib: Source code not found: dets.erl
+*WARNING* stdlib: Source code not found: dets_server.erl
+*WARNING* stdlib: Source code not found: dets_sup.erl
+*WARNING* stdlib: Source code not found: dets_utils.erl
+*WARNING* stdlib: Source code not found: dets_v9.erl
+*WARNING* stdlib: Source code not found: dict.erl
+*WARNING* stdlib: Source code not found: digraph.erl
+*WARNING* stdlib: Source code not found: digraph_utils.erl
+*WARNING* stdlib: Source code not found: edlin.erl
+*WARNING* stdlib: Source code not found: edlin_key.erl
+*WARNING* stdlib: Source code not found: edlin_context.erl
+*WARNING* stdlib: Source code not found: edlin_expand.erl
+*WARNING* stdlib: Source code not found: edlin_type_suggestion.erl
+*WARNING* stdlib: Source code not found: epp.erl
+*WARNING* stdlib: Source code not found: eval_bits.erl
+*WARNING* stdlib: Source code not found: erl_abstract_code.erl
+*WARNING* stdlib: Source code not found: erl_anno.erl
+*WARNING* stdlib: Source code not found: erl_bits.erl
+*WARNING* stdlib: Source code not found: erl_compile.erl
+*WARNING* stdlib: Source code not found: erl_error.erl
+*WARNING* stdlib: Source code not found: erl_eval.erl
+*WARNING* stdlib: Source code not found: erl_expand_records.erl
+*WARNING* stdlib: Source code not found: erl_features.erl
+*WARNING* stdlib: Source code not found: erl_internal.erl
+*WARNING* stdlib: Source code not found: erl_lint.erl
+*WARNING* stdlib: Source code not found: erl_parse.erl
+*WARNING* stdlib: Source code not found: erl_posix_msg.erl
+*WARNING* stdlib: Source code not found: erl_pp.erl
+*WARNING* stdlib: Source code not found: erl_scan.erl
+*WARNING* stdlib: Source code not found: erl_stdlib_errors.erl
+*WARNING* stdlib: Source code not found: erl_tar.erl
+*WARNING* stdlib: Source code not found: error_logger_file_h.erl
+*WARNING* stdlib: Source code not found: error_logger_tty_h.erl
+*WARNING* stdlib: Source code not found: escript.erl
+*WARNING* stdlib: Source code not found: ets.erl
+*WARNING* stdlib: Source code not found: file_sorter.erl
+*WARNING* stdlib: Source code not found: filelib.erl
+*WARNING* stdlib: Source code not found: filename.erl
+*WARNING* stdlib: Source code not found: gb_trees.erl
+*WARNING* stdlib: Source code not found: gb_sets.erl
+*WARNING* stdlib: Source code not found: gen.erl
+*WARNING* stdlib: Source code not found: gen_event.erl
+*WARNING* stdlib: Source code not found: gen_fsm.erl
+*WARNING* stdlib: Source code not found: gen_server.erl
+*WARNING* stdlib: Source code not found: gen_statem.erl
+*WARNING* stdlib: Source code not found: io.erl
+*WARNING* stdlib: Source code not found: io_lib.erl
+*WARNING* stdlib: Source code not found: io_lib_format.erl
+*WARNING* stdlib: Source code not found: io_lib_fread.erl
+*WARNING* stdlib: Source code not found: io_lib_pretty.erl
+*WARNING* stdlib: Source code not found: json.erl
+*WARNING* stdlib: Source code not found: lists.erl
+*WARNING* stdlib: Source code not found: log_mf_h.erl
+*WARNING* stdlib: Source code not found: maps.erl
+*WARNING* stdlib: Source code not found: math.erl
+*WARNING* stdlib: Source code not found: ms_transform.erl
+*WARNING* stdlib: Source code not found: orddict.erl
+*WARNING* stdlib: Source code not found: ordsets.erl
+*WARNING* stdlib: Source code not found: otp_internal.erl
+*WARNING* stdlib: Source code not found: peer.erl
+*WARNING* stdlib: Source code not found: pool.erl
+*WARNING* stdlib: Source code not found: proc_lib.erl
+*WARNING* stdlib: Source code not found: proplists.erl
+*WARNING* stdlib: Source code not found: qlc.erl
+*WARNING* stdlib: Source code not found: qlc_pt.erl
+*WARNING* stdlib: Source code not found: queue.erl
+*WARNING* stdlib: Source code not found: rand.erl
+*WARNING* stdlib: Source code not found: random.erl
+*WARNING* stdlib: Source code not found: re.erl
+*WARNING* stdlib: Source code not found: sets.erl
+*WARNING* stdlib: Source code not found: shell.erl
+*WARNING* stdlib: Source code not found: shell_default.erl
+*WARNING* stdlib: Source code not found: shell_docs.erl
+*WARNING* stdlib: Source code not found: shell_docs_markdown.erl
+*WARNING* stdlib: Source code not found: slave.erl
+*WARNING* stdlib: Source code not found: sofs.erl
+*WARNING* stdlib: Source code not found: string.erl
+*WARNING* stdlib: Source code not found: supervisor.erl
+*WARNING* stdlib: Source code not found: supervisor_bridge.erl
+*WARNING* stdlib: Source code not found: sys.erl
+*WARNING* stdlib: Source code not found: timer.erl
+*WARNING* stdlib: Source code not found: unicode.erl
+*WARNING* stdlib: Source code not found: unicode_util.erl
+*WARNING* stdlib: Source code not found: uri_string.erl
+*WARNING* stdlib: Source code not found: win32reg.erl
+*WARNING* stdlib: Source code not found: zip.erl
+*WARNING* crypto: Source code not found: crypto.erl
+*WARNING* crypto: Source code not found: crypto_ec_curves.erl
+*WARNING* asn1: Source code not found: asn1rt_nif.erl
+*WARNING* public_key: Source code not found: public_key.erl
+*WARNING* public_key: Source code not found: pubkey_pem.erl
+*WARNING* public_key: Source code not found: pubkey_pbe.erl
+*WARNING* public_key: Source code not found: pubkey_ssh.erl
+*WARNING* public_key: Source code not found: pubkey_cert.erl
+*WARNING* public_key: Source code not found: pubkey_policy_tree.erl
+*WARNING* public_key: Source code not found: pubkey_cert_records.erl
+*WARNING* public_key: Source code not found: pubkey_crl.erl
+*WARNING* public_key: Source code not found: pubkey_ocsp.erl
+*WARNING* public_key: Source code not found: pubkey_os_cacerts.erl
+*WARNING* public_key: Source code not found: 'OTP-PUB-KEY'.erl
+*WARNING* public_key: Source code not found: 'PKCS-FRAME'.erl
+*WARNING* ssl: Source code not found: tls_client_connection_1_3.erl
+*WARNING* ssl: Source code not found: tls_server_connection_1_3.erl
+*WARNING* ssl: Source code not found: tls_gen_connection_1_3.erl
+*WARNING* ssl: Source code not found: tls_client_connection.erl
+*WARNING* ssl: Source code not found: tls_server_connection.erl
+*WARNING* ssl: Source code not found: tls_handshake.erl
+*WARNING* ssl: Source code not found: tls_handshake_1_3.erl
+*WARNING* ssl: Source code not found: tls_record.erl
+*WARNING* ssl: Source code not found: tls_record_1_3.erl
+*WARNING* ssl: Source code not found: tls_socket.erl
+*WARNING* ssl: Source code not found: tls_v1.erl
+*WARNING* ssl: Source code not found: tls_connection_sup.erl
+*WARNING* ssl: Source code not found: tls_gen_connection.erl
+*WARNING* ssl: Source code not found: tls_sender.erl
+*WARNING* ssl: Source code not found: tls_server_sup.erl
+*WARNING* ssl: Source code not found: tls_server_session_ticket_sup.erl
+*WARNING* ssl: Source code not found: tls_server_session_ticket.erl
+*WARNING* ssl: Source code not found: tls_sup.erl
+*WARNING* ssl: Source code not found: tls_dyn_connection_sup.erl
+*WARNING* ssl: Source code not found: ssl_dh_groups.erl
+*WARNING* ssl: Source code not found: dtls_client_connection.erl
+*WARNING* ssl: Source code not found: dtls_server_connection.erl
+*WARNING* ssl: Source code not found: dtls_handshake.erl
+*WARNING* ssl: Source code not found: dtls_record.erl
+*WARNING* ssl: Source code not found: dtls_socket.erl
+*WARNING* ssl: Source code not found: dtls_v1.erl
+*WARNING* ssl: Source code not found: dtls_connection_sup.erl
+*WARNING* ssl: Source code not found: dtls_gen_connection.erl
+*WARNING* ssl: Source code not found: dtls_packet_demux.erl
+*WARNING* ssl: Source code not found: dtls_listener_sup.erl
+*WARNING* ssl: Source code not found: dtls_sup.erl
+*WARNING* ssl: Source code not found: dtls_server_sup.erl
+*WARNING* ssl: Source code not found: dtls_server_session_cache_sup.erl
+*WARNING* ssl: Source code not found: ssl.erl
+*WARNING* ssl: Source code not found: ssl_session_cache_api.erl
+*WARNING* ssl: Source code not found: tls_dtls_client_connection.erl
+*WARNING* ssl: Source code not found: tls_dtls_server_connection.erl
+*WARNING* ssl: Source code not found: tls_dtls_gen_connection.erl
+*WARNING* ssl: Source code not found: ssl_config.erl
+*WARNING* ssl: Source code not found: ssl_gen_statem.erl
+*WARNING* ssl: Source code not found: ssl_handshake.erl
+*WARNING* ssl: Source code not found: ssl_record.erl
+*WARNING* ssl: Source code not found: ssl_cipher.erl
+*WARNING* ssl: Source code not found: ssl_cipher_format.erl
+*WARNING* ssl: Source code not found: ssl_srp_primes.erl
+*WARNING* ssl: Source code not found: ssl_alert.erl
+*WARNING* ssl: Source code not found: ssl_listen_tracker_sup.erl
+*WARNING* ssl: Source code not found: tls_bloom_filter.erl
+*WARNING* ssl: Source code not found: tls_client_ticket_store.erl
+*WARNING* ssl: Source code not found: inet_tls_dist.erl
+*WARNING* ssl: Source code not found: inet6_tls_dist.erl
+*WARNING* ssl: Source code not found: ssl_dist_sup.erl
+*WARNING* ssl: Source code not found: ssl_dist_connection_sup.erl
+*WARNING* ssl: Source code not found: ssl_dist_admin_sup.erl
+*WARNING* ssl: Source code not found: tls_dist_sup.erl
+*WARNING* ssl: Source code not found: tls_dist_server_sup.erl
+*WARNING* ssl: Source code not found: ssl_session.erl
+*WARNING* ssl: Source code not found: ssl_client_session_cache_db.erl
+*WARNING* ssl: Source code not found: ssl_server_session_cache.erl
+*WARNING* ssl: Source code not found: ssl_server_session_cache_db.erl
+*WARNING* ssl: Source code not found: ssl_server_session_cache_sup.erl
+*WARNING* ssl: Source code not found: ssl_upgrade_server_session_cache_sup.erl
+*WARNING* ssl: Source code not found: ssl_manager.erl
+*WARNING* ssl: Source code not found: ssl_pem_cache.erl
+*WARNING* ssl: Source code not found: ssl_pkix_db.erl
+*WARNING* ssl: Source code not found: ssl_certificate.erl
+*WARNING* ssl: Source code not found: ssl_crl.erl
+*WARNING* ssl: Source code not found: ssl_crl_cache.erl
+*WARNING* ssl: Source code not found: ssl_crl_cache_api.erl
+*WARNING* ssl: Source code not found: ssl_crl_hash_dir.erl
+*WARNING* ssl: Source code not found: ssl_logger.erl
+*WARNING* ssl: Source code not found: ssl_trace.erl
+*WARNING* ssl: Source code not found: ssl_app.erl
+*WARNING* ssl: Source code not found: ssl_sup.erl
+*WARNING* ssl: Source code not found: ssl_admin_sup.erl
+*WARNING* ssl: Source code not found: ssl_connection_sup.erl
+*WARNING* sasl: Source code not found: sasl.erl
+*WARNING* sasl: Source code not found: alarm_handler.erl
+*WARNING* sasl: Source code not found: format_lib_supp.erl
+*WARNING* sasl: Source code not found: misc_supp.erl
+*WARNING* sasl: Source code not found: rb.erl
+*WARNING* sasl: Source code not found: rb_format_supp.erl
+*WARNING* sasl: Source code not found: release_handler.erl
+*WARNING* sasl: Source code not found: release_handler_1.erl
+*WARNING* sasl: Source code not found: erlsrv.erl
+*WARNING* sasl: Source code not found: sasl_report.erl
+*WARNING* sasl: Source code not found: sasl_report_tty_h.erl
+*WARNING* sasl: Source code not found: sasl_report_file_h.erl
+*WARNING* sasl: Source code not found: systools.erl
+*WARNING* sasl: Source code not found: systools_make.erl
+*WARNING* sasl: Source code not found: systools_rc.erl
+*WARNING* sasl: Source code not found: systools_relup.erl
+*WARNING* sasl: Source code not found: systools_lib.erl
+===> Release successfully assembled: _build/default/rel/riego

@@ -1,0 +1,18 @@
+[Unit]
+Description=Riego Inteligente (simulation)
+After=network.target
+[Service]
+Type=simple
+User=pi4
+WorkingDirectory=/home/pi4/Riego-Inteligente-Por-Zonas
+ExecStart=/home/pi4/Riego-Inteligente-Por-Zonas/_build/default/rel/riego/bin/riego foreground
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/pi4/Riego-Inteligente-Por-Zonas/data
+[Install]
+WantedBy=multi-user.target
